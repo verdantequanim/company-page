@@ -41,6 +41,10 @@ header{display:grid;gap:6px}
 h1{font:700 clamp(28px,4.4vw,40px)/1.1 var(--display);margin:0;text-wrap:balance}
 .lede{margin:0;max-width:68ch;color:var(--muted)}
 .topbar{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.headrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:start}
+@media (max-width:860px){.headrow{grid-template-columns:1fr}}
+.headtext{display:grid;gap:6px;min-width:0}
+.rlcard .open{font:500 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--survey)}
 .topright{display:grid;gap:12px;justify-items:center;align-content:start}
 .topright .gate{justify-content:center}
 .rlcard{display:grid;gap:3px;padding:12px 18px;border-radius:10px;border:1px solid var(--survey);background:var(--survey-soft);text-decoration:none;color:var(--ink);min-width:260px;max-width:420px;text-align:center;justify-items:center}
@@ -190,13 +194,17 @@ a{color:var(--accent)}
 
 <div class="wrap">
   <header>
+    <div class="headrow">
+    <div class="headtext">
     <div class="eyebrow"><span>Verdant Equanim, LLC</span><span class="pill live">Phase 2 · Proof</span><span class="pill" id="tierPill">Public view</span></div>
     <h1>Nebraska Stress Atlas</h1>
     <p class="lede">Pick a layer on the left. The map colors all 93 counties by that measure. Public health context comes from CDC PLACES. HeadWater survey layers show what Nebraskans told us directly, county by county, once a county has enough responses.</p>
+    </div>
+    <a class="rlcard" href="../research/" id="rlCard"><b>Research Library</b><span id="rlCardTxt">The evidence behind HeadWater and the Atlas</span><span class="open">Open to everyone · no passcode</span><span class="go">Open the Research Library ›</span></a>
+    </div>
     <div class="topbar">
       <div class="cov" id="cov"></div>
       <div class="topright">
-      <a class="rlcard" href="../research/" id="rlCard"><b>Research Library</b><span id="rlCardTxt">The evidence behind HeadWater and the Atlas</span><span class="go">Open the Research Library ›</span></a>
       <form class="gate" id="gateForm">
         <label for="pass" class="gatemsg" id="gateLabel">Partner access</label>
         <input id="pass" type="password" placeholder="Partner passcode" autocomplete="off">

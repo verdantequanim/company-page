@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="The Research Library behind the HeadWater chronic stress survey and the Nebraska Stress Atlas: 60 verified sources in 14 categories, with citations.">
+<title>Research Library · Verdant Equanim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F5F6F0; --panel:#FFFFFF; --ink:#1B2420; --muted:#5A6760; --line:#D8DDD3; --soft:#ECEFE6;
+  --accent:#256B4B; --accent-ink:#FFFFFF; --survey:#A8601A; --survey-soft:#F6E9D9;
+  --display:"Bitter",Georgia,serif; --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ color-scheme:dark; --bg:#101512; --panel:#171E1A; --ink:#E6ECE7; --muted:#9AA8A0; --line:#2B3630; --soft:#1E2722; --accent:#7CC58E; --accent-ink:#0E1511; --survey:#E3A559; --survey-soft:#2A2117; } }
+:root[data-theme="dark"]{ color-scheme:dark; --bg:#101512; --panel:#171E1A; --ink:#E6ECE7; --muted:#9AA8A0; --line:#2B3630; --soft:#1E2722; --accent:#7CC58E; --accent-ink:#0E1511; --survey:#E3A559; --survey-soft:#2A2117; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+.wrap{max-width:1100px;margin:0 auto;display:grid;gap:18px}
+.eyebrow{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.eyebrow a{color:var(--accent);text-decoration:none}
+h1{font:700 clamp(28px,4.4vw,40px)/1.1 var(--display);margin:0;text-wrap:balance}
+.lede{margin:0;max-width:72ch;color:var(--muted)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:860px){.layout{grid-template-columns:1fr}}
+.toc{position:sticky;top:12px;display:grid;gap:6px}
+.toc h2{font:600 12px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.toc ol{margin:0;padding:0;list-style:none;display:grid;gap:2px;counter-reset:t}
+.toc li{display:flex;justify-content:space-between;gap:8px;align-items:baseline;font-size:13.5px;padding:5px 8px;border-radius:6px}
+.toc li:hover{background:var(--soft)}
+.toc li a{color:var(--ink);text-decoration:none}
+.toc li span{font:500 11px var(--mono);color:var(--muted)}
+.main{display:grid;gap:18px;min-width:0}
+details.std summary{cursor:pointer;font-weight:600;font-size:15px}
+details.std ol{margin:8px 0 0;padding-left:20px;display:grid;gap:6px;font-size:14px;color:var(--muted);max-width:90ch}
+.cite{display:grid;gap:10px;background:var(--survey-soft);border-color:transparent}
+.cite h2{font:700 18px var(--display);margin:0}
+.cite .c{display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:10px;align-items:start}
+@media (max-width:640px){.cite .c{grid-template-columns:1fr}}
+.cite code{font:12.5px var(--mono);background:var(--panel);padding:6px 9px;border-radius:5px;white-space:pre-wrap;min-width:0}
+.cat{scroll-margin-top:16px}
+.cathead{display:grid;gap:4px;margin-bottom:6px}
+.cathead h2{font:700 22px/1.2 var(--display);margin:0}
+.cathead .n{font:400 12px var(--mono);color:var(--muted)}
+.dev{font:500 10px var(--mono);color:var(--survey);border:1px solid var(--survey);border-radius:999px;padding:2px 7px;vertical-align:middle}
+.about{margin:0 0 12px;color:var(--muted);font-size:14px;max-width:85ch}
+.grid{display:grid;gap:10px}
+.topic{font:600 13px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--survey);margin:12px 0 0}
+.entry{display:grid;gap:4px;padding:12px 14px;border-radius:8px;background:var(--panel);border:1px solid var(--line)}
+.entry .src{font:500 11px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--accent)}
+.entry .ttl{font-weight:600;font-size:15px}
+.entry .meta{font-size:12.5px;color:var(--muted)}
+.entry .find{font-size:14px;margin:2px 0}
+.entry .links{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:12.5px}
+.entry .links a{color:var(--accent)}
+.copy{all:unset;cursor:pointer;font:500 11.5px var(--mono);border:1px solid var(--line);border-radius:5px;padding:3px 8px;color:var(--muted)}
+.copy:focus-visible{outline:2px solid var(--accent)}
+footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px}
+footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><a href="../">Verdant Equanim</a><span>·</span><a href="../atlas/">Nebraska Stress Atlas</a><span>·</span><span>Research Library v1.1 · updated 2026-11-06</span></div>
+    <h1 style="margin-top:8px">Research Library</h1>
+    <p class="lede" style="margin-top:8px">The Research Library is the evidence behind the HeadWater chronic stress survey and the Nebraska Stress Atlas. It exists so that a county, a hospital, a clinic or a health department writing a grant can cite the science in one click, and so that anyone can check what HeadWater measures against the studies that have held up. Each category matches a section of the survey or a layer of the Atlas. Each entry names who did the work, what they found, how many people were studied, and links to the publisher&#x27;s record, the PubMed record and the free full text where one exists.</p>
+  </header>
+  <div class="layout">
+    <nav class="panel toc" aria-label="Categories"><h2>Categories</h2><ol><li><a href="#chronic_stress">Chronic stress and chronic disease</a><span>5</span></li><li><a href="#money">Money, work and health</a><span>4</span></li><li><a href="#sleep">Sleep</a><span>4</span></li><li><a href="#mood">Mood and anxiety</a><span>3</span></li><li><a href="#social">Social connection and loneliness</a><span>3</span></li><li><a href="#childhood">Childhood adversity</a><span>16</span></li><li><a href="#family_history">Family history: famine, war and displacement</a><span>2</span></li><li><a href="#food">Food security and diet</a><span>3</span></li><li><a href="#physical_activity">Physical activity</a><span>2</span></li><li><a href="#environment">Environment</a><span>2</span></li><li><a href="#substance">Substance use</a><span>3</span></li><li><a href="#access">Access to help</a><span>2</span></li><li><a href="#differences">Differences by race, sex, income and disability</a><span>4</span></li><li><a href="#methods">Methods and data sources</a><span>7</span></li></ol></nav>
+    <div class="main">
+      <details class="panel std"><summary>The standard for what goes in</summary><ol><li>A finding is included when it has been replicated in at least two independent populations, or comes from a meta-analysis or a cohort of tens of thousands, and has held for at least ten years. Federal surveillance data (BRFSS, Census, vital statistics) is included as the source for a measure itself.</li><li>Primary sources only: the original study or the federal record, never a news story or a vendor summary. Systematic reviews and meta-analyses rank above single studies.</li><li>Every entry carries a DOI or PubMed ID, the sample size, the population, one plain sentence on what it shows, and the date it was last checked. If the one sentence cannot be written from the record, the entry is not included.</li><li>Entries report what was measured. They do not report why. Where the study&#x27;s own authors say an effect is small, the entry says so.</li><li>The bar is set by the evidence on the evidence: Ioannidis (2005) on why most published findings are false, and the 2015 Reproducibility Project, which replicated 36 of 100 psychology findings. Both are in the Methods shelf.</li><li>Nothing is added to pad a category. A category with two entries that have stood for twenty years is complete.</li></ol><p class="about" style="margin-top:10px">Review: Pending: data governance board review. Once a year, and whenever a source is added or retired.</p></details>
+      <section class="panel cite" id="cite"><h2>Cite HeadWater and the Atlas</h2><div class="c"><b>Survey</b><code>Verdant Equanim, LLC. (2026). HeadWater chronic stress survey, version 2 (Nebraska Under Stress: Community Wellbeing Survey, Wave 2). Lincoln, Nebraska. https://vereq.co</code><button class="copy" type="button" data-cite="Verdant Equanim, LLC. (2026). HeadWater chronic stress survey, version 2 (Nebraska Under Stress: Community Wellbeing Survey, Wave 2). Lincoln, Nebraska. https://vereq.co">Copy</button></div><div class="c"><b>Atlas</b><code>Verdant Equanim, LLC. (2026). Nebraska Stress Atlas: county estimates from CDC PLACES and County Health Rankings with HeadWater survey layers. Lincoln, Nebraska. https://vereq.co/atlas (data vintages shown on the page)</code><button class="copy" type="button" data-cite="Verdant Equanim, LLC. (2026). Nebraska Stress Atlas: county estimates from CDC PLACES and County Health Rankings with HeadWater survey layers. Lincoln, Nebraska. https://vereq.co/atlas (data vintages shown on the page)">Copy</button></div><div class="c"><b>Reliability</b><code>Reliability of HeadWater version 1 subscales, March 2026 staff test (n = 86): Stability .79 (n = 64), Support .77 (n = 53), Sleep .65 (n = 52). Reported by subscale; rural validation is in progress.</code><button class="copy" type="button" data-cite="Reliability of HeadWater version 1 subscales, March 2026 staff test (n = 86): Stability .79 (n = 64), Support .77 (n = 53), Sleep .65 (n = 52). Reported by subscale; rural validation is in progress.">Copy</button></div></section>
+      <section class="cat" id="chronic_stress">
+  <div class="cathead"><h2>Chronic stress and chronic disease </h2><div class="n">5 sources · Whole instrument; HeadWater scales</div></div>
+  <p class="about">The spine of the platform: the physiology of long-running stress and the cohort evidence tying it to heart disease and early death. The honest reading of this shelf is that adult stress on its own is a modest risk factor, far smaller than smoking, and matters most as a trigger in people who already have disease, while stress in childhood and the social and economic conditions behind stress carry more weight. That is why HeadWater asks about early life, money, sleep and the people around you rather than only &#x27;are you stressed&#x27;.</p>
+  <div class="grid"><div class="entry">
+  <div class="src">Rockefeller University (McEwen)</div>
+  <div class="ttl">Protective and damaging effects of stress mediators</div>
+  <div class="meta">Review, New England Journal of Medicine · 1998 · Review · General</div>
+  <p class="find">Sets out allostatic load: the stress hormones that protect the body in the short run damage it when activation is sustained. The physiological frame behind the whole platform.</p>
+  <div class="links"><a href="https://doi.org/10.1056/NEJM199801153380307" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/9428819/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="McEwen BS (1998). Protective and damaging effects of stress mediators. The New England journal of medicine. https://doi.org/10.1056/NEJM199801153380307">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">University of Montreal and Rockefeller University (Juster, McEwen, Lupien)</div>
+  <div class="ttl">Allostatic load biomarkers of chronic stress and impact on health and cognition</div>
+  <div class="meta">Review · 2010 · Review of allostatic load studies · General</div>
+  <p class="find">Indexes combining neuroendocrine, immune, metabolic and cardiovascular markers predict illness and death beyond what standard clinical measures predict.</p>
+  <div class="links"><a href="https://doi.org/10.1016/j.neubiorev.2009.10.002" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/19822172/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Juster RP et al. (2010). Allostatic load biomarkers of chronic stress and impact on health and cognition. Neuroscience and biobehavioral reviews. https://doi.org/10.1016/j.neubiorev.2009.10.002">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Carnegie Mellon University (Cohen)</div>
+  <div class="ttl">Psychological stress and disease</div>
+  <div class="meta">Commentary, JAMA · 2007 · Commentary · General</div>
+  <p class="find">Summarizes the evidence that chronic stress contributes to depression, cardiovascular disease and the course of HIV and cancer, through both behavior and biology. Short and widely cited; a starting point, not a data paper.</p>
+  <div class="links"><a href="https://doi.org/10.1001/jama.298.14.1685" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/17925521/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Cohen S et al. (2007). Psychological stress and disease. JAMA. https://doi.org/10.1001/jama.298.14.1685">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">University College London (Steptoe, Kivimäki)</div>
+  <div class="ttl">Stress and cardiovascular disease</div>
+  <div class="meta">Review, Nature Reviews Cardiology · 2012 · Review of cohort evidence · Adults</div>
+  <p class="find">Chronic stress predicts first coronary events; work stress, social isolation and loneliness each raise the risk; acute stress triggers events in people with advanced atherosclerosis.</p>
+  <div class="links"><a href="https://doi.org/10.1038/nrcardio.2012.45" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/22473079/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Steptoe A and Kivimäki M (2012). Stress and cardiovascular disease. Nature reviews. Cardiology. https://doi.org/10.1038/nrcardio.2012.45">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">University College London (Kivimäki, Steptoe)</div>
+  <div class="ttl">Effects of stress on the development and progression of cardiovascular disease</div>
+  <div class="meta">Review, Nature Reviews Cardiology · 2018 · Pooled mega-cohorts · Adults</div>
+  <p class="find">Severe childhood stress raises the risk of multiple adult chronic conditions. Adult stress effects are, in the authors&#x27; words, generally less marked than childhood stress and classic risk factors such as smoking, blood pressure and cholesterol; adult stress matters most as a trigger in people with existing plaque and as a determinant of outcome in those with existing disease.</p>
+  <div class="links"><a href="https://doi.org/10.1038/nrcardio.2017.189" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/29213140/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Kivimäki M and Steptoe A (2018). Effects of stress on the development and progression of cardiovascular disease. Nature reviews. Cardiology. https://doi.org/10.1038/nrcardio.2017.189">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section><section class="cat" id="money">
+  <div class="cathead"><h2>Money, work and health </h2><div class="n">4 sources · Money &amp; Work section</div></div>
+  <p class="about">Income, job security and job strain and their measured relationship to length and quality of life. The gradient runs through the whole income range, not only at the poverty line.</p>
+  <div class="grid"><div class="entry">
+  <div class="src">Stanford, MIT and Harvard (Chetty, Cutler and colleagues) with the US Treasury</div>
+  <div class="ttl">The Association Between Income and Life Expectancy in the United States, 2001-2014</div>
+  <div class="meta">Cohort, JAMA · 2016 · 1.4 billion person-years from tax records, 2001 to 2014 · US adults aged 40 to 76</div>
+  <p class="find">Men in the top 1 percent of income lived 14.6 years longer than men in the bottom 1 percent; women, 10.1 years. The gap widened over the period. Among low-income people, life expectancy varied by about 4.5 years across local areas, and that variation tracked smoking and other health behaviors, not access to medical care, income inequality or local labor markets.</p>
+  <div class="links"><a href="https://doi.org/10.1001/jama.2016.4226" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/27063997/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4866586/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Chetty R et al. (2016). The Association Between Income and Life Expectancy in the United States, 2001-2014. JAMA. https://doi.org/10.1001/jama.2016.4226">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">University College London (Marmot)</div>
+  <div class="ttl">Health inequalities among British civil servants: the Whitehall II study</div>
+  <div class="meta">Cohort, Lancet · 1991 · 10,314 British civil servants aged 35 to 55 · Employed adults</div>
+  <p class="find">Twenty years after the first Whitehall study, lower employment grade still meant more angina, more ECG evidence of ischemia, more chronic bronchitis, worse self-rated health, more smoking, less exercise, less job control and less social support. The gradient ran through every grade, not only the bottom.</p>
+  <div class="links"><a href="https://doi.org/10.1016/0140-6736(91)93068-k" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/1674771/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Marmot MG et al. (1991). Health inequalities among British civil servants: the Whitehall II study. Lancet (London, England). https://doi.org/10.1016/0140-6736(91)93068-k">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">University of California San Francisco and colleagues (Adler)</div>
+  <div class="ttl">Socioeconomic status and health. The challenge of the gradient</div>
+  <div class="meta">Review, American Psychologist · 1994 · Review · General</div>
+  <p class="find">Socioeconomic status is associated with health at every level, not only below the poverty line, which means the mechanisms have to work across the whole range.</p>
+  <div class="links"><a href="https://doi.org/10.1037//0003-066x.49.1.15" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/8122813/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Adler NE et al. (1994). Socioeconomic status and health. The challenge of the gradient. The American psychologist. https://doi.org/10.1037//0003-066x.49.1.15">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">IPD-Work Consortium, University College London (Kivimäki)</div>
+  <div class="ttl">Job strain as a risk factor for coronary heart disease: a collaborative meta-analysis of individual participant data</div>
+  <div class="meta">Individual participant meta-analysis, Lancet · 2012 · 197,473 employees in 13 European cohorts; 2,358 coronary events · Working adults without heart disease at baseline</div>
+  <p class="find">Job strain raised the risk of a first coronary event by 23 percent after adjustment, with a population attributable risk of 3.4 percent. The authors state the effect is much smaller than standard risk factors such as smoking.</p>
+  <div class="links"><a href="https://doi.org/10.1016/S0140-6736(12)60994-5" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/22981903/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3486012/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Kivimäki M et al. (2012). Job strain as a risk factor for coronary heart disease: a collaborative meta-analysis of individual participant data. Lancet (London, England). https://doi.org/10.1016/S0140-6736(12)60994-5">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section><section class="cat" id="sleep">
+  <div class="cathead"><h2>Sleep </h2><div class="n">4 sources · Stress &amp; Sleep section; CDC PLACES short sleep; County Health Rankings insufficient sleep</div></div>
+  <p class="about">Three independent meta-analyses, covering more than five million people, give the same answer on short sleep and death, diabetes and obesity.</p>
+  <div class="grid"><div class="entry">
+  <div class="src">University of Warwick (Cappuccio)</div>
+  <div class="ttl">Sleep duration and all-cause mortality: a systematic review and meta-analysis of prospective studies</div>
+  <div class="meta">Meta-analysis, Sleep · 2010 · 16 studies, 27 cohorts, 1,382,999 people, 112,566 deaths · Adults, follow-up 4 to 25 years</div>
+  <p class="find">Short sleep raised the risk of death by 12 percent; long sleep by 30 percent. No publication bias found.</p>
+  <div class="links"><a href="https://doi.org/10.1093/sleep/33.5.585" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/20469800/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2864873/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Cappuccio FP et al. (2010). Sleep duration and all-cause mortality: a systematic review and meta-analysis of prospective studies. Sleep. https://doi.org/10.1093/sleep/33.5.585">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Oita University, Nihon University and Kyoto University (Itani, Kaneita)</div>
+  <div class="ttl">Short sleep duration and health outcomes: a systematic review, meta-analysis, and meta-regression</div>
+  <div class="meta">Meta-analysis, Sleep Medicine · 2017 · 153 studies, 5,172,710 people · Adults, follow-up one year or more</div>
+  <p class="find">Short sleep raised mortality 12 percent, diabetes 37 percent, hypertension 17 percent, cardiovascular disease 16 percent, coronary heart disease 26 percent and obesity 38 percent. Mortality rose in a straight line below six hours.</p>
+  <div class="links"><a href="https://doi.org/10.1016/j.sleep.2016.08.006" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/27743803/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Itani O et al. (2017). Short sleep duration and health outcomes: a systematic review, meta-analysis, and meta-regression. Sleep medicine. https://doi.org/10.1016/j.sleep.2016.08.006">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">University of Warwick (Cappuccio)</div>
+  <div class="ttl">Quantity and quality of sleep and incidence of type 2 diabetes: a systematic review and meta-analysis</div>
+  <div class="meta">Meta-analysis, Diabetes Care · 2010 · 10 studies, 13 cohorts, 107,756 people, 3,586 new cases · Adults, follow-up 4 to 32 years</div>
+  <p class="find">Short sleep raised new type 2 diabetes 28 percent; trouble falling asleep, 57 percent; trouble staying asleep, 84 percent. Quality of sleep predicted diabetes as strongly as quantity.</p>
+  <div class="links"><a href="https://doi.org/10.2337/dc09-1124" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/19910503/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2809295/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Cappuccio FP et al. (2010). Quantity and quality of sleep and incidence of type 2 diabetes: a systematic review and meta-analysis. Diabetes care. https://doi.org/10.2337/dc09-1124">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Centers for Disease Control and Prevention</div>
+  <div class="ttl">About Sleep</div>
+  <div class="meta">Federal definition · 2024 · Federal guidance · US adults</div>
+  <p class="find">Defines the adult recommendation of seven or more hours and the short-sleep measure used in PLACES.</p>
+  <div class="links"><a href="https://www.cdc.gov/sleep/about/index.html" target="_blank" rel="noopener">Source page</a> <button class="copy" type="button" data-cite="Centers for Disease Control and Prevention. About Sleep. https://www.cdc.gov/sleep/about/index.html">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section><section class="cat" id="mood">
+  <div class="cathead"><h2>Mood and anxiety </h2><div class="n">3 sources · Feelings section; CDC PLACES frequent mental distress and depression</div></div>
+  <p class="about">Where HeadWater&#x27;s mood items come from and how well two-item screens perform. This shelf documents the instruments more than the disease.</p>
+  <div class="grid"><div class="entry">
+  <div class="src">Indiana University and Columbia University (Kroenke, Spitzer, Williams)</div>
+  <div class="ttl">The Patient Health Questionnaire-2: validity of a two-item depression screener</div>
+  <div class="meta">Instrument validation, Medical Care · 2003 · 6,000 patients in 15 clinics; 580 interviewed by a mental health professional · Primary care and obstetrics patients</div>
+  <p class="find">The two-item PHQ-2 (depressed mood and loss of interest over two weeks) at a score of 3 or more detected major depression with 83 percent sensitivity and 92 percent specificity. HeadWater&#x27;s interest and mood items follow this form.</p>
+  <div class="links"><a href="https://doi.org/10.1097/01.MLR.0000093487.78664.3C" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/14583691/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Kroenke K et al. (2003). The Patient Health Questionnaire-2: validity of a two-item depression screener. Medical care. https://doi.org/10.1097/01.MLR.0000093487.78664.3C">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Indiana University and Columbia University (Kroenke, Spitzer, Williams)</div>
+  <div class="ttl">Anxiety disorders in primary care: prevalence, impairment, comorbidity, and detection</div>
+  <div class="meta">Instrument validation, Annals of Internal Medicine · 2007 · 965 patients in 15 US primary care clinics · Adult primary care patients</div>
+  <p class="find">One in five patients had an anxiety disorder; 41 percent of them were receiving no treatment. The two core GAD items (nervous or on edge; unable to stop worrying) screened well for all four anxiety disorders studied. HeadWater&#x27;s anxiety item follows this form.</p>
+  <div class="links"><a href="https://doi.org/10.7326/0003-4819-146-5-200703060-00004" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/17339617/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Kroenke K et al. (2007). Anxiety disorders in primary care: prevalence, impairment, comorbidity, and detection. Annals of internal medicine. https://doi.org/10.7326/0003-4819-146-5-200703060-00004">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Carnegie Mellon University and University of Oregon (Cohen, Kamarck, Mermelstein)</div>
+  <div class="ttl">A global measure of perceived stress</div>
+  <div class="meta">Instrument, Journal of Health and Social Behavior · 1983 · Original scale development · College and community samples</div>
+  <p class="find">The Perceived Stress Scale, the most used measure of how uncontrollable and overloaded people find their lives. HeadWater&#x27;s stress, overwhelm and control items are in its family.</p>
+  <div class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/6668417/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Cohen S et al. (1983). A global measure of perceived stress. Journal of health and social behavior. PMID 6668417.">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section><section class="cat" id="social">
+  <div class="cathead"><h2>Social connection and loneliness </h2><div class="n">3 sources · People Around You section; CDC PLACES social and emotional support, loneliness</div></div>
+  <p class="about">Two meta-analyses from the same group a decade apart, covering more than 300,000 people, put the effect of social connection on survival in the same range as established medical risk factors.</p>
+  <div class="grid"><div class="entry">
+  <div class="src">Brigham Young University (Holt-Lunstad, Smith, Layton)</div>
+  <div class="ttl">Social relationships and mortality risk: a meta-analytic review</div>
+  <div class="meta">Meta-analysis, PLoS Medicine · 2010 · 148 studies, 308,849 people · Adults, all ages and health states</div>
+  <p class="find">People with stronger social relationships had 50 percent higher odds of survival over the follow-up period, consistent across age, sex, initial health and cause of death. The effect was strongest for measures of social integration and weakest for simply living with others.</p>
+  <div class="links"><a href="https://doi.org/10.1371/journal.pmed.1000316" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/20668659/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2910600/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Holt-Lunstad J et al. (2010). Social relationships and mortality risk: a meta-analytic review. PLoS medicine. https://doi.org/10.1371/journal.pmed.1000316">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Brigham Young University (Holt-Lunstad and colleagues)</div>
+  <div class="ttl">Loneliness and social isolation as risk factors for mortality: a meta-analytic review</div>
+  <div class="meta">Meta-analysis, Perspectives on Psychological Science · 2015 · 70 studies, 3.4 million people · Adults</div>
+  <p class="find">After controlling for confounders, social isolation raised the likelihood of death 29 percent, loneliness 26 percent and living alone 32 percent. Effects were larger in samples under age 65.</p>
+  <div class="links"><a href="https://doi.org/10.1177/1745691614568352" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/25910392/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Holt-Lunstad J et al. (2015). Loneliness and social isolation as risk factors for mortality: a meta-analytic review. Perspectives on psychological science. https://doi.org/10.1177/1745691614568352">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">St. Luke&#x27;s and Mount Sinai, New York (Cohen, Bavishi, Rozanski)</div>
+  <div class="ttl">Purpose in Life and Its Relationship to All-Cause Mortality and Cardiovascular Events: A Meta-Analysis</div>
+  <div class="meta">Meta-analysis, Psychosomatic Medicine · 2016 · 10 prospective studies, 136,265 people · Adults</div>
+  <p class="find">A higher sense of purpose in life was associated with 17 percent lower all-cause mortality and 17 percent fewer cardiovascular events, consistent across countries, questionnaires and age. Source for HeadWater&#x27;s meaning item.</p>
+  <div class="links"><a href="https://doi.org/10.1097/PSY.0000000000000274" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/26630073/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Cohen R et al. (2016). Purpose in Life and Its Relationship to All-Cause Mortality and Cardiovascular Events: A Meta-Analysis. Psychosomatic medicine. https://doi.org/10.1097/PSY.0000000000000274">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section><section class="cat" id="childhood">
+  <div class="cathead"><h2>Childhood adversity </h2><div class="n">16 sources · Early Life section</div></div>
+  <p class="about">The ACE count as a whole, then each experience HeadWater asks about, one shelf per item: emotional and physical abuse and neglect, sexual abuse, seeing violence at home, drug or alcohol use in the home, mental illness or a suicide attempt in the household, parents separated or divorced, and a household member in jail or prison. Meta-analyses and national register cohorts only. Where an effect is small, the entry says so; the divorce and incarceration effects are real and small, the abuse and suicide effects are large.</p>
+  <div class="grid"><h3 class="topic">The ACE count as a whole</h3><div class="entry">
+  <div class="src">Kaiser Permanente and the Centers for Disease Control and Prevention (Felitti, Anda)</div>
+  <div class="ttl">Relationship of childhood abuse and household dysfunction to many of the leading causes of death in adults. The Adverse Childhood Experiences (ACE) Study</div>
+  <div class="meta">Cohort, American Journal of Preventive Medicine · 1998 · 9,508 adults (70.5 percent response) at a large HMO · Insured US adults</div>
+  <p class="find">Compared with none, four or more categories of childhood abuse or household dysfunction meant 4 to 12 times the risk of alcoholism, drug abuse, depression and suicide attempt; 2 to 4 times the risk of smoking and poor self-rated health; and a graded rise in heart disease, cancer, lung disease, fractures and liver disease. Source of HeadWater&#x27;s childhood experiences item.</p>
+  <div class="links"><a href="https://doi.org/10.1016/s0749-3797(98)00017-8" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/9635069/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Felitti VJ et al. (1998). Relationship of childhood abuse and household dysfunction to many of the leading causes of death in adults. The Adverse Childhood Experiences (ACE) Study. American journal of preventive medicine. https://doi.org/10.1016/s0749-3797(98)00017-8">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Public Health Wales and Liverpool John Moores University (Hughes, Bellis) with the World Health Organization</div>
+  <div class="ttl">The effect of multiple adverse childhood experiences on health: a systematic review and meta-analysis</div>
+  <div class="meta">Meta-analysis, Lancet Public Health · 2017 · 37 studies, 253,719 people · Adults in general populations</div>
+  <p class="find">Four or more ACEs raised every health outcome studied: weak to modest for inactivity, obesity and diabetes; moderate for smoking, heavy drinking, cancer, heart disease and respiratory disease; strong for mental illness and problem drinking; strongest, over sevenfold, for problem drug use and interpersonal and self-directed violence.</p>
+  <div class="links"><a href="https://doi.org/10.1016/S2468-2667(17)30118-4" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/29253477/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Hughes K et al. (2017). The effect of multiple adverse childhood experiences on health: a systematic review and meta-analysis. The Lancet. Public health. https://doi.org/10.1016/S2468-2667(17)30118-4">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Centers for Disease Control and Prevention</div>
+  <div class="ttl">About Adverse Childhood Experiences</div>
+  <div class="meta">Federal summary · 2024 · Federal summary · US adults</div>
+  <p class="find">CDC&#x27;s definition of ACEs and the national prevalence figures from BRFSS.</p>
+  <div class="links"><a href="https://www.cdc.gov/aces/about/index.html" target="_blank" rel="noopener">Source page</a> <button class="copy" type="button" data-cite="Centers for Disease Control and Prevention. About Adverse Childhood Experiences. https://www.cdc.gov/aces/about/index.html">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><h3 class="topic">All forms of maltreatment</h3><div class="entry">
+  <div class="src">University College London, John Jay College, University of Nottingham, University of Otago, Cardiff, Karolinska (Gilbert, Widom, Fergusson)</div>
+  <div class="ttl">Burden and consequences of child maltreatment in high-income countries</div>
+  <div class="meta">Review, Lancet · 2009 · Review of high-income country evidence · Children and adults in high-income countries</div>
+  <p class="find">Each year about 4 to 16 percent of children are physically abused and one in ten is neglected or psychologically abused; official substantiated rates capture less than a tenth of this. Maltreatment has lasting effects on mental health, drug and alcohol misuse, obesity and criminal behavior. Neglect is at least as damaging in the long term as physical or sexual abuse and has received the least attention.</p>
+  <div class="links"><a href="https://doi.org/10.1016/S0140-6736(08)61706-7" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/19056114/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Gilbert R et al. (2009). Burden and consequences of child maltreatment in high-income countries. Lancet. https://doi.org/10.1016/S0140-6736(08)61706-7">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><h3 class="topic">Emotional abuse, physical abuse, neglect</h3><div class="entry">
+  <div class="src">University of Queensland and the World Health Organization (Norman, Vos)</div>
+  <div class="ttl">The long-term health consequences of child physical abuse, emotional abuse, and neglect: a systematic review and meta-analysis</div>
+  <div class="meta">Meta-analysis, PLoS Medicine · 2012 · 124 studies · Children followed into adulthood</div>
+  <p class="find">Compared with none: emotional abuse tripled the odds of depression (3.06) and suicide attempts (3.37); physical abuse raised depression 54 percent, drug use 92 percent and suicide attempts 3.4-fold; neglect doubled depression (2.11) and raised suicide attempts 95 percent. Evidence for chronic physical disease was suggestive, not confirmed.</p>
+  <div class="links"><a href="https://doi.org/10.1371/journal.pmed.1001349" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/23209385/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3507962/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Norman RE et al. (2012). The long-term health consequences of child physical abuse, emotional abuse, and neglect: a systematic review and meta-analysis. PLoS medicine. https://doi.org/10.1371/journal.pmed.1001349">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><h3 class="topic">Sexual abuse</h3><div class="entry">
+  <div class="src">Mayo Clinic (Chen, Murad)</div>
+  <div class="ttl">Sexual abuse and lifetime diagnosis of psychiatric disorders: systematic review and meta-analysis</div>
+  <div class="meta">Meta-analysis, Mayo Clinic Proceedings · 2010 · 37 studies, 3,162,318 people · Any age, any population</div>
+  <p class="find">A history of sexual abuse was associated with roughly triple the odds of anxiety disorder (3.09), 2.7 times depression and eating disorders, 2.3 times PTSD and 4.1 times suicide attempts, regardless of the victim&#x27;s sex or age at the abuse. No association with schizophrenia.</p>
+  <div class="links"><a href="https://doi.org/10.4065/mcp.2009.0583" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/20458101/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2894717/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Chen LP et al. (2010). Sexual abuse and lifetime diagnosis of psychiatric disorders: systematic review and meta-analysis. Mayo Clinic proceedings. https://doi.org/10.4065/mcp.2009.0583">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Leiden University (Stoltenborgh, van IJzendoorn, Bakermans-Kranenburg)</div>
+  <div class="ttl">A global perspective on child sexual abuse: meta-analysis of prevalence around the world</div>
+  <div class="meta">Meta-analysis of prevalence, Child Maltreatment · 2011 · 217 publications, 331 samples, 9,911,748 people · Worldwide</div>
+  <p class="find">Self-reported childhood sexual abuse: 12.7 percent overall, 18 percent of women and 7.6 percent of men. Informant studies find about one thirtieth of that, which shows how much depends on who is asked. Context for HeadWater&#x27;s anonymous self-report design.</p>
+  <div class="links"><a href="https://doi.org/10.1177/1077559511403920" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/21511741/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Stoltenborgh M et al. (2011). A global perspective on child sexual abuse: meta-analysis of prevalence around the world. Child maltreatment. https://doi.org/10.1177/1077559511403920">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><h3 class="topic">Saw violence at home</h3><div class="entry">
+  <div class="src">University of Memphis (Kitzmann)</div>
+  <div class="ttl">Child witnesses to domestic violence: a meta-analytic review</div>
+  <div class="meta">Meta-analysis, Journal of Consulting and Clinical Psychology · 2003 · 118 studies · Children exposed to violence between parents</div>
+  <p class="find">Children who witnessed violence between their parents had significantly worse outcomes than children who did not (d = 0.40) and than children from verbally aggressive homes, and outcomes not significantly different from children who were themselves physically abused. Effects were similar across outcome types, slightly larger for preschoolers.</p>
+  <div class="links"><a href="https://doi.org/10.1037/0022-006x.71.2.339" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/12699028/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Kitzmann KM et al. (2003). Child witnesses to domestic violence: a meta-analytic review. Journal of consulting and clinical psychology. https://doi.org/10.1037/0022-006x.71.2.339">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Southern Methodist University (Vu, Jouriles, McDonald)</div>
+  <div class="ttl">Children&#x27;s exposure to intimate partner violence: A meta-analysis of longitudinal associations with child adjustment problems</div>
+  <div class="meta">Meta-analysis of longitudinal studies, Clinical Psychology Review · 2016 · 74 longitudinal studies · Children exposed to intimate partner violence</div>
+  <p class="find">Exposure to intimate partner violence predicted later behavior and emotional problems, and the association grew stronger over time. Exposure at younger ages predicted more behavior problems. Child sex did not change the result.</p>
+  <div class="links"><a href="https://doi.org/10.1016/j.cpr.2016.04.003" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/27136293/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Vu NL et al. (2016). Children&#x27;s exposure to intimate partner violence: A meta-analysis of longitudinal associations with child adjustment problems. Clinical psychology review. https://doi.org/10.1016/j.cpr.2016.04.003">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><h3 class="topic">Drug or alcohol use in the home</h3><div class="entry">
+  <div class="src">Centers for Disease Control and Prevention and Kaiser Permanente (Anda, Felitti)</div>
+  <div class="ttl">Adverse childhood experiences, alcoholic parents, and later risk of alcoholism and depression</div>
+  <div class="meta">Cohort, Psychiatric Services · 2002 · 9,346 adults in the ACE Study · Insured US adults</div>
+  <p class="find">One in five grew up with a parent who abused alcohol, and those homes carried far more of the other adverse experiences. Adult alcoholism was higher among children of alcoholics at every ACE count. Adult depression among children of alcoholics was explained by the other adverse experiences in those homes, not by the parental drinking itself.</p>
+  <div class="links"><a href="https://doi.org/10.1176/appi.ps.53.8.1001" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/12161676/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Anda RF et al. (2002). Adverse childhood experiences, alcoholic parents, and later risk of alcoholism and depression. Psychiatric services. https://doi.org/10.1176/appi.ps.53.8.1001">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><h3 class="topic">Mental illness or suicide attempt in the household</h3><div class="entry">
+  <div class="src">Dalhousie University (Rasic, Uher)</div>
+  <div class="ttl">Risk of mental illness in offspring of parents with schizophrenia, bipolar disorder, and major depressive disorder: a meta-analysis of family high-risk studies</div>
+  <div class="meta">Meta-analysis, Schizophrenia Bulletin · 2014 · 33 family high-risk studies; 3,863 offspring of parents with severe mental illness and 3,158 controls · Children of parents with schizophrenia, bipolar disorder or major depression</div>
+  <p class="find">One third of children of a parent with severe mental illness developed a severe mental illness themselves by adulthood, two and a half times the control rate, and the risk extended beyond the parent&#x27;s own disorder to other types.</p>
+  <div class="links"><a href="https://doi.org/10.1093/schbul/sbt114" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/23960245/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3885302/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Rasic D et al. (2014). Risk of mental illness in offspring of parents with schizophrenia, bipolar disorder, and major depressive disorder: a meta-analysis of family high-risk studies. Schizophrenia bulletin. https://doi.org/10.1093/schbul/sbt114">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">University of Bristol and Norwegian University of Science and Technology (Geulayov, Gunnell)</div>
+  <div class="ttl">The association of parental fatal and non-fatal suicidal behaviour with offspring suicidal behaviour and depression: a systematic review and meta-analysis</div>
+  <div class="meta">Meta-analysis, Psychological Medicine · 2012 · 28 articles, 14 in the meta-analysis · Children of parents who died by or attempted suicide</div>
+  <p class="find">After confounders, children of a parent who died by suicide were about twice as likely to die by suicide (adjusted OR 1.94), and children of a parent who attempted suicide were about twice as likely to attempt it (1.95). Maternal suicidal behavior and younger age at exposure carried larger effects; sons and daughters did not differ.</p>
+  <div class="links"><a href="https://doi.org/10.1017/S0033291711002753" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/22129460/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Geulayov G et al. (2012). The association of parental fatal and non-fatal suicidal behaviour with offspring suicidal behaviour and depression: a systematic review and meta-analysis. Psychological medicine. https://doi.org/10.1017/S0033291711002753">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">University of Manchester and Aarhus University (Carr, Webb)</div>
+  <div class="ttl">Self-harm and violent criminality linked with parental death during childhood</div>
+  <div class="meta">National register cohort, Psychological Medicine · 2020 · All Danish residents born 1970 to 2000 · Children who lost a parent before age 15</div>
+  <p class="find">Parental death in childhood raised later hospital-treated self-harm and violent crime, after adjusting for relatives&#x27; mental illness. Losing both parents, unnatural causes of death, and death during the preschool years carried the largest increases. Not a HeadWater item on its own; included because suicide in the home is also a parental death.</p>
+  <div class="links"><a href="https://doi.org/10.1017/S0033291719001193" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/31155014/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7253620/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Carr MJ et al. (2020). Self-harm and violent criminality linked with parental death during childhood. Psychological medicine. https://doi.org/10.1017/S0033291719001193">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><h3 class="topic">Parents separated or divorced</h3><div class="entry">
+  <div class="src">University of Nebraska-Lincoln (Amato, Keith)</div>
+  <div class="ttl">Parental divorce and the well-being of children: a meta-analysis</div>
+  <div class="meta">Meta-analysis, Psychological Bulletin · 1991 · 92 studies · Children of divorced versus continuously married parents</div>
+  <p class="find">Children of divorce scored lower across well-being measures, with a median effect of 0.14 of a standard deviation, a small effect. The most consistent support was for family conflict, not parental absence or lost income, as the reason.</p>
+  <div class="links"><a href="https://doi.org/10.1037/0033-2909.110.1.26" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/1832495/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Amato PR and Keith B (1991). Parental divorce and the well-being of children: a meta-analysis. Psychological bulletin. https://doi.org/10.1037/0033-2909.110.1.26">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Pennsylvania State University (Amato)</div>
+  <div class="ttl">Children of divorce in the 1990s: an update of the Amato and Keith (1991) meta-analysis</div>
+  <div class="meta">Meta-analysis update, Journal of Family Psychology · 2001 · 67 studies from the 1990s · Children of divorced versus continuously married parents</div>
+  <p class="find">The same gaps in achievement, conduct, adjustment, self-concept and social relations held a decade later. The gap narrowed in the 1980s and widened again in the 1990s. Small effects, consistent across forty years of studies.</p>
+  <div class="links"><a href="https://doi.org/10.1037//0893-3200.15.3.355" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/11584788/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Amato PR (2001). Children of divorce in the 1990s: an update of the Amato and Keith (1991) meta-analysis. Journal of family psychology. https://doi.org/10.1037//0893-3200.15.3.355">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><h3 class="topic">Household member in jail or prison</h3><div class="entry">
+  <div class="src">University of Cambridge (Murray, Farrington)</div>
+  <div class="ttl">Children&#x27;s antisocial behavior, mental health, drug use, and educational performance after parental incarceration: a systematic review and meta-analysis</div>
+  <div class="meta">Meta-analysis, Psychological Bulletin · 2012 · 40 studies; 7,374 children with incarcerated parents and 37,325 comparison children · Children of incarcerated parents</div>
+  <p class="find">In the most rigorous studies, parental incarceration was associated with about 10 percent higher risk of antisocial behavior (OR 1.4) after accounting for parental criminality, but not with mental health problems, drug use or poor school performance. The authors rate much of the underlying research as poor quality. An honest entry: the effect is real and smaller than often claimed.</p>
+  <div class="links"><a href="https://doi.org/10.1037/a0026407" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/22229730/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3283435/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Murray J et al. (2012). Children&#x27;s antisocial behavior, mental health, drug use, and educational performance after parental incarceration: a systematic review and meta-analysis. Psychological bulletin. https://doi.org/10.1037/a0026407">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section><section class="cat" id="family_history">
+  <div class="cathead"><h2>Family history: famine, war and displacement <span class="dev">evidence developing</span></h2><div class="n">2 sources · Family History section</div></div>
+  <p class="about">Evidence developing. The Dutch Hunger Winter cohort is the one solid anchor: prenatal famine is consistently tied to adult body size, diabetes and schizophrenia; other outcomes are less robust and the proposed epigenetic mechanism is not settled. This shelf stays small on purpose.</p>
+  <div class="grid"><div class="entry">
+  <div class="src">University of Amsterdam (Roseboom)</div>
+  <div class="ttl">The Dutch famine and its long-term consequences for adult health</div>
+  <div class="meta">Cohort, Early Human Development · 2006 · 2,414 people born around the Dutch famine of 1944 to 1945 · Dutch adults</div>
+  <p class="find">Famine exposure in the womb was associated with glucose intolerance at every stage of gestation; early-gestation exposure with more coronary heart disease, worse lipids, disturbed clotting, higher stress responsiveness, more obesity and, in women, more breast cancer. Effects depended on timing.</p>
+  <div class="links"><a href="https://doi.org/10.1016/j.earlhumdev.2006.07.001" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/16876341/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Roseboom T et al. (2006). The Dutch famine and its long-term consequences for adult health. Early human development. https://doi.org/10.1016/j.earlhumdev.2006.07.001">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Columbia University and Emory University (Lumey, Stein, Susser)</div>
+  <div class="ttl">Prenatal famine and adult health</div>
+  <div class="meta">Review, Annual Review of Public Health · 2011 · Review of famine cohorts · Adults exposed to famine before birth</div>
+  <p class="find">Across famine studies, prenatal famine is consistently tied to adult body size, diabetes and schizophrenia. For other outcomes the findings are less robust, and the epigenetic mechanism remains a hypothesis. This is why the shelf is labeled evidence developing.</p>
+  <div class="links"><a href="https://doi.org/10.1146/annurev-publhealth-031210-101230" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/21219171/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3857581/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Lumey LH et al. (2011). Prenatal famine and adult health. Annual review of public health. https://doi.org/10.1146/annurev-publhealth-031210-101230">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section><section class="cat" id="food">
+  <div class="cathead"><h2>Food security and diet </h2><div class="n">3 sources · Food section; CDC PLACES food insecurity; County Health Rankings food measures</div></div>
+  <p class="about">Food insecurity and clinical disease, and the burden of poor diet. The diabetes link is weaker than often claimed and the entries say so.</p>
+  <div class="grid"><div class="entry">
+  <div class="src">University of Illinois and University of Kentucky (Gundersen, Ziliak)</div>
+  <div class="ttl">Food Insecurity And Health Outcomes</div>
+  <div class="meta">Review, Health Affairs · 2015 · Review of US studies · US children, adults and seniors</div>
+  <p class="find">Food insecurity is consistently associated with worse health after confounders are controlled: food-insecure children at least twice as likely to be in fair or poor health; food-insecure seniors with limitations comparable to food-secure seniors fourteen years older.</p>
+  <div class="links"><a href="https://doi.org/10.1377/hlthaff.2015.0645" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/26526240/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Gundersen C and Ziliak JP (2015). Food Insecurity And Health Outcomes. Health affairs. https://doi.org/10.1377/hlthaff.2015.0645">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">University of California San Francisco (Seligman, Laraia, Kushel)</div>
+  <div class="ttl">Food insecurity is associated with chronic disease among low-income NHANES participants</div>
+  <div class="meta">Cohort, Journal of Nutrition · 2010 · 5,094 low-income adults aged 18 to 65, NHANES 1999 to 2004 · Low-income US adults</div>
+  <p class="find">Food insecurity was associated with 20 percent higher hypertension and 30 percent higher hyperlipidemia. The association with diabetes was not statistically significant except under a strict definition of food insecurity.</p>
+  <div class="links"><a href="https://doi.org/10.3945/jn.109.112573" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/20032485/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2806885/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Seligman HK et al. (2010). Food insecurity is associated with chronic disease among low-income NHANES participants. The Journal of nutrition. https://doi.org/10.3945/jn.109.112573">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Global Burden of Disease Diet Collaborators, Institute for Health Metrics and Evaluation</div>
+  <div class="ttl">Health effects of dietary risks in 195 countries, 1990-2017: a systematic analysis for the Global Burden of Disease Study 2017</div>
+  <div class="meta">Comparative risk assessment, Lancet · 2019 · 195 countries, 1990 to 2017 · Adults 25 and older worldwide</div>
+  <p class="find">Eleven million deaths in 2017 were attributable to diet, led by high sodium, low whole grains and low fruit. Dietary data were uneven across countries and the authors flag the resulting uncertainty.</p>
+  <div class="links"><a href="https://doi.org/10.1016/S0140-6736(19)30041-8" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/30954305/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6899507/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="GBD 2017 Diet Collaborators (2019). Health effects of dietary risks in 195 countries, 1990-2017: a systematic analysis for the Global Burden of Disease Study 2017. Lancet. https://doi.org/10.1016/S0140-6736(19)30041-8">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section><section class="cat" id="physical_activity">
+  <div class="cathead"><h2>Physical activity </h2><div class="n">2 sources · Health &amp; Environment section; CDC PLACES and County Health Rankings inactivity</div></div>
+  <p class="about">The burden of inactivity, estimated conservatively.</p>
+  <div class="grid"><div class="entry">
+  <div class="src">Harvard Medical School and the Lancet Physical Activity Series Working Group (Lee, Blair)</div>
+  <div class="ttl">Effect of physical inactivity on major non-communicable diseases worldwide: an analysis of burden of disease and life expectancy</div>
+  <div class="meta">Burden analysis, Lancet · 2012 · Population attributable fractions by country, 2008 · Adults worldwide</div>
+  <p class="find">Using conservative assumptions, inactivity accounts for 6 percent of coronary heart disease, 7 percent of type 2 diabetes, 10 percent of breast and colon cancer and 9 percent of premature deaths, about 5.3 million deaths in 2008.</p>
+  <div class="links"><a href="https://doi.org/10.1016/S0140-6736(12)61031-9" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/22818936/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3645500/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Lee IM et al. (2012). Effect of physical inactivity on major non-communicable diseases worldwide: an analysis of burden of disease and life expectancy. Lancet. https://doi.org/10.1016/S0140-6736(12)61031-9">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Centers for Disease Control and Prevention</div>
+  <div class="ttl">Benefits of Physical Activity</div>
+  <div class="meta">Federal summary · 2024 · Federal summary · US adults</div>
+  <p class="find">CDC&#x27;s summary of the health benefits of physical activity and the adult guideline of 150 minutes a week of moderate activity.</p>
+  <div class="links"><a href="https://www.cdc.gov/physical-activity-basics/benefits/index.html" target="_blank" rel="noopener">Source page</a> <button class="copy" type="button" data-cite="Centers for Disease Control and Prevention. Benefits of Physical Activity. https://www.cdc.gov/physical-activity-basics/benefits/index.html">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section><section class="cat" id="environment">
+  <div class="cathead"><h2>Environment </h2><div class="n">2 sources · Health &amp; Environment section; County Health Rankings air and water measures</div></div>
+  <p class="about">Fine particulate air pollution and death, including below current national standards.</p>
+  <div class="grid"><div class="entry">
+  <div class="src">Brigham Young University and Harvard School of Public Health (Pope, Dockery)</div>
+  <div class="ttl">Health effects of fine particulate air pollution: lines that connect</div>
+  <div class="meta">Critical review, Journal of the Air and Waste Management Association · 2006 · Review of research since 1997 · General</div>
+  <p class="find">A comprehensive evaluation of six lines of research gives persuasive evidence that fine particulate air pollution harms cardiopulmonary health, at different time scales of exposure.</p>
+  <div class="links"><a href="https://doi.org/10.1080/10473289.2006.10464485" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/16805397/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Pope CA 3rd and Dockery DW (2006). Health effects of fine particulate air pollution: lines that connect. Journal of the Air &amp; Waste Management Association. https://doi.org/10.1080/10473289.2006.10464485">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Harvard T.H. Chan School of Public Health (Di, Dominici, Schwartz)</div>
+  <div class="ttl">Air Pollution and Mortality in the Medicare Population</div>
+  <div class="meta">Cohort, New England Journal of Medicine · 2017 · 60,925,443 Medicare beneficiaries, 460 million person-years, 2000 to 2012 · US adults 65 and older</div>
+  <p class="find">Each 10 micrograms per cubic meter of fine particulate matter raised all-cause mortality 7.3 percent, and 13.6 percent when exposure was already below the national standard. Effects were larger for men, Black beneficiaries and people eligible for Medicaid.</p>
+  <div class="links"><a href="https://doi.org/10.1056/NEJMoa1702747" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/28657878/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5766848/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Di Q et al. (2017). Air Pollution and Mortality in the Medicare Population. The New England journal of medicine. https://doi.org/10.1056/NEJMoa1702747">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section><section class="cat" id="substance">
+  <div class="cathead"><h2>Substance use </h2><div class="n">3 sources · Substance Use section; CDC PLACES smoking; County Health Rankings smoking and excessive drinking</div></div>
+  <p class="about">Tobacco and alcohol burden from federal and global sources, and the source of HeadWater&#x27;s drinking item.</p>
+  <div class="grid"><div class="entry">
+  <div class="src">Centers for Disease Control and Prevention</div>
+  <div class="ttl">Cigarette Smoking</div>
+  <div class="meta">Federal summary · 2024 · Federal summary · US adults</div>
+  <p class="find">CDC&#x27;s summary of smoking prevalence and the diseases it causes, drawing on the Surgeon General&#x27;s reports.</p>
+  <div class="links"><a href="https://www.cdc.gov/tobacco/about/index.html" target="_blank" rel="noopener">Source page</a> <button class="copy" type="button" data-cite="Centers for Disease Control and Prevention. Cigarette Smoking. https://www.cdc.gov/tobacco/about/index.html">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Global Burden of Disease Alcohol Collaborators, Institute for Health Metrics and Evaluation</div>
+  <div class="ttl">Alcohol use and burden for 195 countries and territories, 1990-2016: a systematic analysis for the Global Burden of Disease Study 2016</div>
+  <div class="meta">Comparative risk assessment, Lancet · 2018 · 694 data sources and 592 studies; 195 countries, 1990 to 2016 · Ages 15 and older worldwide</div>
+  <p class="find">Alcohol was the seventh leading risk factor for death in 2016 and the leading risk factor for ages 15 to 49. In this analysis the level of consumption that minimized health loss was zero drinks a week. Later analyses debate the low-dose estimate; the overall burden finding stands.</p>
+  <div class="links"><a href="https://doi.org/10.1016/S0140-6736(18)31310-2" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/30146330/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6148333/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="GBD 2016 Alcohol Collaborators (2018). Alcohol use and burden for 195 countries and territories, 1990-2016: a systematic analysis for the Global Burden of Disease Study 2016. Lancet. https://doi.org/10.1016/S0140-6736(18)31310-2">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">VA Puget Sound and University of Washington (Bush, Bradley)</div>
+  <div class="ttl">The AUDIT alcohol consumption questions (AUDIT-C): an effective brief screening test for problem drinking</div>
+  <div class="meta">Instrument validation, Archives of Internal Medicine · 1998 · 243 male veterans in three VA clinics · Male primary care patients</div>
+  <p class="find">The three AUDIT-C consumption questions detected heavy drinking as well as the full ten-item AUDIT. Small and male-only; included as the source of HeadWater&#x27;s drinking item, not as evidence about drinking.</p>
+  <div class="links"><a href="https://doi.org/10.1001/archinte.158.16.1789" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/9738608/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Bush K et al. (1998). The AUDIT alcohol consumption questions (AUDIT-C): an effective brief screening test for problem drinking. Archives of internal medicine. https://doi.org/10.1001/archinte.158.16.1789">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section><section class="cat" id="access">
+  <div class="cathead"><h2>Access to help </h2><div class="n">2 sources · Community Needs section; County Health Rankings provider rates and uninsured</div></div>
+  <p class="about">How much mental health need goes untreated, and the standard model of what determines whether people get care.</p>
+  <div class="grid"><div class="entry">
+  <div class="src">Harvard Medical School (Kessler)</div>
+  <div class="ttl">Prevalence and treatment of mental disorders, 1990 to 2003</div>
+  <div class="meta">Repeated national survey, New England Journal of Medicine · 2005 · 5,388 interviews (1990 to 1992) and 4,319 (2001 to 2003), National Comorbidity Survey · US adults aged 18 to 54</div>
+  <p class="find">About three in ten adults had a mental disorder in the past year in both decades. Treatment rose from 20 percent to 33 percent of those with a disorder, which means most people with a disorder still received no treatment.</p>
+  <div class="links"><a href="https://doi.org/10.1056/NEJMsa043266" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/15958807/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2847367/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Kessler RC et al. (2005). Prevalence and treatment of mental disorders, 1990 to 2003. The New England journal of medicine. https://doi.org/10.1056/NEJMsa043266">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">University of California Los Angeles (Andersen)</div>
+  <div class="ttl">Revisiting the behavioral model and access to medical care: does it matter?</div>
+  <div class="meta">Model review, Journal of Health and Social Behavior · 1995 · Conceptual model · General</div>
+  <p class="find">The Behavioral Model of Health Services Use: whether people get care depends on predisposing factors, enabling resources and need. The standard frame for HeadWater&#x27;s community needs and confidence items.</p>
+  <div class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/7738325/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Andersen RM (1995). Revisiting the behavioral model and access to medical care: does it matter? Journal of health and social behavior. PMID 7738325.">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section><section class="cat" id="differences">
+  <div class="cathead"><h2>Differences by race, sex, income and disability </h2><div class="n">4 sources · About You section; County Health Rankings income and demographic measures</div></div>
+  <p class="about">Measured differences only, from federal vital statistics and large cohorts. Entries report the difference and the population it was measured in. They do not report why; that is for the reader, the county and the board.</p>
+  <div class="grid"><div class="entry">
+  <div class="src">National Center for Health Statistics (Murphy, Kochanek, Xu, Arias)</div>
+  <div class="ttl">Mortality in the United States, 2023 (NCHS Data Brief 521)</div>
+  <div class="meta">Federal vital statistics · 2024 · All US deaths, 2023 · US population</div>
+  <p class="find">Life expectancy and age-adjusted death rates by race, ethnicity and sex for 2023, from the National Vital Statistics System. The current federal reference for differences in length of life.</p>
+  <div class="links"><a href="https://www.cdc.gov/nchs/products/databriefs/db521.htm" target="_blank" rel="noopener">Source page</a> <button class="copy" type="button" data-cite="Murphy SL, Kochanek KD, Xu J, Arias E. (2024). Mortality in the United States, 2023. NCHS Data Brief No. 521. National Center for Health Statistics. https://www.cdc.gov/nchs/products/databriefs/db521.htm">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">National Center for Health Statistics (Kochanek, Arias, Anderson)</div>
+  <div class="ttl">How did cause of death contribute to racial differences in life expectancy in the United States in 2010?</div>
+  <div class="meta">Federal vital statistics, NCHS Data Brief · 2013 · All US deaths, 2010 · US population</div>
+  <p class="find">In 2010 life expectancy for the Black population was 3.8 years lower than for the White population (4.7 years for males, 3.3 for females), accounted for by higher death rates from heart disease, cancer, homicide, diabetes, stroke and perinatal conditions. Kept for the cause-of-death breakdown; the 2023 brief carries the current figures.</p>
+  <div class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/24152376/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Kochanek KD et al. (2013). How did cause of death contribute to racial differences in life expectancy in the United States in 2010? NCHS data brief. PMID 24152376.">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Stanford, MIT and Harvard (Chetty, Cutler and colleagues) with the US Treasury</div>
+  <div class="ttl">The Association Between Income and Life Expectancy in the United States, 2001-2014</div>
+  <div class="meta">Cohort, JAMA · 2016 · 1.4 billion person-years from tax records · US adults aged 40 to 76</div>
+  <p class="find">The income gap in life expectancy, 14.6 years for men and 10.1 for women between the top and bottom 1 percent, with local variation tied to health behaviors.</p>
+  <div class="links"><a href="https://doi.org/10.1001/jama.2016.4226" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/27063997/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4866586/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Chetty R et al. (2016). The Association Between Income and Life Expectancy in the United States, 2001-2014. JAMA. https://doi.org/10.1001/jama.2016.4226">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">National Institutes of Health and the Administration for Community Living (Krahn, Walker, Correa-De-Araujo)</div>
+  <div class="ttl">Persons with disabilities as an unrecognized health disparity population</div>
+  <div class="meta">Review and position paper, American Journal of Public Health · 2015 · Review · US adults with significant disabilities, more than 12 percent of the population</div>
+  <p class="find">Summarizes documented differences in health outcomes for people with disabilities and argues they meet the criteria for a health disparity population. Included for the documented differences; the policy recommendations are the authors&#x27; own.</p>
+  <div class="links"><a href="https://doi.org/10.2105/AJPH.2014.302182" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/25689212/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4355692/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Krahn GL et al. (2015). Persons with disabilities as an unrecognized health disparity population. American journal of public health. https://doi.org/10.2105/AJPH.2014.302182">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section><section class="cat" id="methods">
+  <div class="cathead"><h2>Methods and data sources </h2><div class="n">7 sources · The Atlas itself</div></div>
+  <p class="about">How the public numbers on the Atlas are made, how HeadWater&#x27;s reliability is reported, and the two papers that set this library&#x27;s bar.</p>
+  <div class="grid"><div class="entry">
+  <div class="src">Centers for Disease Control and Prevention</div>
+  <div class="ttl">PLACES: Local Data for Better Health, methodology</div>
+  <div class="meta">Federal methods · 2025 · All US counties, places, tracts and ZIP code areas · US adults</div>
+  <p class="find">How the CDC PLACES county estimates on the Atlas are made: small area estimation from BRFSS responses, Census population data and ACS characteristics. The estimates are modeled, not direct counts.</p>
+  <div class="links"><a href="https://www.cdc.gov/places/methodology/index.html" target="_blank" rel="noopener">Source page</a> <button class="copy" type="button" data-cite="Centers for Disease Control and Prevention. PLACES: Local Data for Better Health, Methodology. https://www.cdc.gov/places/methodology/index.html">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Centers for Disease Control and Prevention</div>
+  <div class="ttl">PLACES measure definitions</div>
+  <div class="meta">Federal definitions · 2025 · Definitions · US adults</div>
+  <p class="find">The exact wording of each PLACES measure on the Atlas, including the BRFSS question behind it.</p>
+  <div class="links"><a href="https://www.cdc.gov/places/measure-definitions/index.html" target="_blank" rel="noopener">Source page</a> <button class="copy" type="button" data-cite="Centers for Disease Control and Prevention. PLACES Measure Definitions. https://www.cdc.gov/places/measure-definitions/index.html">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Centers for Disease Control and Prevention</div>
+  <div class="ttl">Behavioral Risk Factor Surveillance System</div>
+  <div class="meta">Federal survey · 2025 · About 400,000 adult interviews a year · US adults</div>
+  <p class="find">The telephone survey behind both PLACES and the County Health Rankings behavior and health measures.</p>
+  <div class="links"><a href="https://www.cdc.gov/brfss/about/index.htm" target="_blank" rel="noopener">Source page</a> <button class="copy" type="button" data-cite="Centers for Disease Control and Prevention. About BRFSS. https://www.cdc.gov/brfss/about/index.htm">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">University of Wisconsin Population Health Institute (Remington, Catlin, Gennuso)</div>
+  <div class="ttl">The County Health Rankings: rationale and methods</div>
+  <div class="meta">Methods paper, Population Health Metrics · 2015 · Over 3,000 US counties · US counties</div>
+  <p class="find">How the County Health Rankings are built: more than 30 county measures from national sources, z-scored, weighted and summed within each state. The authors note two-fold differences between the least and most healthy counties in a state and encourage users to check local data.</p>
+  <div class="links"><a href="https://doi.org/10.1186/s12963-015-0044-2" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/25931988/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4415342/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Remington PL et al. (2015). The County Health Rankings: rationale and methods. Population health metrics. https://doi.org/10.1186/s12963-015-0044-2">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">County Health Rankings and Roadmaps, University of Wisconsin Population Health Institute</div>
+  <div class="ttl">2025 County Health Rankings Nebraska data</div>
+  <div class="meta">Data release · 2025 · 93 Nebraska counties · Nebraska</div>
+  <p class="find">The 2025 Nebraska data file (version 3) from which the Atlas takes 34 measures.</p>
+  <div class="links"><a href="https://www.countyhealthrankings.org/health-data/nebraska/data-and-resources" target="_blank" rel="noopener">Source page</a> <button class="copy" type="button" data-cite="University of Wisconsin Population Health Institute. (2025). County Health Rankings and Roadmaps: Nebraska data. https://www.countyhealthrankings.org/health-data/nebraska/data-and-resources">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">University of Ioannina and Tufts (Ioannidis)</div>
+  <div class="ttl">Why most published research findings are false</div>
+  <div class="meta">Essay, PLoS Medicine · 2005 · Simulation and argument · Research in general</div>
+  <p class="find">A research finding is less likely to be true when studies are small, effects are small, many relationships are tested, designs are flexible and there is financial or other interest. The reason this library requires replication and size.</p>
+  <div class="links"><a href="https://doi.org/10.1371/journal.pmed.0020124" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/16060722/" target="_blank" rel="noopener">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1182327/" target="_blank" rel="noopener">Free full text</a> <button class="copy" type="button" data-cite="Ioannidis JP (2005). Why most published research findings are false. PLoS medicine. https://doi.org/10.1371/journal.pmed.0020124">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div><div class="entry">
+  <div class="src">Open Science Collaboration (270 contributors)</div>
+  <div class="ttl">Estimating the reproducibility of psychological science</div>
+  <div class="meta">Replication study, Science · 2015 · 100 published psychology studies replicated with high-powered designs · Psychology research</div>
+  <p class="find">Thirty-six percent of replications were statistically significant versus 97 percent of the originals; replication effects were half the size. Replication success tracked the strength of the original evidence. The reason single studies do not make this library.</p>
+  <div class="links"><a href="https://doi.org/10.1126/science.aac4716" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/26315443/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Open Science Collaboration (2015). Estimating the reproducibility of psychological science. Science. https://doi.org/10.1126/science.aac4716">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
+</div></div>
+</section>
+      <footer>60 entries in 14 categories. Each was read and checked against its PubMed or federal record on 2026-11-06. Entries report what was measured, not why. Questions: <a href="mailto:jluginbill@vereq.co">jluginbill@vereq.co</a> · The data file is <a href="research.json">research.json</a>.</footer>
+    </div>
+  </div>
+</div>
+<script>
+document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', () => {
+  const t = b.dataset.cite; const done = () => { const o = b.textContent; b.textContent = 'Copied'; setTimeout(() => b.textContent = o, 1400); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done).catch(done); else done();
+}));
+</script>
+</body>
+</html>

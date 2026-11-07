@@ -41,17 +41,15 @@ nav{display:flex;gap:22px;font-size:.92rem;text-transform:uppercase;letter-spaci
 nav a{color:var(--muted);text-decoration:none}
 nav a:hover,nav a:focus-visible{color:var(--green);outline:none;text-decoration:underline}
 
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;padding-block:40px 48px;border-bottom:1px solid var(--rule)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:end;padding-block:40px 48px;border-bottom:1px solid var(--rule)}
 .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(2.3rem,5vw,3.9rem);line-height:1.05;margin:0 0 18px;text-wrap:balance;letter-spacing:-.01em}
 .hero h1 em{font-style:italic;color:var(--green)}
 .hero p{max-width:34em;margin:0 0 22px;color:var(--muted);font-size:1.12rem}
 .cta{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#f7f4ec;padding:12px 20px;border-radius:4px;text-decoration:none;font-weight:600;letter-spacing:.02em}
 .cta:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .cta small{font-weight:400;opacity:.85}
-.mapwrap{display:grid;gap:14px;justify-items:center;min-width:0}
+.mapwrap{display:grid;gap:22px;justify-items:start;min-width:0}
 .map{width:100%;max-width:100%;height:auto;display:block}
-.atlasbtn{background:transparent;color:var(--green);border:2px solid var(--green);padding:10px 18px}
-.atlasbtn small{color:var(--muted);opacity:1}
 .map .county{fill:var(--sky);stroke:var(--green);stroke-width:.7;stroke-linejoin:round}
 .map .county.hot{fill:var(--green)}
 .map .county.warm{fill:var(--gold)}
@@ -204,7 +202,7 @@ footer{padding-block:34px 44px;color:var(--muted);font-size:.95rem;display:flex;
 <text x="6" y="260">93 counties</text>
 <text x="514" y="260" text-anchor="end">pilot counties shaded</text>
 </svg>
-  <a class="cta atlasbtn" href="atlas/">Open the Atlas <small>public health layers, all 93 counties</small></a>
+  <a class="cta" href="atlas/">Open the Atlas <small>public health layers, all 93 counties</small></a>
   </div>
 </div>
 

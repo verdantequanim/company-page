@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Verdant Equanim, LLC builds HeadWater, a chronic stress survey, and the Nebraska Stress Atlas. Lincoln, Nebraska.">
+<title>Verdant Equanim</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: a prairie horizon. A wide, low hero with the Nebraska outline as the only picture, then one quiet column of text with a thin rule between sections. */
+:root{
+  --bg:#f7f4ec;        /* winter wheat */
+  --fg:#1d241c;
+  --muted:#5e6657;
+  --rule:#d9d3c2;
+  --green:#214517;     /* the brand green from the app */
+  --gold:#c8962e;      /* harvest */
+  --sky:#dfe9ee;
+  --card:#efeadc;
+  --display:"Newsreader",Georgia,"Times New Roman",serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#15190f; --fg:#eee8d8; --muted:#a9b09c; --rule:#2e3626;
+    --green:#8fbf6f; --gold:#e0b453; --sky:#1f2b33; --card:#1c2217; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15190f; --fg:#eee8d8; --muted:#a9b09c; --rule:#2e3626;
+  --green:#8fbf6f; --gold:#e0b453; --sky:#1f2b33; --card:#1c2217; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1.05rem;line-height:1.55;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{padding-block:22px 10px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
+.mark .seal{width:38px;height:38px;border-radius:50%;background:var(--green);display:grid;place-items:center;color:#f7f4ec;font-family:var(--display);font-size:1.1rem;font-weight:600}
+.mark .name{font-family:var(--display);font-size:1.25rem;letter-spacing:.01em}
+nav{display:flex;gap:22px;font-size:.92rem;text-transform:uppercase;letter-spacing:.08em}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover,nav a:focus-visible{color:var(--green);outline:none;text-decoration:underline}
+
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;padding-block:40px 48px;border-bottom:1px solid var(--rule)}
+.hero h1{font-family:var(--display);font-weight:500;font-size:clamp(2.3rem,5vw,3.9rem);line-height:1.05;margin:0 0 18px;text-wrap:balance;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--green)}
+.hero p{max-width:34em;margin:0 0 22px;color:var(--muted);font-size:1.12rem}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#f7f4ec;padding:12px 20px;border-radius:4px;text-decoration:none;font-weight:600;letter-spacing:.02em}
+.cta:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.cta small{font-weight:400;opacity:.85}
+.map{width:100%;max-width:100%;height:auto;display:block}
+.map .county{fill:var(--sky);stroke:var(--green);stroke-width:.7;stroke-linejoin:round}
+.map .county.hot{fill:var(--green)}
+.map .county.warm{fill:var(--gold)}
+.map text{font-family:var(--body);font-size:11px;fill:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+
+section{padding-block:40px;border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:0}
+.lede{display:grid;grid-template-columns:200px 1fr;gap:28px}
+.lede h2{font-family:var(--display);font-weight:500;font-size:1.55rem;margin:0;line-height:1.2;text-wrap:balance}
+.lede .text{max-width:62ch;min-width:0}
+.lede p{margin:0 0 14px}
+.lede p:last-child{margin-bottom:0}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.fact{background:var(--card);padding:16px 18px;border-left:3px solid var(--gold)}
+.fact b{display:block;font-family:var(--display);font-size:1.6rem;font-weight:500;line-height:1.1;font-variant-numeric:tabular-nums}
+.fact span{color:var(--muted);font-size:.92rem}
+.plain{background:var(--card);padding:18px 20px;max-width:62ch}
+.plain strong{color:var(--green)}
+footer{padding-block:34px 44px;color:var(--muted);font-size:.95rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--rule)}
+.contact{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.contact code{font-family:var(--body);background:var(--card);padding:4px 8px;border-radius:3px;color:var(--fg);user-select:all}
+.contact button{font:inherit;font-size:.85rem;background:none;border:1px solid var(--rule);color:var(--muted);padding:4px 10px;border-radius:3px;cursor:pointer}
+.contact button:focus-visible{outline:2px solid var(--gold)}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:24px}
+  .lede{grid-template-columns:1fr;gap:10px}
+  .facts{grid-template-columns:1fr}
+  nav{gap:14px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .map .county.hot,.map .county.warm{animation:pulse 5s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="top">
+  <a class="mark" href="#top"><span class="seal">VE</span><span class="name">Verdant Equanim</span></a>
+  <nav>
+    <a href="#survey">The survey</a>
+    <a href="#atlas">The Atlas</a>
+    <a href="#data">Data</a>
+    <a href="#who">Who we are</a>
+  </nav>
+</header>
+
+<div class="hero" id="top">
+  <div>
+    <h1>Chronic stress, <em>counted by county.</em></h1>
+    <p>Verdant Equanim, LLC is a Nebraska behavioral health technology company based in Lincoln. We build the HeadWater chronic stress survey and the Nebraska Stress Atlas.</p>
+    <a class="cta" href="https://www.vereq.co/surveys/nebraska-under-stress-community-wellbeing-survey-wave-2-draft/204bf54e-aff6-430a-ae0f-11d1440c9fc3?public=true">Take the survey <small>about 12 minutes, anonymous</small></a>
+  </div>
+  <svg class="map" viewBox="0 0 520 266" role="img" aria-label="Nebraska, all 93 counties, with the pilot counties shaded">
+<g><path class="county" d="M122.2 204.7 L122.2 184.7 L163.2 184.7 L163.4 211.6 L122.2 211.7 L122.2 204.7Z"><title>Chase</title></path>
+<path class="county" d="M340.7 124.0 L351.8 124.0 L351.8 122.8 L355.3 122.8 L355.3 121.6 L364.3 121.6 L367.6 120.4 L374.9 120.4 L374.9 130.6 L374.7 137.2 L363.6 137.4 L363.6 138.5 L354.5 138.5 L351.8 140.7 L341.5 140.7 L341.7 130.7 L340.9 130.7 L340.7 130.7 L340.7 124.0Z"><title>Nance</title></path>
+<path class="county" d="M341.5 184.7 L367.8 184.6 L367.8 211.6 L341.7 211.7 L341.5 211.7 L341.5 184.7Z"><title>Clay</title></path>
+<path class="county" d="M192.2 76.8 L225.8 77.0 L226.0 103.8 L200.1 103.8 L192.4 103.8 L192.2 76.8Z"><title>Thomas</title></path>
+<path class="county" d="M286.7 76.8 L313.4 76.8 L313.6 103.8 L287.1 103.8 L286.7 103.8 L286.7 76.8Z"><title>Garfield</title></path>
+<path class="county" d="M226.8 103.8 L241.2 104.0 L259.6 103.8 L286.7 103.8 L287.1 103.8 L287.1 130.6 L287.7 130.7 L287.5 157.6 L274.8 157.6 L228.3 157.6 L227.7 157.6 L227.7 130.7 L226.8 130.7 L226.8 103.8Z"><title>Custer</title></path>
+<path class="county" d="M340.3 49.8 L367.2 49.7 L367.2 76.7 L367.4 90.2 L340.5 90.2 L340.5 77.3 L340.1 76.8 L340.3 49.8Z"><title>Antelope</title></path>
+<path class="county" d="M314.4 130.6 L340.7 130.7 L340.9 130.7 L340.9 157.6 L315.7 157.6 L314.2 157.6 L314.4 130.6Z"><title>Howard</title></path>
+<path class="county" d="M126.1 103.6 L158.6 103.6 L159.7 103.6 L159.7 130.6 L126.1 130.6 L126.1 103.6Z"><title>Arthur</title></path>
+<path class="county" d="M367.6 147.7 L371.1 143.0 L377.4 137.6 L381.0 136.6 L381.0 135.4 L385.3 133.2 L389.5 132.6 L394.3 130.5 L394.3 157.6 L367.8 157.6 L367.6 147.7Z"><title>Polk</title></path>
+<path class="county" d="M394.3 157.6 L421.0 157.7 L421.0 184.7 L420.8 184.7 L394.3 184.6 L394.3 157.6Z"><title>Seward</title></path>
+<path class="county warm" d="M262.1 185.7 L265.6 186.3 L273.8 186.2 L275.2 186.7 L280.2 186.7 L285.2 187.7 L289.2 187.5 L289.2 211.6 L262.9 211.6 L262.3 211.6 L262.1 185.7Z"><title>Phelps</title></path>
+<path class="county" d="M414.5 76.6 L426.0 76.6 L441.6 76.7 L441.6 82.4 L441.6 103.7 L421.2 103.6 L414.5 103.6 L414.5 76.6Z"><title>Cuming</title></path>
+<path class="county" d="M164.5 238.6 L164.5 211.6 L196.2 211.7 L197.4 211.7 L197.2 225.3 L197.4 238.7 L164.5 238.6Z"><title>Hitchcock</title></path>
+<path class="county" d="M394.3 76.6 L414.5 76.6 L414.5 103.6 L401.0 103.6 L394.3 103.6 L394.3 76.6Z"><title>Stanton</title></path>
+<path class="county" d="M394.3 56.4 L414.7 56.4 L414.7 63.1 L426.0 63.2 L426.0 76.6 L414.5 76.6 L394.3 76.6 L394.3 56.4Z"><title>Wayne</title></path>
+<path class="county" d="M315.5 185.3 L315.7 184.6 L341.1 184.7 L341.5 184.7 L341.5 211.7 L315.5 211.6 L315.5 185.3Z"><title>Adams</title></path>
+<path class="county" d="M242.5 184.5 L259.0 184.5 L262.1 185.7 L262.3 211.6 L236.0 211.5 L235.8 204.8 L242.5 204.8 L242.5 184.5Z"><title>Gosper</title></path>
+<path class="county" d="M367.8 184.6 L394.3 184.6 L394.3 211.6 L368.0 211.6 L367.8 211.6 L367.8 184.6Z"><title>Fillmore</title></path>
+<path class="county" d="M421.2 126.1 L426.2 127.1 L430.4 126.4 L433.7 128.2 L440.8 127.6 L444.6 130.5 L446.4 130.7 L449.4 133.0 L450.2 136.8 L453.5 140.7 L452.7 143.1 L454.8 146.5 L455.8 152.3 L454.2 154.8 L455.2 157.7 L453.5 160.1 L446.8 160.0 L446.8 157.7 L421.0 157.7 L421.0 130.7 L421.2 126.1Z"><title>Saunders</title></path>
+<path class="county" d="M37.7 6.0 L67.1 6.1 L79.2 6.1 L79.2 22.7 L80.2 22.7 L80.2 49.5 L41.2 49.7 L39.2 49.7 L39.2 22.7 L37.9 22.8 L37.7 6.0Z"><title>Dawes</title></path>
+<path class="county" d="M394.3 184.6 L420.8 184.7 L420.8 198.2 L420.6 211.7 L394.3 211.6 L394.3 184.6Z"><title>Saline</title></path>
+<path class="county" d="M274.8 157.6 L287.5 157.6 L314.2 157.6 L315.7 157.6 L315.7 184.6 L315.5 185.3 L309.6 186.5 L305.0 188.2 L292.9 188.0 L289.2 187.5 L285.2 187.7 L280.2 186.7 L275.2 186.7 L274.8 184.5 L274.8 157.6Z"><title>Buffalo</title></path>
+<path class="county" d="M262.9 211.6 L289.2 211.6 L289.2 238.7 L263.1 238.7 L262.9 211.6Z"><title>Harlan</title></path>
+<path class="county" d="M228.3 157.6 L274.8 157.6 L274.8 184.5 L275.2 186.7 L273.8 186.2 L265.6 186.3 L262.1 185.7 L259.0 184.5 L242.5 184.5 L228.5 184.5 L228.3 157.6Z"><title>Dawson</title></path>
+<path class="county" d="M287.1 103.8 L313.6 103.8 L314.0 103.8 L314.0 130.7 L287.7 130.7 L287.1 130.6 L287.1 103.8Z"><title>Valley</title></path>
+<path class="county" d="M225.8 77.0 L231.6 77.0 L259.6 77.0 L259.6 103.8 L241.2 104.0 L226.8 103.8 L226.0 103.8 L225.8 77.0Z"><title>Blaine</title></path>
+<path class="county" d="M289.2 187.5 L292.9 188.0 L305.0 188.2 L309.6 186.5 L315.5 185.3 L315.5 211.6 L289.2 211.6 L289.2 187.5Z"><title>Kearney</title></path>
+<path class="county" d="M446.8 218.5 L470.0 218.5 L473.3 218.5 L473.1 238.8 L460.0 238.8 L446.8 238.7 L446.8 218.5Z"><title>Pawnee</title></path>
+<path class="county" d="M367.8 157.6 L394.3 157.6 L394.3 184.6 L367.8 184.6 L367.8 157.6Z"><title>York</title></path>
+<path class="county" d="M314.0 103.8 L340.5 103.8 L340.7 104.0 L340.7 124.0 L340.7 130.7 L314.4 130.6 L314.0 130.7 L314.0 103.8Z"><title>Greeley</title></path>
+<path class="county" d="M446.8 198.3 L470.0 198.2 L470.0 218.5 L446.8 218.5 L446.8 198.3Z"><title>Johnson</title></path>
+<path class="county" d="M313.4 76.8 L340.1 76.8 L340.5 77.3 L340.5 90.2 L340.5 103.8 L314.0 103.8 L313.6 103.8 L313.4 76.8Z"><title>Wheeler</title></path>
+<path class="county" d="M6.0 130.7 L45.2 130.6 L45.2 157.5 L45.0 161.1 L33.7 161.1 L6.0 161.1 L6.0 130.7Z"><title>Kimball</title></path>
+<path class="county" d="M473.1 238.8 L473.3 218.5 L499.8 218.5 L503.8 219.6 L504.2 224.7 L509.2 229.8 L507.5 235.1 L514.0 238.8 L512.1 238.8 L486.1 238.8 L473.1 238.8Z"><title>Richardson</title></path>
+<path class="county" d="M197.4 211.7 L230.0 211.7 L230.2 238.7 L198.5 238.7 L197.4 238.7 L197.2 225.3 L197.4 211.7Z"><title>Red Willow</title></path>
+<path class="county" d="M340.5 90.2 L367.4 90.2 L367.4 103.6 L367.6 120.4 L364.3 121.6 L355.3 121.6 L355.3 122.8 L351.8 122.8 L351.8 124.0 L340.7 124.0 L340.7 104.0 L340.5 103.8 L340.5 90.2Z"><title>Boone</title></path>
+<path class="county" d="M287.7 130.7 L314.0 130.7 L314.4 130.6 L314.2 157.6 L287.5 157.6 L287.7 130.7Z"><title>Sherman</title></path>
+<path class="county hot" d="M315.7 157.6 L340.9 157.6 L341.1 171.4 L341.1 184.7 L315.7 184.6 L315.7 157.6Z"><title>Hall</title></path>
+<path class="county" d="M230.0 18.0 L233.7 21.0 L238.1 22.7 L241.0 22.5 L243.3 23.7 L249.4 24.0 L249.8 25.3 L258.1 27.3 L260.2 26.9 L260.2 50.0 L261.0 49.9 L261.0 77.0 L259.6 77.0 L231.6 77.0 L231.6 50.0 L230.8 50.0 L230.8 23.1 L230.0 23.1 L230.0 18.0Z"><title>Brown</title></path>
+<path class="county warm" d="M446.8 178.0 L483.6 178.0 L480.8 180.4 L480.4 182.9 L483.6 186.7 L486.3 187.8 L488.3 191.5 L487.5 193.4 L487.3 197.6 L490.6 198.2 L470.0 198.2 L446.8 198.3 L446.8 178.0Z"><title>Otoe</title></path>
+<path class="county" d="M284.6 21.3 L290.7 18.3 L296.3 16.7 L300.5 14.1 L302.1 14.3 L306.1 18.2 L308.8 18.1 L311.3 19.7 L313.4 19.5 L316.3 21.3 L319.4 20.9 L323.8 23.2 L330.7 24.2 L333.4 23.5 L339.9 24.6 L339.9 49.8 L340.3 49.8 L340.1 76.8 L313.4 76.8 L286.7 76.8 L285.9 76.8 L285.9 49.9 L285.2 49.9 L285.2 22.9 L284.6 21.3Z"><title>Holt</title></path>
+<path class="county" d="M447.9 108.2 L466.7 108.2 L468.3 111.0 L466.9 113.6 L469.2 116.2 L468.5 120.0 L471.7 121.8 L472.1 119.4 L474.0 119.4 L474.0 121.9 L473.5 124.6 L477.7 125.2 L477.5 130.9 L454.8 130.7 L454.8 127.4 L452.5 127.4 L451.4 125.1 L449.1 124.0 L448.1 120.6 L447.9 108.2Z"><title>Washington</title></path>
+<path class="county" d="M401.0 103.6 L414.5 103.6 L421.2 103.6 L421.2 125.8 L414.7 129.2 L405.4 132.0 L401.0 131.4 L401.0 103.6Z"><title>Colfax</title></path>
+<path class="county" d="M41.2 49.7 L80.2 49.5 L81.7 49.5 L81.5 56.0 L82.1 69.8 L82.1 76.5 L84.4 76.4 L84.6 83.3 L75.0 83.6 L46.0 83.4 L43.7 83.4 L43.7 76.6 L41.2 76.6 L41.2 49.7Z"><title>Box Butte</title></path>
+<path class="county" d="M163.2 184.7 L168.9 184.7 L196.2 184.5 L196.0 187.9 L196.2 211.7 L164.5 211.6 L163.4 211.6 L163.2 184.7Z"><title>Hayes</title></path>
+<path class="county" d="M120.5 6.1 L147.0 6.4 L170.1 6.3 L189.9 6.3 L230.0 6.2 L230.0 18.0 L230.0 23.1 L230.8 23.1 L230.8 50.0 L231.6 50.0 L231.6 77.0 L225.8 77.0 L192.2 76.8 L158.6 76.5 L124.9 76.2 L123.0 76.2 L123.0 49.2 L121.3 49.2 L121.3 22.7 L120.3 22.7 L120.5 6.1Z"><title>Cherry</title></path>
+<path class="county" d="M446.4 130.7 L454.8 130.7 L477.5 130.9 L476.5 134.9 L480.6 136.7 L477.9 139.4 L479.0 143.6 L478.3 146.4 L454.8 146.5 L452.7 143.1 L453.5 140.7 L450.2 136.8 L449.4 133.0 L446.4 130.7Z"><title>Douglas</title></path>
+<path class="county" d="M421.2 103.6 L441.6 103.7 L448.1 103.7 L447.9 108.2 L448.1 120.6 L449.1 124.0 L451.4 125.1 L452.5 127.4 L454.8 127.4 L454.8 130.7 L446.4 130.7 L444.6 130.5 L440.8 127.6 L433.7 128.2 L430.4 126.4 L426.2 127.1 L421.2 126.1 L421.2 125.8 L421.2 103.6Z"><title>Dodge</title></path>
+<path class="county" d="M260.2 26.9 L268.3 28.0 L274.2 25.2 L275.4 23.7 L280.0 23.1 L284.6 21.3 L285.2 22.9 L285.2 49.9 L285.9 49.9 L285.9 76.8 L261.0 77.0 L261.0 49.9 L260.2 50.0 L260.2 26.9Z"><title>Rock</title></path>
+<path class="county" d="M367.2 49.7 L387.6 49.7 L394.3 49.6 L394.3 56.4 L394.3 76.6 L367.2 76.7 L367.2 49.7Z"><title>Pierce</title></path>
+<path class="county hot" d="M420.8 184.7 L421.0 184.7 L421.0 157.7 L446.8 157.7 L446.8 160.0 L446.8 178.0 L446.8 198.3 L420.8 198.2 L420.8 184.7Z"><title>Lancaster</title></path>
+<path class="county" d="M341.1 171.4 L349.0 162.5 L352.4 160.5 L357.6 155.1 L364.3 152.3 L367.6 147.7 L367.8 157.6 L367.8 184.6 L341.5 184.7 L341.1 184.7 L341.1 171.4Z"><title>Hamilton</title></path>
+<path class="county" d="M367.2 76.7 L394.3 76.6 L394.3 103.6 L367.4 103.6 L367.4 90.2 L367.2 76.7Z"><title>Madison</title></path>
+<path class="county" d="M340.9 130.7 L341.7 130.7 L341.5 140.7 L351.8 140.7 L354.5 138.5 L363.6 138.5 L363.6 137.4 L374.7 137.2 L374.9 130.6 L381.0 130.6 L381.0 135.4 L381.0 136.6 L377.4 137.6 L371.1 143.0 L367.6 147.7 L364.3 152.3 L357.6 155.1 L352.4 160.5 L349.0 162.5 L341.1 171.4 L340.9 157.6 L340.9 130.7Z"><title>Merrick</title></path>
+<path class="county" d="M284.8 6.2 L328.6 6.2 L330.5 10.1 L337.6 13.6 L339.7 15.2 L339.9 24.6 L333.4 23.5 L330.7 24.2 L323.8 23.2 L319.4 20.9 L316.3 21.3 L313.4 19.5 L311.3 19.7 L308.8 18.1 L306.1 18.2 L302.1 14.3 L300.5 14.1 L296.3 16.7 L290.7 18.3 L284.6 21.3 L284.8 6.2Z"><title>Boyd</title></path>
+<path class="county" d="M446.8 160.0 L453.5 160.1 L455.2 157.7 L457.3 159.5 L461.9 161.5 L465.4 159.9 L467.5 157.5 L471.9 156.1 L474.6 157.1 L480.8 157.1 L481.9 161.6 L483.8 162.9 L483.1 165.9 L484.6 168.9 L483.1 171.1 L482.7 175.9 L483.6 178.0 L446.8 178.0 L446.8 160.0Z"><title>Cass</title></path>
+<path class="county" d="M122.2 160.9 L168.9 160.9 L168.9 184.7 L163.2 184.7 L122.2 184.7 L122.2 180.7 L122.2 161.1 L122.2 160.9Z"><title>Perkins</title></path>
+<path class="county" d="M341.7 238.6 L341.7 211.7 L367.8 211.6 L368.0 211.6 L368.0 238.7 L361.6 238.7 L341.7 238.6Z"><title>Nuckolls</title></path>
+<path class="county" d="M230.0 211.7 L236.0 211.5 L262.3 211.6 L262.9 211.6 L263.1 238.7 L231.0 238.7 L230.2 238.7 L230.0 211.7Z"><title>Furnas</title></path>
+<path class="county" d="M414.7 56.4 L414.7 24.6 L417.0 24.7 L418.7 27.9 L421.2 26.7 L427.0 29.1 L427.2 31.7 L431.6 31.9 L433.9 33.0 L432.5 36.5 L436.8 40.9 L437.0 43.0 L431.8 43.0 L431.6 62.1 L431.6 63.2 L426.0 63.2 L414.7 63.1 L414.7 56.4Z"><title>Dixon</title></path>
+<path class="county" d="M420.6 238.7 L420.6 211.7 L420.8 198.2 L446.8 198.3 L446.8 218.5 L446.8 238.7 L427.0 238.7 L420.6 238.7Z"><title>Gage</title></path>
+<path class="county" d="M200.1 103.8 L226.0 103.8 L226.8 103.8 L226.8 130.7 L199.9 130.7 L200.1 103.8Z"><title>Logan</title></path>
+<path class="county warm" d="M437.0 43.0 L438.3 44.4 L443.3 44.1 L444.3 46.1 L447.9 45.6 L450.8 46.1 L451.6 49.0 L449.8 52.0 L449.8 57.0 L452.1 59.0 L453.1 62.2 L431.6 62.1 L431.8 43.0 L437.0 43.0Z"><title>Dakota</title></path>
+<path class="county" d="M470.0 198.2 L490.6 198.2 L491.7 195.6 L494.0 196.8 L491.3 199.6 L491.5 202.3 L493.8 204.5 L493.6 207.1 L496.1 214.5 L499.8 216.2 L499.6 218.3 L499.8 218.5 L473.3 218.5 L470.0 218.5 L470.0 198.2Z"><title>Nemaha</title></path>
+<path class="county" d="M89.8 144.0 L121.9 144.0 L122.2 160.9 L122.2 161.1 L89.2 161.0 L89.8 157.5 L89.8 144.0Z"><title>Deuel</title></path>
+<path class="county" d="M426.0 63.2 L431.6 63.2 L431.6 62.1 L453.1 62.2 L455.0 65.8 L453.1 67.0 L453.5 70.7 L458.1 74.4 L457.9 80.0 L455.8 80.0 L455.8 82.5 L441.6 82.4 L441.6 76.7 L426.0 76.6 L426.0 63.2Z"><title>Thurston</title></path>
+<path class="county" d="M79.2 6.1 L120.5 6.1 L120.3 22.7 L121.3 22.7 L121.3 49.2 L123.0 49.2 L123.0 76.2 L124.9 76.2 L124.7 83.0 L121.3 83.0 L85.9 83.2 L84.6 83.3 L84.4 76.4 L82.1 76.5 L82.1 69.8 L81.5 56.0 L81.7 49.5 L80.2 49.5 L80.2 22.7 L79.2 22.7 L79.2 6.1Z"><title>Sheridan</title></path>
+<path class="county" d="M6.0 6.0 L37.7 6.0 L37.9 22.8 L39.2 22.7 L39.2 49.7 L41.2 49.7 L41.2 76.6 L43.7 76.6 L43.7 83.4 L6.0 83.5 L6.0 36.2 L6.0 6.0Z"><title>Sioux</title></path>
+<path class="county" d="M454.8 146.5 L478.3 146.4 L483.1 147.7 L480.8 148.8 L481.7 155.0 L480.8 157.1 L474.6 157.1 L471.9 156.1 L467.5 157.5 L465.4 159.9 L461.9 161.5 L457.3 159.5 L455.2 157.7 L454.2 154.8 L455.8 152.3 L454.8 146.5Z"><title>Sarpy</title></path>
+<path class="county" d="M85.9 83.2 L121.3 83.0 L121.3 103.6 L126.1 103.6 L126.1 130.6 L121.9 130.6 L121.9 144.0 L89.8 144.0 L89.8 130.6 L88.2 130.6 L88.2 127.2 L88.2 103.6 L86.5 103.6 L85.9 99.0 L85.9 83.2Z"><title>Garden</title></path>
+<path class="county" d="M122.2 211.7 L163.4 211.6 L164.5 211.6 L164.5 238.6 L159.5 238.7 L122.2 238.6 L122.2 211.7Z"><title>Dundy</title></path>
+<path class="county" d="M394.3 130.5 L399.1 130.2 L401.0 131.4 L405.4 132.0 L414.7 129.2 L421.2 125.8 L421.2 126.1 L421.0 130.7 L421.0 157.7 L394.3 157.6 L394.3 130.5Z"><title>Butler</title></path>
+<path class="county" d="M368.0 211.6 L394.3 211.6 L394.3 238.7 L368.0 238.7 L368.0 211.6Z"><title>Thayer</title></path>
+<path class="county" d="M196.2 184.5 L228.5 184.5 L242.5 184.5 L242.5 204.8 L235.8 204.8 L236.0 211.5 L230.0 211.7 L197.4 211.7 L196.2 211.7 L196.0 187.9 L196.2 184.5Z"><title>Frontier</title></path>
+<path class="county" d="M259.6 77.0 L261.0 77.0 L285.9 76.8 L286.7 76.8 L286.7 103.8 L259.6 103.8 L259.6 77.0Z"><title>Loup</title></path>
+<path class="county" d="M6.0 83.5 L43.7 83.4 L46.0 83.4 L46.0 103.6 L45.6 107.0 L6.0 107.1 L6.0 83.5Z"><title>Scotts Bluff</title></path>
+<path class="county" d="M121.3 83.0 L124.7 83.0 L124.9 76.2 L158.6 76.5 L158.6 103.6 L126.1 103.6 L121.3 103.6 L121.3 83.0Z"><title>Grant</title></path>
+<path class="county" d="M387.6 17.7 L390.1 18.0 L391.6 16.5 L394.7 17.3 L397.8 16.4 L403.1 18.1 L403.3 20.6 L406.4 21.6 L408.1 23.8 L414.7 24.6 L414.7 56.4 L394.3 56.4 L394.3 49.6 L387.6 49.7 L387.6 17.7Z"><title>Cedar</title></path>
+<path class="county" d="M441.6 82.4 L455.8 82.5 L455.8 80.0 L457.9 80.0 L461.0 81.6 L460.0 82.7 L463.1 83.4 L462.9 85.4 L466.2 85.8 L465.6 90.2 L464.4 91.0 L465.8 94.0 L467.5 97.6 L470.0 99.1 L469.4 102.2 L467.7 103.5 L469.0 107.1 L466.7 108.2 L447.9 108.2 L448.1 103.7 L441.6 103.7 L441.6 82.4Z"><title>Burt</title></path>
+<path class="county" d="M394.3 238.7 L394.3 211.6 L420.6 211.7 L420.6 238.7 L394.3 238.7Z"><title>Jefferson</title></path>
+<path class="county" d="M167.6 130.6 L199.9 130.7 L226.8 130.7 L227.7 130.7 L227.7 157.6 L228.3 157.6 L228.5 184.5 L196.2 184.5 L168.9 184.7 L168.9 160.9 L168.9 157.5 L167.6 157.5 L167.6 130.6Z"><title>Lincoln</title></path>
+<path class="county" d="M289.2 211.6 L315.5 211.6 L315.5 238.7 L295.7 238.7 L289.2 238.7 L289.2 211.6Z"><title>Franklin</title></path>
+<path class="county" d="M367.4 103.6 L394.3 103.6 L401.0 103.6 L401.0 131.4 L399.1 130.2 L394.3 130.5 L389.5 132.6 L385.3 133.2 L381.0 135.4 L381.0 130.6 L374.9 130.6 L374.9 120.4 L367.6 120.4 L367.4 103.6Z"><title>Platte</title></path>
+<path class="county" d="M46.0 83.4 L75.0 83.6 L84.6 83.3 L85.9 83.2 L85.9 99.0 L86.5 103.6 L88.2 103.6 L88.2 127.2 L45.6 127.3 L45.6 107.0 L46.0 103.6 L46.0 83.4Z"><title>Morrill</title></path>
+<path class="county" d="M230.0 6.2 L268.5 6.2 L284.8 6.2 L284.6 21.3 L280.0 23.1 L275.4 23.7 L274.2 25.2 L268.3 28.0 L260.2 26.9 L258.1 27.3 L249.8 25.3 L249.4 24.0 L243.3 23.7 L241.0 22.5 L238.1 22.7 L233.7 21.0 L230.0 18.0 L230.0 6.2Z"><title>Keya Paha</title></path>
+<path class="county" d="M159.7 103.6 L192.4 103.8 L200.1 103.8 L199.9 130.7 L167.6 130.6 L159.7 130.6 L159.7 103.6Z"><title>McPherson</title></path>
+<path class="county" d="M45.2 130.6 L45.6 127.3 L88.2 127.2 L88.2 130.6 L89.8 130.6 L89.8 144.0 L89.8 157.5 L89.2 161.0 L87.3 161.1 L45.0 161.1 L45.2 157.5 L45.2 130.6Z"><title>Cheyenne</title></path>
+<path class="county" d="M6.0 107.1 L45.6 107.0 L45.6 127.3 L45.2 130.6 L6.0 130.7 L6.0 117.4 L6.0 107.1Z"><title>Banner</title></path>
+<path class="county" d="M339.7 15.2 L342.6 15.8 L347.6 18.7 L348.8 18.6 L356.6 24.5 L360.5 23.9 L363.0 22.0 L364.9 17.1 L366.6 16.3 L370.7 17.7 L375.9 18.3 L378.9 17.6 L387.6 17.7 L387.6 49.7 L367.2 49.7 L340.3 49.8 L339.9 49.8 L339.9 24.6 L339.7 15.2Z"><title>Knox</title></path>
+<path class="county" d="M315.5 211.6 L341.5 211.7 L341.7 211.7 L341.7 238.6 L328.4 238.7 L315.5 238.7 L315.5 211.6Z"><title>Webster</title></path>
+<path class="county" d="M158.6 76.5 L192.2 76.8 L192.4 103.8 L159.7 103.6 L158.6 103.6 L158.6 76.5Z"><title>Hooker</title></path>
+<path class="county" d="M121.9 144.0 L121.9 130.6 L126.1 130.6 L159.7 130.6 L167.6 130.6 L167.6 157.5 L168.9 157.5 L168.9 160.9 L122.2 160.9 L121.9 144.0Z"><title>Keith</title></path></g>
+<text x="6" y="260">93 counties</text>
+<text x="514" y="260" text-anchor="end">pilot counties shaded</text>
+</svg>
+</div>
+
+<section id="survey">
+  <div class="lede">
+    <h2>What HeadWater is</h2>
+    <div class="text">
+      <p>HeadWater is a chronic stress survey for adults. It takes about 12 minutes on a phone, a computer, or by text message. It asks about stress, sleep, mood, work and money, food, the place you live, early life, substance use, and the people around you. It is anonymous. Nobody sees a name with an answer.</p>
+      <p>When a person finishes, they see plain language feedback by area and where to find help nearby. Anyone who reports thoughts of self harm sees the 988 Suicide and Crisis Lifeline and local crisis contacts on the next screen.</p>
+      <p>HeadWater is not a diagnosis and not a medical device. It does not tell anyone they have a condition. It shows a person where their stress load sits and gives them somewhere to start.</p>
+    </div>
+  </div>
+</section>
+
+<section id="atlas">
+  <div class="lede">
+    <h2>What the Stress Atlas is</h2>
+    <div class="text">
+      <p>The Nebraska Stress Atlas combines survey results by county, with no names and with small counties pooled so no one can be identified. It is built to show a county, a hospital, a clinic, or a health department where chronic stress is concentrated, so they can decide where to put their effort.</p>
+      <p>It is designed to grow into a map of which evidence based practices a county already has against the load it carries, and of the upstream drivers of what is coming.</p>
+    </div>
+  </div>
+</section>
+
+<section id="where">
+  <div class="lede">
+    <h2>Where we are</h2>
+    <div class="text">
+      <p>The first version of the survey was tested with 86 adults in Nebraska in early 2026. Reliability was measured for each subscale separately and is reported that way. The survey is live on the web and on Android, with an Apple version in progress. The Atlas shows county results from that first test.</p>
+      <p>In 2027, with rural partners across Nebraska, we plan to run the survey in rural counties, report results to each partner and to the state, and measure whether the subscales hold in a rural sample before anything more is built on top of them.</p>
+      <div class="facts">
+        <div class="fact"><b>86</b><span>adults in the first test, March 2026</span></div>
+        <div class="fact"><b>93</b><span>counties on the Atlas, drawn from the same map</span></div>
+        <div class="fact"><b>19+</b><span>age to take part, under Nebraska law</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="data">
+  <div class="lede">
+    <h2>How we handle data</h2>
+    <div class="text">
+      <div class="plain">
+        <strong>We never sell a person's answers.</strong> Person level data is released to no one. Combined, de-identified county results may be licensed to partners the data governance board approves, for uses it approves, under contracts that forbid re-identification and resale. The board reviews what leaves the platform before any results are published.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="who">
+  <div class="lede">
+    <h2>Who we are</h2>
+    <div class="text">
+      <p>Verdant Equanim was founded by Jeromie Luginbill, founder and CEO of Integrated Behavioral Health Services, a CARF accredited behavioral health provider in Lincoln since 2017. Verdant Equanim is a subsidiary of IBHS and operates as its own company.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="contact">Contact <code id="email">jluginbill@vereq.co</code><button type="button" id="copy">Copy</button></div>
+  <div>Verdant Equanim, LLC · Lincoln, Nebraska</div>
+</footer>
+</div>
+
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var t=document.getElementById('email').textContent,b=this;
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)}).catch(sel)}else{sel()}
+});
+</script>
+
+</body>
+</html>

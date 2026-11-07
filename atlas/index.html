@@ -1,4 +1,6 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><title>Nebraska Stress Atlas</title></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Nebraska Stress Atlas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -112,6 +114,28 @@ ol.top li b{font:500 13px var(--mono);font-variant-numeric:tabular-nums}
 .note{padding:16px 18px;display:grid;gap:8px;font-size:13.5px;color:var(--muted)}
 .note p{margin:0;max-width:80ch}
 .note strong{color:var(--ink)}
+.prio{padding:16px 18px;display:grid;gap:12px}
+.priohead{display:grid;gap:4px}
+.priohead h3{font:600 12px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0}
+.priohead .cname{margin:0}
+.priohead .def,.prio .def.small{margin:0;color:var(--muted);font-size:13px;max-width:80ch}
+.priogrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:880px){.priogrid{grid-template-columns:1fr}}
+.priocol{min-width:0;display:grid;gap:8px;align-content:start}
+.priocol h4{font:600 13px var(--body);margin:0;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.priocol h4 .muted{font:400 11px var(--mono);color:var(--muted)}
+ol.plist{margin:0;padding:0;list-style:none;display:grid;gap:4px;counter-reset:p}
+ol.plist li{display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:8px;align-items:center;font-size:13.5px;padding:5px 6px;border-radius:6px;border:1px solid var(--line)}
+ol.plist li::before{counter-increment:p;content:counter(p);font:400 12px var(--mono);color:var(--muted);text-align:right}
+ol.plist li .lab{min-width:0;overflow-wrap:anywhere}
+ol.plist li .lab small{display:block;color:var(--muted);font-size:11.5px;white-space:normal}
+ol.plist li b{font:500 12.5px var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+ol.plist li.high{border-color:var(--accent);background:var(--soft)}
+ol.plist li.svyhigh{border-color:var(--survey);background:var(--survey-soft)}
+ol.plist li.both{border-color:var(--survey);background:var(--survey-soft)}
+ol.plist li.lockrow{grid-template-columns:1fr;color:var(--muted);font-size:13px}
+ol.plist li.lockrow::before{content:none}
+.tag{font:500 10px var(--mono);border:1px solid currentColor;border-radius:999px;padding:1px 6px;margin-left:6px}
 .cov{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
 .cov .stat b{font-size:26px}
 a{color:var(--accent)}
@@ -158,6 +182,20 @@ a{color:var(--accent)}
           <ol class="top" id="top"></ol>
         </section>
       </div>
+
+      <section class="panel prio" id="prio" aria-live="polite">
+        <div class="priohead">
+          <h3>County priorities</h3>
+          <p class="cname" id="prioName"></p>
+          <p class="def">Each list is ranked from the strongest signal down. A rank is where this county sits against the other 92 Nebraska counties; the priority call belongs to the county and the data governance board.</p>
+        </div>
+        <div class="priogrid">
+          <div class="priocol"><h4>CDC PLACES <span class="muted">11 measures, ranked</span></h4><ol class="plist" id="prioCdc"></ol></div>
+          <div class="priocol"><h4>HeadWater survey <span class="muted">items, ranked by share flagged</span></h4><ol class="plist" id="prioHw"></ol></div>
+          <div class="priocol"><h4>Where both agree <span class="muted">CDC and HeadWater</span></h4><ol class="plist" id="prioBoth"></ol></div>
+        </div>
+        <p class="def small">CDC PLACES values are model based estimates for small areas, so in a small county a rank is a signal, not a measurement. HeadWater lists appear only for counties past the respondent floor and after the governance board approves release. "Where both agree" pairs each survey item with its closest CDC measure and lists the pairs where the county is in the top quarter of the state on the CDC measure and the item is in the county's top third of flagged answers.</p>
+      </section>
 
       <section class="panel note">
         <p><strong>Respondent floor.</strong> A county shows HeadWater results only when it has at least <span id="floorTxt">10</span> submitted surveys. Below that it is hatched, and its responses are held back until the floor is reached. Individual answers are never shown.</p>
@@ -272,6 +310,7 @@ function applyTier(){
   document.getElementById("gateBtn").textContent = partner ? "Lock HeadWater layers" : "Unlock HeadWater layers";
   document.querySelectorAll(".mbtn.svy").forEach(b => { if (partner) b.removeAttribute("disabled"); else b.setAttribute("disabled",""); });
   document.querySelectorAll(".dbtn .lock").forEach(l => l.textContent = partner ? "partner" : "locked");
+  if (typeof showPriorities === "function" && document.getElementById("prioName")) showPriorities(selected);
 }
 gateForm.addEventListener("submit", async e => {
   e.preventDefault();
@@ -337,7 +376,7 @@ const counties = gC.selectAll("path").data(P.geo.features).join("path")
   .attr("class","county").attr("d", path)
   .on("mouseenter", (e,f) => showDetail(f.id))
   .on("mouseleave", () => showDetail(selected))
-  .on("click", (e,f) => { selected = f.id; showDetail(f.id); counties.classed("sel", d => d.id === selected); });
+  .on("click", (e,f) => { selected = f.id; showDetail(f.id); showPriorities(f.id); counties.classed("sel", d => d.id === selected); });
 counties.append("title");
 const gL = svg.append("g").attr("class","ranklabels").attr("pointer-events","none");
 const centroids = {}; P.geo.features.forEach(f => centroids[f.id] = path.centroid(f));
@@ -382,9 +421,9 @@ function render(){
   const ol = document.getElementById("top"); ol.innerHTML = "";
   if (!top.length) ol.innerHTML = `<li><span style="color:var(--muted)">No county has reached the floor for this layer yet.</span><b></b></li>`;
   top.forEach(([id,v]) => { const li = document.createElement("li"); li.innerHTML = `<span>${names[id]}</span><b>${it.cat ? (AGG.counties[id].n + " resp.") : (v.toFixed(1)+L.unit)}</b>`;
-    li.addEventListener("click", () => { selected = id; showDetail(id); counties.classed("sel", d => d.id === selected); }); ol.appendChild(li); });
+    li.addEventListener("click", () => { selected = id; showDetail(id); showPriorities(id); counties.classed("sel", d => d.id === selected); }); ol.appendChild(li); });
   document.querySelectorAll(".mbtn").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.id === current)));
-  showDetail(selected);
+  showDetail(selected); showPriorities(selected);
 }
 
 function showDetail(id){
@@ -439,6 +478,60 @@ function showDetail(id){
     <div class="svy"><strong>${c.n} HeadWater responses</strong> in ${names[id]} County.</div>`;
 }
 
+// ---------- county priorities ----------
+const XWALK = {
+  sleep_quality:["SLEEP"], sleep_regular:["SLEEP"], sleep_rested:["SLEEP"],
+  sl_stress:["MHLTH"], sl_overwhelmed:["MHLTH"], sl_control:["MHLTH"], sl_confident:["MHLTH"], sl_anxious:["MHLTH"], sl_irritable:["MHLTH"],
+  sl_interest:["DEPRESSION","MHLTH"], sl_down:["DEPRESSION","MHLTH"], mh_counsel:["DEPRESSION"], mh_skipped:["MHLTH"],
+  fs_foodworry:["FOODINSECU"], fs_foodcost:["FOODINSECU"], fs_access:["FOODINSECU"],
+  fs_bills:["HOUSINSECU","SHUTUTILITY"], fs_putoff:["HOUSINSECU"], fs_400:["HOUSINSECU","SHUTUTILITY"], fs_finstab:["HOUSINSECU"],
+  fs_transport:["LACKTRPT"], sub_tobacco:["CSMOKING"],
+  ss_care:["EMOTIONSPT"], ss_talk:["EMOTIONSPT"], ss_sick:["EMOTIONSPT"], ss_lonely:["LONELINESS"], purpose:["LONELINESS"]
+};
+function cdcRanked(id){
+  const out = [];
+  CATALOG.filter(d => d.places)[0].items.forEach(it => {
+    const vals = P.data[it.id]; const v = vals[id]; if (v == null) return;
+    const all = Object.values(vals); const rank = all.filter(x => x > v).length + 1; const med = d3.median(all);
+    out.push({ id: it.id, q: it.q, v, rank, med, diff: v - med });
+  });
+  return out.sort((a,b) => a.rank - b.rank);
+}
+function hwRanked(id){
+  const c = (AGG.counties||{})[id]; if (!c || !c.items) return null;
+  const out = [];
+  for (const [k, x] of Object.entries(c.items)) {
+    const it = itemById[k]; if (!it || it.cat || x.pct == null) continue;
+    out.push({ id:k, q: it.q, domain: it.domain, pct: x.pct, n: x.n, sensitive: !!it.sensitive });
+  }
+  return out.sort((a,b) => b.pct - a.pct);
+}
+function showPriorities(id){
+  document.getElementById("prioName").textContent = names[id] + " County";
+  const cdc = cdcRanked(id);
+  const tagFor = r => r <= 10 ? `<span class="tag">top 10</span>` : (r <= 25 ? `<span class="tag">top quarter</span>` : (r >= 70 ? `<span class="tag">low</span>` : ""));
+  document.getElementById("prioCdc").innerHTML = cdc.map(r => `<li class="${r.rank<=25?"high":""}"><span class="lab">${r.q}${tagFor(r.rank)}<small>${r.v.toFixed(1)}% of adults, state median ${r.med.toFixed(1)}%</small></span><b>${r.rank} / 93</b></li>`).join("");
+  const hw = partner ? hwRanked(id) : null;
+  const hwEl = document.getElementById("prioHw"), bothEl = document.getElementById("prioBoth");
+  if (!partner) {
+    hwEl.innerHTML = `<li class="lockrow">HeadWater lists open with partner access, for counties past the respondent floor of ${FLOOR()} and after the governance board approves release.</li>`;
+    bothEl.innerHTML = `<li class="lockrow">Opens with the HeadWater list.</li>`;
+    return;
+  }
+  if (!hw) {
+    hwEl.innerHTML = `<li class="lockrow">Fewer than ${FLOOR()} HeadWater responses in ${names[id]} County so far.</li>`;
+    bothEl.innerHTML = `<li class="lockrow">Needs HeadWater responses from this county.</li>`;
+    return;
+  }
+  const cut = Math.ceil(hw.length / 3);
+  hwEl.innerHTML = hw.map((r,i) => `<li class="${i<cut?"svyhigh":""}"><span class="lab">${r.q}${r.sensitive?`<span class="tag">sensitive</span>`:""}<small>${r.domain} · ${r.n} answered</small></span><b>${r.pct.toFixed(1)}%</b></li>`).join("");
+  const cdcById = {}; cdc.forEach(r => cdcById[r.id] = r);
+  const both = [];
+  hw.slice(0, cut).forEach(r => (XWALK[r.id]||[]).forEach(cid => { const c = cdcById[cid]; if (c && c.rank <= 25) both.push({ hw:r, cdc:c }); }));
+  both.sort((a,b) => a.cdc.rank - b.cdc.rank || b.hw.pct - a.hw.pct);
+  bothEl.innerHTML = both.length ? both.map(p => `<li class="both"><span class="lab">${p.cdc.q}<small>CDC rank ${p.cdc.rank} of 93 · HeadWater: ${p.hw.pct.toFixed(0)}% ${p.hw.q.toLowerCase()}</small></span><b>${p.cdc.rank} / 93</b></li>`).join("")
+    : `<li class="lockrow">No pair yet where ${names[id]} County is in the top quarter on a CDC measure and the matching HeadWater item is in its top third.</li>`;
+}
 function setMeasure(id){ current = id; try { localStorage.setItem("nsa-measure2", id); } catch(e){} render(); }
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
 new MutationObserver(render).observe(document.documentElement, { attributes:true, attributeFilter:["data-theme"] });

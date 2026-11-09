@@ -60,6 +60,39 @@ details.std ol{margin:8px 0 0;padding-left:20px;display:grid;gap:6px;font-size:1
 .copy:focus-visible{outline:2px solid var(--accent)}
 footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px}
 footer a{color:var(--accent)}
+/* Start here: role picker */
+.who{padding:14px 18px;display:grid;gap:8px;border-color:var(--survey);background:var(--survey-soft)}
+.whohead{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.whohead b{font:700 15px var(--display)}
+.whohead select{font:14px var(--body);padding:8px 10px;border:1px solid var(--line);border-radius:7px;background:var(--panel);color:var(--ink);max-width:100%}
+.who .about{margin:0;font-size:13.5px;color:var(--muted);max-width:90ch}
+.roleextras{display:grid;gap:8px;font-size:13.5px}
+.roleextras .seats{display:flex;gap:6px;flex-wrap:wrap}
+.roleextras .seats span{font:500 11px var(--mono);border:1px solid var(--line);border-radius:999px;padding:2px 8px;background:var(--panel)}
+.roleextras .onepage{padding:10px 12px;border-radius:8px;background:var(--panel);border:1px solid var(--line)}
+.cat.partner .cathead h2 .pp{font:500 10px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--survey);border:1px solid var(--survey);border-radius:999px;padding:2px 7px;margin-left:8px;vertical-align:middle}
+.gatebox{display:grid;gap:8px;padding:12px 14px;border:1px dashed var(--survey);border-radius:8px;background:var(--survey-soft)}
+.gatebox form{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.gatebox input{font:14px var(--body);padding:8px 10px;border:1px solid var(--line);border-radius:7px;background:var(--panel);color:var(--ink);width:190px}
+.gatebox button{all:unset;box-sizing:border-box;font:600 13px var(--body);padding:8px 14px;border-radius:7px;background:var(--survey);color:#fff;cursor:pointer}
+.gatebox .msg{font-size:13px;color:var(--muted)}
+.gatebox .msg.err{color:#9A2E2E}
+.gatebox a{color:var(--survey);font-weight:600}
+.wwtopic{margin:14px 0 6px;font:600 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--survey)}
+.wwi{display:grid;gap:3px;padding:10px 12px;border-radius:7px;background:var(--panel);border:1px solid var(--line)}
+.wwi .nm{font-weight:600;font-size:14px}
+.wwi .gr{font:500 10.5px var(--mono);color:var(--accent);border:1px solid currentColor;border-radius:999px;padding:1px 6px;display:inline-block;margin-right:6px}
+.wwi .gr.warn{color:#9A2E2E}
+.wwi .gr.weak{color:var(--muted)}
+.wwi .fd{font-size:13px}
+.wwi .by{font:400 11.5px var(--mono);color:var(--muted)}
+.fd1{display:grid;gap:3px;padding:10px 12px;border-radius:7px;background:var(--panel);border:1px solid var(--line)}
+.fd1 .nm{font-weight:600;font-size:14px}
+.fd1 .sp{font:500 11px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--accent)}
+.fd1 .el{font-size:13px}
+.fd1 .by{font:400 11.5px var(--mono);color:var(--muted)}
+.fd1.fit{border-color:var(--survey)}
+.fd1 .fitTag{font:500 10px var(--mono);color:var(--survey);border:1px solid var(--survey);border-radius:999px;padding:1px 6px;margin-left:6px}
 </style>
 </head>
 <body>
@@ -69,6 +102,15 @@ footer a{color:var(--accent)}
     <h1 style="margin-top:8px">Research Library</h1>
     <p class="lede" style="margin-top:8px">The Research Library is the evidence behind the HeadWater chronic stress survey and the Nebraska Stress Atlas. It exists so that a county, a hospital, a clinic or a health department writing a grant can cite the science in one click, and so that anyone can check what HeadWater measures against the studies that have held up. Each category matches a section of the survey or a layer of the Atlas. Each entry names who did the work, what they found, how many people were studied, and links to the publisher&#x27;s record, the PubMed record and the free full text where one exists.</p>
   </header>
+  <section class="panel who" id="who">
+    <div class="whohead">
+      <label for="roleSel"><b>Start here if you are a…</b></label>
+      <select id="roleSel"><option value="">Choose who you are (optional)</option></select>
+      <button class="copy" type="button" id="roleClear" hidden>Show the library as it is</button>
+    </div>
+    <p class="about" id="roleLine">Pick a role and the shelves below reorder to what that role usually needs first. The entries do not change. Individuals never need a code; everything public is yours.</p>
+    <div id="roleExtras" class="roleextras" hidden></div>
+  </section>
   <div class="layout">
     <nav class="panel toc" aria-label="Categories"><h2>Categories</h2><ol><li><a href="#chronic_stress">Chronic stress and chronic disease</a><span>5</span></li><li><a href="#money">Money, work and health</a><span>4</span></li><li><a href="#sleep">Sleep</a><span>4</span></li><li><a href="#mood">Mood and anxiety</a><span>3</span></li><li><a href="#social">Social connection and loneliness</a><span>3</span></li><li><a href="#childhood">Childhood adversity</a><span>16</span></li><li><a href="#family_history">Family history: famine, war and displacement</a><span>2</span></li><li><a href="#food">Food security and diet</a><span>3</span></li><li><a href="#physical_activity">Physical activity</a><span>2</span></li><li><a href="#environment">Environment</a><span>2</span></li><li><a href="#substance">Substance use</a><span>3</span></li><li><a href="#access">Access to help</a><span>2</span></li><li><a href="#differences">Differences by race, sex, income and disability</a><span>4</span></li><li><a href="#methods">Methods and data sources</a><span>7</span></li></ol></nav>
     <div class="main">
@@ -491,15 +533,123 @@ footer a{color:var(--accent)}
   <div class="links"><a href="https://doi.org/10.1126/science.aac4716" target="_blank" rel="noopener">Publisher (DOI)</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/26315443/" target="_blank" rel="noopener">PubMed</a> <button class="copy" type="button" data-cite="Open Science Collaboration (2015). Estimating the reproducibility of psychological science. Science. https://doi.org/10.1126/science.aac4716">Copy citation</button><span class="meta">checked 2026-11-06</span></div>
 </div></div>
 </section>
+      <section class="cat partner" id="whatworks">
+        <div class="cathead"><h2>What works <span class="pp">partner preview</span></h2><div class="n" id="wwN">Graded interventions for each Atlas measure</div></div>
+        <p class="about">A separate shelf with a separate standard. The library above reports what was measured. This shelf reports what has been tested as an intervention, and only as graded by three bodies: the Community Preventive Services Task Force (The Community Guide), the U.S. Preventive Services Task Force, and Cochrane systematic reviews. Each entry carries the body's own grade in its own words, including "insufficient evidence" and "recommended against." Nothing ungraded goes on. This shelf is a partner preview until the data governance board's reviewer has signed off; then it opens to everyone.</p>
+        <div id="wwBody"></div>
+      </section>
+      <section class="cat partner" id="funders">
+        <div class="cathead"><h2>Funder shelf <span class="pp">partner preview</span></h2><div class="n" id="fdN">Funding programs, from their own pages</div></div>
+        <p class="about">Each entry is a funding program, verified on the program's own page: who it says can apply, where, on what cycle, and the date we checked. No aggregator sites, no sample language, no grant advice. The library points to the program and the evidence and stops there. Pick a role above to see the programs that fit it first.</p>
+        <div id="fdBody"></div>
+      </section>
       <footer>60 entries in 14 categories. Each was read and checked against its PubMed or federal record on 2026-11-06. Entries report what was measured, not why. Questions: <a href="mailto:jluginbill@vereq.co">jluginbill@vereq.co</a> · The data file is <a href="research.json">research.json</a>.</footer>
     </div>
   </div>
 </div>
 <script>
 document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', () => {
-  const t = b.dataset.cite; const done = () => { const o = b.textContent; b.textContent = 'Copied'; setTimeout(() => b.textContent = o, 1400); };
+  const t = b.dataset.cite; if (!t) return; const done = () => { const o = b.textContent; b.textContent = 'Copied'; setTimeout(() => b.textContent = o, 1400); };
   if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done).catch(done); else done();
 }));
+
+// ---------- Start here: roles, what works, funder shelf ----------
+const PASS_HASH = "13df78d32ce45710d4c825a3375f24728f2a9c015b6cea063894f796df589f99";
+const MAILTO = "jluginbill@vereq.co";
+const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+let partner = false; try { partner = sessionStorage.getItem("nsa-partner") === "1"; } catch(e){}
+let AUD = { audiences: [] }, WW = { entries: [] }, FD = { funders: [] }, role = null;
+const main = document.querySelector(".main");
+const catEls = {}; document.querySelectorAll("section.cat:not(.partner)").forEach(s => catEls[s.id] = s);
+const ORIGINAL = Object.keys(catEls);
+const toc = document.querySelector(".toc ol");
+const tocItems = {}; if (toc) toc.querySelectorAll("li").forEach(li => { const a = li.querySelector("a"); if (a) tocItems[a.getAttribute("href").slice(1)] = li; });
+function accessMail(){
+  return `mailto:${MAILTO}?subject=${encodeURIComponent("Partner access request, Nebraska Stress Atlas")}&body=${encodeURIComponent(
+`Please tell us who you are and we will reply by hand. Thank you.
+
+Name:
+Organization:
+Seat type (hospital or clinic, behavioral health provider, local health department, Behavioral Health Region, school or Educational Service Unit, college or university, Tribal Nation, Nebraska Extension, faith or community organization, farm or agriculture group, elected official, foundation, state agency, researcher, insurer, employer):
+County or counties:
+What you need partner access for:
+`)}`;
+}
+async function sha256(t){ const b = new TextEncoder().encode(t); const h = await crypto.subtle.digest("SHA-256", b); return [...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,"0")).join(""); }
+function gateHtml(id){
+  return `<div class="gatebox"><div><b>Partner preview.</b> This shelf opens with the Atlas partner passcode until the data governance board's reviewer has signed off. The passcode is a preview curtain, not an account system; registration by seat type is a 2027 platform feature.</div>
+  <form data-gate="${id}"><input type="password" placeholder="Partner passcode" autocomplete="off" aria-label="Partner passcode"><button type="submit">Unlock</button><span class="msg"></span></form>
+  <div><a href="${accessMail()}">No passcode? Request partner access by email ›</a></div></div>`;
+}
+function wireGate(root){
+  root.querySelectorAll("form[data-gate]").forEach(f => f.addEventListener("submit", async e => {
+    e.preventDefault(); const v = f.querySelector("input").value.trim(); if (!v) return;
+    let ok = false; try { ok = (await sha256(v)) === PASS_HASH; } catch(x){}
+    const msg = f.querySelector(".msg");
+    if (ok) { partner = true; try { sessionStorage.setItem("nsa-partner","1"); } catch(x){} renderWW(); renderFD(); }
+    else { msg.textContent = "That passcode did not match."; msg.className = "msg err"; }
+  }));
+}
+function gradeClass(g){ const s = (g||"").toLowerCase(); if (/against|not recommended/.test(s)) return "warn"; if (/insufficient|low|very low|uncertain|unclear|protocol|no finding|none/.test(s)) return "weak"; return ""; }
+function renderWW(){
+  const body = document.getElementById("wwBody"); const n = document.getElementById("wwN");
+  const es = WW.entries || [];
+  n.textContent = `${es.length} graded entries · Community Preventive Services Task Force, U.S. Preventive Services Task Force, Cochrane`;
+  if (!partner) { body.innerHTML = gateHtml("ww"); wireGate(body); return; }
+  if (!es.length) { body.innerHTML = `<p class="about">The shelf is being assembled.</p>`; return; }
+  const topics = []; es.forEach(e => { if (!topics.includes(e.topic)) topics.push(e.topic); });
+  body.innerHTML = topics.map(t => `<h3 class="wwtopic">${esc(t)}</h3><div class="grid">` + es.filter(e => e.topic === t).map(w => `<div class="wwi"><div class="nm">${esc(w.intervention)}</div><div><span class="gr ${gradeClass(w.grade)}">${esc(w.grade)}</span><span class="by">${esc(w.body)}${w.year ? " · " + esc(w.year) : ""}${w.setting ? " · " + esc(w.setting) : ""}</span></div><div class="fd">${esc(w.finding)}</div><div class="by">${w.url ? `<a href="${esc(w.url)}" target="_blank" rel="noopener">Source page</a> · ` : ""}measures: ${(w.measures||[]).map(esc).join(", ")}${w.checked ? " · checked " + esc(w.checked) : ""}</div></div>`).join("") + `</div>`).join("");
+}
+function renderFD(){
+  const body = document.getElementById("fdBody"); const n = document.getElementById("fdN");
+  const fs = FD.funders || [];
+  n.textContent = `${fs.length} programs, each verified on its own page`;
+  if (!partner) { body.innerHTML = gateHtml("fd"); wireGate(body); return; }
+  if (!fs.length) { body.innerHTML = `<p class="about">The shelf is being assembled.</p>`; return; }
+  const tags = role ? (role.funder_tags || []) : [];
+  const fits = f => tags.includes("all") || (f.tags||[]).some(t => tags.includes(t));
+  const sorted = fs.slice().sort((a,b) => (fits(b)?1:0) - (fits(a)?1:0) || a.name.localeCompare(b.name));
+  body.innerHTML = (role && tags.length ? `<p class="about">Programs that fit <b>${esc(role.label)}</b> are listed first and marked.</p>` : "") + `<div class="grid">` + sorted.map(f => `<div class="fd1${role && fits(f) ? " fit" : ""}"><div class="sp">${esc(f.sponsor)}</div><div class="nm">${esc(f.name)}${role && fits(f) ? `<span class="fitTag">fits your role</span>` : ""}</div><div class="el">${esc(f.eligibility)}</div><div class="by">${esc(f.geography||"")}${f.cycle ? " · " + esc(f.cycle) : ""}${f.note ? " · " + esc(f.note) : ""}</div><div class="by"><a href="${esc(f.url)}" target="_blank" rel="noopener">Program page</a>${f.checked ? " · checked " + esc(f.checked) : ""}</div></div>`).join("") + `</div>`;
+}
+function applyRole(id){
+  role = (AUD.audiences||[]).find(a => a.id === id) || null;
+  const line = document.getElementById("roleLine"), extras = document.getElementById("roleExtras"), clear = document.getElementById("roleClear");
+  const order = role ? role.shelves.filter(s => catEls[s]).concat(ORIGINAL.filter(s => !role.shelves.includes(s))) : ORIGINAL;
+  const anchor = document.getElementById("whatworks");
+  order.forEach(s => { main.insertBefore(catEls[s], anchor); if (toc && tocItems[s]) toc.appendChild(tocItems[s]); });
+  if (role) {
+    Object.keys(catEls).forEach(s => catEls[s].hidden = !!(role.one_page && !role.shelves.includes(s)));
+    line.innerHTML = `<b>${esc(role.label)}.</b> ${esc(role.one_line)}`;
+    let ex = "";
+    if (role.seats) ex += `<div class="seats">${role.seats.map(s => `<span>${esc(s)}</span>`).join("")}</div>`;
+    if (role.one_page) ex += `<div class="onepage">One page. The shelves below are the three or four this role usually needs; the <a href="../atlas/">county card on the Atlas</a> has the rest. Use "Show the library as it is" for everything.</div>`;
+    if (role.review_note) ex += `<div class="onepage">${esc(role.review_note)}</div>`;
+    if (role.id === "individual") ex += `<div class="onepage">Your county's page, including what works and what is in place, is on the <a href="../atlas/">Atlas</a>. Click your county.</div>`;
+    extras.innerHTML = ex; extras.hidden = !ex; clear.hidden = false;
+    try { localStorage.setItem("nsa-role", role.id); } catch(e){}
+  } else {
+    Object.keys(catEls).forEach(s => catEls[s].hidden = false);
+    line.textContent = "Pick a role and the shelves below reorder to what that role usually needs first. The entries do not change. Individuals never need a code; everything public is yours.";
+    extras.hidden = true; clear.hidden = true;
+    try { localStorage.removeItem("nsa-role"); } catch(e){}
+  }
+  renderFD();
+}
+const sel = document.getElementById("roleSel");
+sel.addEventListener("change", () => applyRole(sel.value));
+document.getElementById("roleClear").addEventListener("click", () => { sel.value = ""; applyRole(""); });
+Promise.all([
+  fetch("../data/audiences.json").then(r => r.ok ? r.json() : { audiences: [] }).catch(() => ({ audiences: [] })),
+  fetch("../data/whatworks.json").then(r => r.ok ? r.json() : { entries: [] }).catch(() => ({ entries: [] })),
+  fetch("../data/funders.json").then(r => r.ok ? r.json() : { funders: [] }).catch(() => ({ funders: [] }))
+]).then(([a, w, f]) => {
+  AUD = a; WW = w; FD = f;
+  (AUD.audiences||[]).forEach(x => { const o = document.createElement("option"); o.value = x.id; o.textContent = x.label; sel.appendChild(o); });
+  let saved = null; try { saved = localStorage.getItem("nsa-role"); } catch(e){}
+  const fromHash = (location.hash.match(/role=([a-z_]+)/) || [])[1];
+  const r = fromHash || saved; if (r && (AUD.audiences||[]).some(x => x.id === r)) { sel.value = r; applyRole(r); } else { renderFD(); }
+  renderWW();
+});
 </script>
 </body>
 </html>

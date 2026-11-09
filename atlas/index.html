@@ -189,6 +189,38 @@ ol.plist li.lockrow::before{content:none}
 .cov{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
 .cov .stat b{font-size:26px}
 a{color:var(--accent)}
+.reqlink{text-decoration:none;color:var(--survey);font-weight:500}
+.reqlink:hover{text-decoration:underline}
+/* From priority to action */
+.chainbody{display:grid;gap:14px}
+.pstep{display:grid;gap:10px;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.pstep .ptitle{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.pstep .ptitle b{font:700 17px/1.2 var(--display)}
+.pstep .ptitle .rk{font:500 12px var(--mono);color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.step{display:grid;gap:6px;align-content:start;padding:10px 12px;border-radius:8px;background:var(--soft);min-width:0}
+.step h5{margin:0;font:600 11px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.step .n{font:500 11px var(--mono);color:var(--muted)}
+.step p{margin:0;font-size:13px}
+.step a{font-size:13px}
+.step.locked{border:1px dashed var(--survey);background:var(--survey-soft)}
+.step.locked p{color:var(--muted)}
+.ww{display:grid;gap:6px}
+.wwi{display:grid;gap:2px;padding:8px 10px;border-radius:7px;background:var(--panel);border:1px solid var(--line)}
+.wwi .nm{font-weight:600;font-size:13px}
+.wwi .gr{font:500 10.5px var(--mono);color:var(--accent);border:1px solid currentColor;border-radius:999px;padding:1px 6px;display:inline-block;margin-right:6px}
+.wwi .gr.warn{color:var(--warn)}
+.wwi .gr.weak{color:var(--muted)}
+.wwi .fd{font-size:12.5px;color:var(--muted)}
+.wwi .by{font:400 11px var(--mono);color:var(--muted)}
+.inv{display:grid;gap:4px;font-size:13px}
+.inv .none{color:var(--muted)}
+.mail{display:inline-block;margin-top:4px;font-size:12.5px;font-weight:600;color:var(--survey);text-decoration:none;border:1px solid var(--survey);border-radius:6px;padding:4px 9px}
+.mail:hover{background:var(--survey-soft)}
+.gapwait{font-size:12.5px;color:var(--muted)}
+.chain .pill.partner{margin-left:6px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -211,6 +243,7 @@ a{color:var(--accent)}
         <button class="btn" type="submit" id="gateBtn">Unlock HeadWater layers</button>
         <span class="gatemsg" id="gateMsg"></span>
       </form>
+      <a class="gatemsg reqlink" id="reqAccessTop" href="#">No passcode? Request partner access ›</a>
       </div>
     </div>
   </header>
@@ -246,7 +279,7 @@ a{color:var(--accent)}
         <div class="priohead">
           <h3>County priorities</h3>
           <p class="cname" id="prioName"></p>
-          <p class="def">Each list is ranked from the strongest signal down. A rank is where this county sits against the other 92 Nebraska counties; the priority call belongs to the county and the data governance board.</p>
+          <p class="def">Each list is ranked from the strongest signal down. A rank is where this county sits against the other 92 Nebraska counties; the priority call belongs to the county and the data governance board. Shaded rows are where this county ranks in the top quarter of the state (rank 23 or better of 93). White rows are everywhere else.</p>
         </div>
         <div class="priogrid">
           <div class="priocol"><h4>CDC PLACES <span class="muted">11 measures, ranked</span></h4><ol class="plist" id="prioCdc"></ol></div>
@@ -257,11 +290,23 @@ a{color:var(--accent)}
         <p class="def small">CDC PLACES values are model based estimates for small areas, so in a small county a rank is a signal, not a measurement. HeadWater lists appear only for counties past the respondent floor and after the governance board approves release. County Health Rankings (University of Wisconsin Population Health Institute, 2025 release) draws on BRFSS, Census and vital statistics; measures where higher is better are ranked so that 1 still means most concern. "Where sources agree" lists topics where this county is in the top quarter of the state in both CDC PLACES and County Health Rankings, and, with partner access, where a HeadWater item in the county's top third matches a public measure in the top quarter.</p>
       </section>
 
+      <section class="panel prio chain" id="chain" aria-live="polite">
+        <div class="priohead">
+          <h3>From priority to action</h3>
+          <p class="cname" id="chainName"></p>
+          <p class="def">For each of this county's top priorities, in order: the problem here, why it matters, what works, what is already in place, and the gap. "What works" lists only interventions graded by the Community Preventive Services Task Force, the U.S. Preventive Services Task Force or Cochrane, in their own words. "In place" is what organizations in this county have reported and Verdant Equanim has verified. The gap opens one year after this county's HeadWater layer goes live.</p>
+        </div>
+        <div id="chainBody" class="chainbody"></div>
+        <p class="def small" id="chainFoot"></p>
+      </section>
+
       <section class="panel note">
         <p><strong>Respondent floor.</strong> A county shows HeadWater results only when it has at least <span id="floorTxt">10</span> submitted surveys. Below that it is hatched, and its responses are held back until the floor is reached. Individual answers are never shown.</p>
         <p><strong>Scores.</strong> The three HeadWater scales average their items on a 0 to 100 scale pointed in the stress direction, so a higher Financial Stress, Stress Load or Social Support score always means more strain. Item layers show the share of respondents giving the flagged answer, and the county panel shows the mean where the item has one.</p>
         <p><strong>Public layer.</strong> CDC PLACES county estimates, age-adjusted percent of adults, from 2023 BRFSS (short sleep from 2022). Model-based estimates, not direct counts. Source: <a href="https://data.cdc.gov/resource/swc5-untb" target="_blank" rel="noopener">data.cdc.gov PLACES county data</a>.</p>
         <p><strong>Survey data.</strong> HeadWater survey layers on this public copy open county by county once a county passes the respondent floor and the Verdant Equanim data governance board approves release. No survey results are published here yet. Wave 2 opened 22 October 2026.<span id="stamp2" hidden></span></p>
+        <p><strong>Year one.</strong> For each county, the "From priority to action" panel shows what works on its top priorities and what the county has reported it already has in place. The gap between the two is not shown until one year after the day that county's HeadWater layer goes live. During that year the inventory reads "not yet reported," never "nothing." Each county gets its own year, counted from its own go-live date, and any county can report what it has at any time.</p>
+        <p><strong>Partner access.</strong> The passcode on this page is a preview curtain, not an account system. Registration by seat type (hospital, health department, school, Tribal Nation and so on), with each seat seeing what the data governance board says it may, is a platform feature planned for the 2027 build. Until then, <a id="reqAccess" href="#">request partner access by email</a> and Verdant Equanim verifies by hand. Individuals never need a code: the county page, the research, what works and what is in place are theirs without one.</p>
       </section>
     </div>
   </div>
@@ -688,6 +733,105 @@ function renderResearchPanel(){
 }
 document.getElementById("rlBtn").addEventListener("click", () => { const p = document.getElementById("rlPanel"); const open = p.hidden; p.hidden = !open; document.getElementById("rlBtn").setAttribute("aria-expanded", String(open)); if (open) renderResearchPanel(); });
 document.getElementById("rlCardTxt").textContent = `${RL.entries.length} verified sources in ${RL.categories.length} categories, with a copy button on every citation. Cite HeadWater and the Atlas.`;
+// ---------- From priority to action: problem, why, what works, in place, gap ----------
+let WW = { entries: [] }, INV = { counties: {}, report_to: "jluginbill@vereq.co" };
+const MAILTO = "jluginbill@vereq.co";
+const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+function mailto(subject, body){ return `mailto:${MAILTO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`; }
+function accessMail(){
+  return mailto("Partner access request, Nebraska Stress Atlas",
+`Please tell us who you are and we will reply by hand. Thank you.
+
+Name:
+Organization:
+Seat type (hospital or clinic, behavioral health provider, local health department, Behavioral Health Region, school or Educational Service Unit, college or university, Tribal Nation, Nebraska Extension, faith or community organization, farm or agriculture group, elected official, foundation, state agency, researcher, insurer, employer):
+County or counties:
+What you need partner access for:
+`);
+}
+function inventoryMail(countyName, measureQ, interventions){
+  const opts = (interventions && interventions.length) ? "\nGraded interventions for this priority (pick any that apply, or name another):\n" + interventions.map(w => " - " + w.intervention).join("\n") + "\n" : "\n";
+  return mailto(`County inventory: ${countyName} County`,
+`Thank you for reporting what ${countyName} County has in place. Please fill in what you can; Verdant Equanim verifies by phone or by email from your organization's own domain before anything is posted.
+
+County: ${countyName}
+Priority this addresses: ${measureQ || ""}
+${opts}
+Intervention or program:
+Organization that runs it (by seat type: hospital, clinic, health department, school, Tribal Nation, church, nonprofit, Extension, county, other):
+Since when (year):
+Who we can contact to verify (name, role, phone or email):
+Anything else:
+`);
+}
+function gradeClass(g){ const s = (g||"").toLowerCase(); if (/against|not recommended/.test(s)) return "warn"; if (/insufficient|low|very low|uncertain|unclear/.test(s)) return "weak"; return ""; }
+function wwFor(mid){ return (WW.entries||[]).filter(e => (e.measures||[]).includes(mid)); }
+function plusOneYear(iso){ const d = new Date(iso + "T00:00:00"); d.setFullYear(d.getFullYear()+1); return d; }
+function fmtDate(d){ return d.toLocaleDateString("en-US", { year:"numeric", month:"long", day:"numeric" }); }
+function topPriorities(id){
+  const cdc = cdcRanked(id), chr = chrRanked(id);
+  const byId = {}; cdc.concat(chr).forEach(r => byId[r.id] = r);
+  const picked = [], seen = new Set();
+  // 1. topics where both public sources put the county in the top quarter
+  Object.entries(PUBPAIR).forEach(([a,b]) => { const ra = byId[a], rb = byId[b]; if (ra && rb && ra.q25 && rb.q25) { picked.push({ lead: ra.rank <= rb.rank ? ra : rb, pair: [ra, rb], agree: true }); seen.add(a); seen.add(b); } });
+  picked.sort((x,y) => (x.lead.rank/x.lead.n) - (y.lead.rank/y.lead.n));
+  // 2. then the rest of the top quarter, strongest first
+  cdc.concat(chr).filter(r => r.q25 && !seen.has(r.id)).sort((a,b) => (a.rank/a.n) - (b.rank/b.n)).forEach(r => { if (picked.length >= 5) return; const twin = PUBPAIR[r.id] || Object.keys(PUBPAIR).find(k => PUBPAIR[k] === r.id); if (twin && seen.has(twin)) return; picked.push({ lead: r, pair: [r], agree: false }); seen.add(r.id); if (twin) seen.add(twin); });
+  return picked.slice(0,5);
+}
+function wwItemHtml(w){
+  return `<div class="wwi"><div class="nm">${esc(w.intervention)}</div><div><span class="gr ${gradeClass(w.grade)}">${esc(w.grade)}</span><span class="by">${esc(w.body)}${w.year ? " · " + esc(w.year) : ""}${w.setting ? " · " + esc(w.setting) : ""}</span></div><div class="fd">${esc(w.finding)}</div><div class="by"><a href="${esc(w.url)}" target="_blank" rel="noopener">Source page</a>${w.checked ? " · checked " + esc(w.checked) : ""}</div></div>`;
+}
+function showChain(id){
+  const el = document.getElementById("chainBody"); if (!el) return;
+  document.getElementById("chainName").textContent = names[id] + " County";
+  const inv = (INV.counties||{})[id] || {};
+  const live = inv.live_since || null;
+  const gapOpen = live ? (new Date() >= plusOneYear(live)) : false;
+  const pri = topPriorities(id);
+  if (!pri.length) { el.innerHTML = `<div class="pstep"><p class="def">${names[id]} County is not in the top quarter of the state on any public measure. Its county priorities list above still shows where it sits on every measure.</p></div>`; }
+  else el.innerHTML = pri.map(p => {
+    const r = p.lead; const mids = p.pair.map(x => x.id);
+    const cid = catFor(r.id); const cat = catById[cid]; const nres = RL.entries.filter(e => e.category === cid).length;
+    let ww = []; mids.forEach(m => wwFor(m).forEach(w => { if (!ww.includes(w)) ww.push(w); }));
+    const invRows = (inv.entries||[]).filter(e => (e.measures||[]).some(m => mids.includes(m)) || (e.interventions||[]).some(n => ww.some(w => w.id === n)));
+    const rankTxt = p.pair.map(x => `${x.chr ? "County Health Rankings" : "CDC PLACES"} ${x.rank} of ${x.n}`).join(" · ");
+    // step 3: what works (partner preview until the governance board's reviewer signs off)
+    let s3;
+    if (!partner) s3 = `<div class="step locked"><h5>3 · What works</h5><p>Partner preview. Graded interventions for this priority open with partner access until the data governance board's reviewer has signed off on the shelf.</p><a class="reqlink" href="${accessMail()}">Request partner access ›</a></div>`;
+    else if (!WW.entries || !WW.entries.length) s3 = `<div class="step"><h5>3 · What works</h5><p class="gapwait">Loading the graded interventions.</p></div>`;
+    else if (!ww.length) s3 = `<div class="step"><h5>3 · What works</h5><p class="gapwait">None of the three grading bodies has a finding on this measure yet. That is recorded as a gap in the evidence, not filled.</p></div>`;
+    else s3 = `<div class="step"><h5>3 · What works <span class="n">${ww.length} graded</span></h5><div class="ww">${ww.map(wwItemHtml).join("")}</div></div>`;
+    // step 4: in place
+    const s4 = `<div class="step"><h5>4 · In place in ${esc(names[id])} County</h5>${invRows.length ? `<div class="inv">${invRows.map(e => `<div><b>${esc(e.intervention)}</b> · ${esc(e.org_type||"")}${e.since ? " · since " + esc(e.since) : ""}${e.verified ? " · verified " + esc(e.verified) : ""}</div>`).join("")}</div>` : `<div class="inv"><span class="none">Not yet reported.</span></div>`}<a class="mail" href="${inventoryMail(names[id], r.q, partner ? ww : [])}">Report what ${esc(names[id])} County has in place ›</a></div>`;
+    // step 5: the gap
+    let s5;
+    if (!live) s5 = `<div class="step"><h5>5 · The gap</h5><p class="gapwait">Opens one year after ${esc(names[id])} County's HeadWater layer goes live. The county's layer is not live yet.</p></div>`;
+    else if (!gapOpen) s5 = `<div class="step"><h5>5 · The gap</h5><p class="gapwait">Opens ${fmtDate(plusOneYear(live))}. ${esc(names[id])} County's HeadWater layer went live ${fmtDate(new Date(live + "T00:00:00"))}.</p></div>`;
+    else {
+      const have = new Set(invRows.flatMap(e => e.interventions||[]));
+      const missing = ww.filter(w => !have.has(w.id) && !/against|insufficient/i.test(w.grade||""));
+      s5 = `<div class="step"><h5>5 · The gap <span class="n">${missing.length} not yet in place</span></h5>${missing.length ? `<div class="inv">${missing.map(w => `<div>${esc(w.intervention)} <span class="n">${esc(w.grade)}</span></div>`).join("")}</div>` : `<p>Every graded intervention for this priority has been reported in place.</p>`}</div>`;
+    }
+    return `<div class="pstep">
+      <div class="ptitle"><b>${esc(r.q)}</b><span class="rk">${rankTxt}</span>${p.agree ? `<span class="tag">two public sources</span>` : ""}</div>
+      <div class="steps">
+        <div class="step"><h5>1 · The problem here</h5><p>${esc(names[id])} County: ${r.fmt(r.v)}, state median ${r.fmt(r.med)} (${r.chr ? "County Health Rankings 2025" : "CDC PLACES 2023"}). Rank ${r.rank} of ${r.n}, where 1 is most concern.</p></div>
+        <div class="step"><h5>2 · Why it matters <span class="n">${nres} sources</span></h5><p>${esc(cat ? cat.name : "")}.</p><a href="../research/#${cid}">Research Library shelf ›</a></div>
+        ${s3}${s4}
+      </div>
+      <div class="steps" style="grid-template-columns:1fr">${s5}</div>
+    </div>`;
+  }).join("");
+  const nInv = (inv.entries||[]).length;
+  document.getElementById("chainFoot").innerHTML = `Priorities are the topics where ${esc(names[id])} County is in the top quarter of the state, two-source agreement first. ${live ? `HeadWater layer live since ${fmtDate(new Date(live+"T00:00:00"))}.` : "HeadWater layer not yet live for this county."} ${nInv} reported item${nInv===1?"":"s"} in place. Reports are verified before posting; nothing here is a judgment of the county, and the priority call belongs to the county and the data governance board. <a href="../research/#role=grant_writer">Write about this county: open the Research Library as a grant writer ›</a>`;
+}
+Promise.all([
+  fetch("../data/whatworks.json").then(r => r.ok ? r.json() : { entries: [] }).catch(() => ({ entries: [] })),
+  fetch("../data/inventory.json").then(r => r.ok ? r.json() : { counties: {} }).catch(() => ({ counties: {} }))
+]).then(([w, i]) => { WW = w || { entries: [] }; INV = i || { counties: {} }; showChain(selected); });
+["reqAccess","reqAccessTop"].forEach(k => { const a = document.getElementById(k); if (a) a.href = accessMail(); });
+const _showPriorities = showPriorities; showPriorities = function(id){ _showPriorities(id); showChain(id); };
 function setMeasure(id){ current = id; try { localStorage.setItem("nsa-measure2", id); } catch(e){} render(); }
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
 new MutationObserver(render).observe(document.documentElement, { attributes:true, attributeFilter:["data-theme"] });

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Preview of the HeadWater results screen: your picture by area in plain words, what the research says, what works, and what your county is doing.">
+<title>Your HeadWater results · Verdant Equanim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F5F6F0; --panel:#FFFFFF; --ink:#1B2420; --muted:#5A6760; --line:#D8DDD3; --soft:#ECEFE6;
+  --accent:#256B4B; --accent-ink:#FFFFFF; --survey:#A8601A; --survey-soft:#F6E9D9;
+  --steady:#256B4B; --mixed:#A8601A; --strained:#8C2F2F; --strained-soft:#F5E3E3;
+  --display:"Bitter",Georgia,serif; --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ color-scheme:dark; --bg:#101512; --panel:#171E1A; --ink:#E6ECE7; --muted:#9AA8A0; --line:#2B3630; --soft:#1E2722; --accent:#7CC58E; --accent-ink:#0E1511; --survey:#E3A559; --survey-soft:#2A2117; --steady:#7CC58E; --mixed:#E3A559; --strained:#E08A8A; --strained-soft:#2A1A1A; } }
+:root[data-theme="dark"]{ color-scheme:dark; --bg:#101512; --panel:#171E1A; --ink:#E6ECE7; --muted:#9AA8A0; --line:#2B3630; --soft:#1E2722; --accent:#7CC58E; --accent-ink:#0E1511; --survey:#E3A559; --survey-soft:#2A2117; --steady:#7CC58E; --mixed:#E3A559; --strained:#E08A8A; --strained-soft:#2A1A1A; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+.wrap{max-width:860px;margin:0 auto;display:grid;gap:16px}
+a{color:var(--accent)}
+h1{font:700 30px/1.15 var(--display);margin:0}
+h2{font:700 20px/1.2 var(--display);margin:0 0 6px}
+h3{font:700 16px/1.25 var(--display);margin:0 0 4px}
+.eyebrow{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pill.preview{border-color:var(--survey);color:var(--survey);background:var(--survey-soft)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.lede{color:var(--muted);margin:6px 0 0;max-width:70ch}
+.note{background:var(--survey-soft);border:1px solid var(--survey);border-radius:10px;padding:10px 14px;font-size:14px}
+.note b{color:var(--survey)}
+form .grp{border:0;padding:0;margin:0 0 18px}
+form legend{font:700 16px var(--display);padding:0;margin-bottom:4px}
+.q{display:grid;gap:4px;margin:10px 0}
+.q label{font-size:14px}
+.q select,.q input{font:14px var(--body);padding:8px 10px;border:1px solid var(--line);border-radius:7px;background:var(--panel);color:var(--ink);max-width:100%}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+button{font:600 14px var(--body);padding:10px 16px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer}
+button.ghost{background:transparent;color:var(--accent)}
+.hint{color:var(--muted);font-size:13px}
+.areas{display:grid;gap:14px}
+.area{border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:8px;border-left-width:6px}
+.area.steady{border-left-color:var(--steady)} .area.mixed{border-left-color:var(--mixed)} .area.strained{border-left-color:var(--strained)}
+.areahead{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.band{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.steady .band{color:var(--steady)} .mixed .band{color:var(--mixed)} .strained .band{color:var(--strained)}
+.bar{height:8px;background:var(--soft);border-radius:999px;position:relative;overflow:hidden}
+.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:var(--accent)}
+.strained .bar i{background:var(--strained)} .mixed .bar i{background:var(--mixed)}
+.area p{margin:0}
+.area .sub{color:var(--muted);font-size:13px}
+details{border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;font-weight:600;font-size:14px}
+.ww{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px}
+.ww li{background:var(--soft);border-radius:8px;padding:8px 10px;font-size:14px}
+.ww b{display:block}
+.ww .g{font:500 11px var(--mono);color:var(--muted)}
+.links{display:flex;gap:12px;flex-wrap:wrap;font-size:14px}
+.locked{border:1px dashed var(--line);border-radius:10px;padding:14px 16px;color:var(--muted);display:grid;gap:6px}
+.locked b{color:var(--ink)}
+.cmp{font-size:13px;color:var(--muted)}
+.cmp .up{color:var(--steady)} .cmp .down{color:var(--strained)}
+.help{display:grid;gap:6px}
+.help .big{font:700 22px/1.2 var(--display)}
+footer{color:var(--muted);font-size:13px;display:flex;gap:14px;flex-wrap:wrap}
+.hidden{display:none}
+@media (max-width:600px){ h1{font-size:25px} .panel{padding:14px 15px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><span>Verdant Equanim, LLC</span><span class="pill preview">Preview · nothing here is saved</span><span class="pill">HeadWater</span></div>
+    <h1>Your HeadWater results</h1>
+    <p class="lede">The picture by area, in plain words. No single number yet, no labels. Where an area is strained, you see what the research says, what has been shown to work, and what your county is doing about it.</p>
+  </header>
+
+  <div class="note"><b>This is a preview of the screen a person will see at the end of the survey.</b> It scores the same way the real one will. Answer the questions below to try it, or arrive here from the survey with your scores already filled in. Nothing you enter is sent anywhere.</div>
+
+  <section class="panel" id="formPanel">
+    <h2>Try it</h2>
+    <p class="hint">Nine of the survey's questions, the ones that make up the four areas. Each takes a few seconds.</p>
+    <form id="f">
+      <fieldset class="grp">
+        <legend>Money, work and getting around</legend>
+        <div class="q"><label for="q09">How steady is your household's money situation right now?</label>
+          <select id="q09" name="q09"><option value="">Choose one</option><option value="1">Very unsteady</option><option value="2">Somewhat unsteady</option><option value="3">In between</option><option value="4">Fairly steady</option><option value="5">Very steady</option></select></div>
+        <div class="q"><label for="q16">How secure do you feel about your job or income?</label>
+          <select id="q16" name="q16"><option value="">Choose one</option><option value="1">Not at all secure</option><option value="2">A little secure</option><option value="3">Somewhat secure</option><option value="4">Mostly secure</option><option value="5">Very secure</option></select></div>
+        <div class="q"><label for="q11">How easy is it for you to get where you need to go?</label>
+          <select id="q11" name="q11"><option value="">Choose one</option><option value="1">Very hard</option><option value="2">Hard</option><option value="3">In between</option><option value="4">Easy</option><option value="5">Very easy</option></select></div>
+      </fieldset>
+      <fieldset class="grp">
+        <legend>Sleep</legend>
+        <div class="q"><label for="q53">Over the past 7 days, how would you rate your sleep?</label>
+          <select id="q53" name="q53"><option value="">Choose one</option><option value="1">Very poor</option><option value="2">Poor</option><option value="3">Fair</option><option value="4">Good</option><option value="5">Very good</option></select></div>
+        <div class="q"><label for="q24">How regular are your sleep and wake times?</label>
+          <select id="q24" name="q24"><option value="">Choose one</option><option value="1">All over the place</option><option value="2">Not very regular</option><option value="3">Somewhat regular</option><option value="4">Mostly regular</option><option value="5">Very regular</option></select></div>
+      </fieldset>
+      <fieldset class="grp">
+        <legend>People around you</legend>
+        <div class="q"><label for="q27">There are people in my life who care about me and support me.</label>
+          <select id="q27" name="q27"><option value="">Choose one</option><option value="1">Strongly disagree</option><option value="2">Disagree</option><option value="3">Neither</option><option value="4">Agree</option><option value="5">Strongly agree</option></select></div>
+        <div class="q"><label for="q48">If you needed help in your community, how confident are you that you could find it?</label>
+          <select id="q48" name="q48"><option value="">Choose one</option><option value="1">Not at all confident</option><option value="2">A little confident</option><option value="3">Somewhat confident</option><option value="4">Confident</option><option value="5">Very confident</option></select></div>
+        <div class="q"><label for="q51">How often do you have someone to talk to when you need it?</label>
+          <select id="q51" name="q51"><option value="">Choose one</option><option value="1">Never</option><option value="2">Rarely</option><option value="3">Sometimes</option><option value="4">Often</option><option value="5">Always</option></select></div>
+      </fieldset>
+      <fieldset class="grp">
+        <legend>How you have been feeling</legend>
+        <div class="q"><label for="q22">On a scale of 1 to 10, how stressed have you felt over the past month?</label>
+          <select id="q22" name="q22"><option value="">Choose one</option><option value="1">1 · hardly at all</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10 · as stressed as I can imagine</option></select></div>
+        <div class="q"><label for="q38">Over the past two weeks, how often have you had little interest or pleasure in doing things?</label>
+          <select id="q38" name="q38"><option value="">Choose one</option><option value="1">Not at all</option><option value="2">A few days</option><option value="3">About half the days</option><option value="4">Most days</option><option value="5">Nearly every day</option></select></div>
+        <div class="q"><label for="q39">Over the past two weeks, how often have you felt nervous, anxious or on edge?</label>
+          <select id="q39" name="q39"><option value="">Choose one</option><option value="1">Not at all</option><option value="2">A few days</option><option value="3">About half the days</option><option value="4">Most days</option><option value="5">Nearly every day</option></select></div>
+      </fieldset>
+      <fieldset class="grp">
+        <legend>Where you live</legend>
+        <div class="q"><label for="county">Your county</label><select id="county" name="county"><option value="">Choose a county</option></select></div>
+      </fieldset>
+      <div class="row"><button type="submit">Show my results</button><button type="button" class="ghost" id="clear">Start over</button><span class="hint">You can leave questions blank. An area needs at least two answers to show.</span></div>
+    </form>
+  </section>
+
+  <section class="panel hidden" id="results">
+    <div class="eyebrow"><span id="resDate"></span><span id="resCounty"></span></div>
+    <h2>Your picture by area</h2>
+    <p class="hint">Each area is scored 0 to 100 from your own answers to its questions. Higher means steadier, better rested, better supported. These are descriptions, not diagnoses. The bands are first drafts and the survey science reviewer sets the final cut points.</p>
+    <div class="areas" id="areas"></div>
+
+    <h2 style="margin-top:18px">How you have been feeling</h2>
+    <p class="hint">These three are reported one at a time on purpose. In the March test they did not hold together well enough to combine, so combining them would invent a number. Each one on its own is a fair signal.</p>
+    <div class="areas" id="indicators"></div>
+
+    <div class="locked" id="composite" style="margin-top:18px">
+      <b>One combined HeadWater score</b>
+      <span>This space is reserved. A single score appears here once each area holds a reliability of .70 or better in the rural sample and the survey science reviewer turns it on. Until then a combined number would promise more than the data can carry, so we do not show one.</span>
+    </div>
+
+    <div class="panel" style="margin-top:18px;padding:14px 16px;background:var(--soft)" id="countyPanel">
+      <h3 id="countyHead">Your county</h3>
+      <p class="sub" id="countyBody">Pick a county above to see what it ranks high on, what works for those problems, and what is already in place there.</p>
+      <div class="links" id="countyLinks"></div>
+    </div>
+
+    <div class="help panel" style="margin-top:18px;padding:14px 16px">
+      <h3>If today is hard</h3>
+      <div class="big">Call or text 988</div>
+      <p class="sub" style="margin:0">The Suicide and Crisis Lifeline, any hour, for any kind of crisis, not only thoughts of suicide. Free and confidential.</p>
+    </div>
+
+    <div class="row" style="margin-top:14px">
+      <button type="button" id="save">Save on this device</button>
+      <button type="button" class="ghost" id="again">Change my answers</button>
+      <span class="cmp" id="cmp"></span>
+    </div>
+    <p class="hint" style="margin-top:10px">Saving keeps a copy only in this browser so you can compare in about 90 days. Nothing leaves your device. The real screen will offer a text reminder instead.</p>
+  </section>
+
+  <footer>
+    <a href="../">Verdant Equanim</a>
+    <a href="../atlas/">Nebraska Stress Atlas</a>
+    <a href="../research/">Research Library</a>
+    <span>Scoring follows the HeadWater Scoring Specification v1.1 (mean of available items, at least two per area).</span>
+  </footer>
+</div>
+
+<script>
+// ---------- areas (Scoring Spec v1.1) ----------
+const AREAS = [
+  { id:"stability", name:"Money, work and getting around", items:["q09","q16","q11"], min:2, cat:"money",
+    measures:["HOUSINSECU","chr_sevhouse","chr_unemp","chr_income","chr_costburden","SHUTUTILITY"],
+    words:{ steady:"Your money, work and transportation feel steady right now. That is the single strongest protector against chronic stress in the research, so this is a real asset.",
+            mixed:"Some of this is steady and some is not. Money and work strain tends to show up in sleep and mood before people notice it, so it is worth watching.",
+            strained:"Money, work or getting around is hard for you right now. This is the area most tied to long term stress load in the research, and it is also the one where community programs make the most difference." } },
+  { id:"sleep", name:"Sleep", items:["q53","q24"], min:2, cat:"sleep",
+    measures:["SLEEP","chr_sleep"],
+    words:{ steady:"You are sleeping well and on a regular rhythm. Sleep is where stress is repaired, so this protects everything else on this page.",
+            mixed:"Your sleep is uneven. Regular sleep and wake times are the part people can change first, and the research on that is strong.",
+            strained:"Sleep is not working for you right now. Short or broken sleep raises stress hormones and lowers the ability to cope the next day, so this is often the first thing to address." } },
+  { id:"support", name:"People around you", items:["q27","q48","q51"], min:2, cat:"social",
+    measures:["LONELINESS","EMOTIONSPT","chr_support"],
+    words:{ steady:"You have people who care, someone to talk to, and confidence you could find help. That buffers stress more than almost anything else.",
+            mixed:"You have some support but not always when you need it. One more person you can call changes this picture.",
+            strained:"You are carrying this with too little support. Loneliness has health effects comparable to smoking in large studies. It is also one of the most fixable things on this page, and your county has people whose job this is." } }
+];
+const INDICATORS = [
+  { id:"q22", name:"Stress over the past month", scale:10,
+    bands:[[1,3,"low","You rated your stress low this month."],[4,6,"moderate","You rated your stress in the middle this month. Most Nebraskans in the March test landed here."],[7,10,"high","You rated your stress high this month. A single rating like this is a fair signal, and it is worth looking at which area below is driving it."]] },
+  { id:"q38", name:"Interest or pleasure in things", scale:5,
+    bands:[[1,2,"low","Little or no loss of interest."],[3,3,"moderate","About half the days you have had little interest in things. That is worth a conversation with someone you trust or your doctor."],[4,5,"high","Most days you have had little interest or pleasure in things. This one question is not a diagnosis, but it is the question doctors ask first. Please talk to someone about it."]] },
+  { id:"q39", name:"Feeling nervous or on edge", scale:5,
+    bands:[[1,2,"low","Little or no anxiety."],[3,3,"moderate","Anxious about half the days. Common, and the sleep and support areas above are usually where it starts."],[4,5,"high","Anxious most days. Again, one question is not a diagnosis, and it is a signal worth acting on. The 988 line below is for this too."]] }
+];
+const CAT_LABEL = { money:"Money, work and health", sleep:"Sleep", social:"Social connection and loneliness", mood:"Mood and anxiety" };
+const COMPOSITE_ON = false; // flipped by the survey science reviewer, not by us
+
+// ---------- data ----------
+let WW = null, COUNTIES = {};
+const wwReady = fetch("../data/whatworks.json").then(r => r.json()).then(j => { WW = j.entries || []; }).catch(() => { WW = []; });
+const cReady = fetch("../atlas/chr2025.json").then(r => r.json()).then(j => {
+  const sel = document.getElementById("county");
+  const rows = Object.entries(j.counties).map(([id,c]) => [id, c._name]).sort((a,b) => a[1].localeCompare(b[1]));
+  rows.forEach(([id,n]) => { COUNTIES[id] = n; const o = document.createElement("option"); o.value = id; o.textContent = n; sel.appendChild(o); });
+  const pre = params().county; if (pre && COUNTIES[pre]) sel.value = pre;
+}).catch(() => {});
+
+function params(){ const p = {}; new URLSearchParams(location.search).forEach((v,k) => p[k] = v); return p; }
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+// ---------- scoring ----------
+function to100(mean, top){ return Math.round((mean - 1) / (top - 1) * 100); }
+function scoreArea(a, ans){
+  const vals = a.items.map(k => Number(ans[k])).filter(v => v >= 1);
+  if (vals.length < a.min) return null;
+  const mean = vals.reduce((s,v) => s + v, 0) / vals.length;
+  return { score: to100(mean, 5), n: vals.length, of: a.items.length };
+}
+function bandFor(score){ return score >= 70 ? "steady" : score >= 40 ? "mixed" : "strained"; }
+const BAND_WORD = { steady:"Steady", mixed:"Mixed", strained:"Strained" };
+
+function wwFor(measures, prefer){
+  if (!WW) return [];
+  // For a person reading about themselves: leave off entries whose own grading body calls the evidence insufficient, low or very low,
+  // entries aimed at children, schools or shift work, and policy entries a person cannot act on alone. The Atlas county view shows the full shelf.
+  const weak = /insufficient|very low|low quality|low certainty|grade i\b|no grade/i, notme = /school|pediatric|adolescen|youth|shift work|legislation|policy/i;
+  const seen = new Set(), out = [];
+  WW.forEach(e => {
+    const first = String(e.grade).split(";")[0];
+    if (e.measures.some(m => measures.includes(m)) && !seen.has(e.id) && !weak.test(first) && !notme.test(e.setting + " " + e.intervention)) { seen.add(e.id); out.push(e); }
+  });
+  const rank = e => { const i = (prefer || []).findIndex(k => e.id.startsWith(k)); if (i >= 0) return i; const g = e.grade; return 10 + (/grade a|strong|recommended/i.test(g) ? 0 : /grade b|moderate|sufficient/i.test(g) ? 1 : 2); };
+  return out.sort((x,y) => rank(x) - rank(y)).slice(0, 3);
+}
+const MOOD_MEASURES = ["MHLTH","DEPRESSION","chr_mentdays","chr_mentdistress"];
+const MOOD_PREFER = ["exercise_for_depression", "screening_adults_for_depression", "collaborative_care_for_depression_community"];
+function wwHtml(list){
+  if (!list.length) return `<p class="sub">The What works shelf was built for counties and programs first, and it does not yet hold a graded intervention a person can act on alone for this area. That shelf is the next thing added, with the same rule: graded by the Community Preventive Services Task Force, the U.S. Preventive Services Task Force or Cochrane, or it does not go on.</p>`;
+  return `<ul class="ww">` + list.map(e => `<li><b>${esc(e.intervention)}</b><span class="g">${esc(e.body)} · ${esc(e.grade)} · ${esc(e.year)}</span> ${esc(e.finding)} <a href="${esc(e.url)}" target="_blank" rel="noopener">Source ›</a></li>`).join("") + `</ul>`;
+}
+
+function render(ans){
+  const areasEl = document.getElementById("areas"); areasEl.innerHTML = "";
+  let shown = 0;
+  AREAS.forEach(a => {
+    const r = scoreArea(a, ans);
+    if (!r) { areasEl.insertAdjacentHTML("beforeend", `<div class="area"><div class="areahead"><h3>${a.name}</h3><span class="band">Not enough answers</span></div><p class="sub">This area needs at least ${a.min} of its ${a.items.length} questions answered.</p></div>`); return; }
+    shown++;
+    const b = bandFor(r.score);
+    areasEl.insertAdjacentHTML("beforeend", `
+      <div class="area ${b}">
+        <div class="areahead"><h3>${a.name}</h3><span class="band">${BAND_WORD[b]} · ${r.score} of 100</span></div>
+        <div class="bar"><i style="width:${r.score}%"></i></div>
+        <p>${a.words[b]}</p>
+        <p class="sub">From ${r.n} of ${a.items.length} questions. In the March test this area held together at ${a.id==="stability"?".79":a.id==="support"?".77":".65"} reliability; rural validation is in progress.</p>
+        <details ${b==="strained"?"open":""}><summary>What the research says, and what works</summary>
+          <p class="sub" style="margin-top:6px"><a href="../research/#${a.cat}">Research Library: ${CAT_LABEL[a.cat]} ›</a> Studies that met the library's standard, each one read and checked.</p>
+          ${wwHtml(wwFor(a.measures))}
+          <p class="sub">Interventions graded by the Community Preventive Services Task Force, the U.S. Preventive Services Task Force or Cochrane. The shelf is under review by the data governance board before it is called final.</p>
+        </details>
+      </div>`);
+  });
+
+  const indEl = document.getElementById("indicators"); indEl.innerHTML = "";
+  INDICATORS.forEach(ind => {
+    const v = Number(ans[ind.id]);
+    if (!(v >= 1)) { indEl.insertAdjacentHTML("beforeend", `<div class="area"><div class="areahead"><h3>${ind.name}</h3><span class="band">Not answered</span></div></div>`); return; }
+    const band = ind.bands.find(([lo,hi]) => v >= lo && v <= hi);
+    const cls = band[2] === "low" ? "steady" : band[2] === "moderate" ? "mixed" : "strained";
+    indEl.insertAdjacentHTML("beforeend", `
+      <div class="area ${cls}">
+        <div class="areahead"><h3>${ind.name}</h3><span class="band">${v} of ${ind.scale}</span></div>
+        <div class="bar"><i style="width:${Math.round((v-1)/(ind.scale-1)*100)}%"></i></div>
+        <p>${band[3]}</p>
+      </div>`);
+  });
+  if (INDICATORS.some(ind => { const v = Number(ans[ind.id]); const b = ind.bands.find(([lo,hi]) => v >= lo && v <= hi); return b && b[2] !== "low"; })) {
+    indEl.insertAdjacentHTML("beforeend", `<div class="area"><h3>What the research says, and what works</h3>
+      <p class="sub"><a href="../research/#mood">Research Library: Mood and anxiety ›</a> Studies that met the library's standard, each one read and checked.</p>
+      ${wwHtml(wwFor(MOOD_MEASURES, MOOD_PREFER))}
+      <p class="sub">Graded by the Community Preventive Services Task Force, the U.S. Preventive Services Task Force or Cochrane. Shelf under review by the data governance board.</p></div>`);
+  }
+
+  document.getElementById("composite").classList.toggle("hidden", COMPOSITE_ON);
+
+  const cid = ans.county;
+  const ch = document.getElementById("countyHead"), cb = document.getElementById("countyBody"), cl = document.getElementById("countyLinks");
+  if (cid && COUNTIES[cid]) {
+    ch.textContent = `${COUNTIES[cid]} County`;
+    cb.textContent = `The Atlas ranks ${COUNTIES[cid]} County against the other 92 on public health measures, then shows for its top concerns what works, what is already in place, and who is working on it. That is the same page every hospital, health department and school in your county sees.`;
+    cl.innerHTML = `<a href="../atlas/#county=${cid}">Open ${esc(COUNTIES[cid])} County in the Atlas ›</a><a href="../research/#role=individual">Research Library for individuals ›</a>`;
+    document.getElementById("resCounty").textContent = `${COUNTIES[cid]} County`;
+  } else {
+    ch.textContent = "Your county"; cb.textContent = "Pick a county above to see what it ranks high on, what works for those problems, and what is already in place there."; cl.innerHTML = `<a href="../atlas/">Open the Atlas ›</a>`;
+    document.getElementById("resCounty").textContent = "";
+  }
+  document.getElementById("resDate").textContent = new Date().toLocaleDateString("en-US", { year:"numeric", month:"long", day:"numeric" });
+
+  // compare with a saved copy on this device
+  const cmp = document.getElementById("cmp"); cmp.innerHTML = "";
+  try {
+    const prev = JSON.parse(localStorage.getItem("hw-results") || "null");
+    if (prev && prev.scores) {
+      const parts = [];
+      AREAS.forEach(a => { const now = scoreArea(a, ans), was = prev.scores[a.id]; if (now && was != null) { const d = now.score - was; parts.push(`${a.name.split(",")[0]} <span class="${d>=0?"up":"down"}">${d>=0?"+":""}${d}</span>`); } });
+      if (parts.length) cmp.innerHTML = `Since ${new Date(prev.at).toLocaleDateString("en-US",{month:"short",day:"numeric"})}: ` + parts.join(" · ");
+    }
+  } catch(e) {}
+
+  document.getElementById("results").classList.remove("hidden");
+  document.getElementById("formPanel").classList.toggle("hidden", shown > 0);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  return shown;
+}
+
+function readForm(){ const ans = {}; new FormData(document.getElementById("f")).forEach((v,k) => { if (v !== "") ans[k] = v; }); return ans; }
+let CURRENT = null;
+document.getElementById("f").addEventListener("submit", e => { e.preventDefault(); CURRENT = readForm(); render(CURRENT); });
+document.getElementById("again").addEventListener("click", () => { document.getElementById("formPanel").classList.remove("hidden"); document.getElementById("results").classList.add("hidden"); window.scrollTo({top:0}); });
+document.getElementById("clear").addEventListener("click", () => { document.getElementById("f").reset(); });
+document.getElementById("save").addEventListener("click", () => {
+  if (!CURRENT) return;
+  const scores = {}; AREAS.forEach(a => { const r = scoreArea(a, CURRENT); if (r) scores[a.id] = r.score; });
+  try { localStorage.setItem("hw-results", JSON.stringify({ at: Date.now(), scores })); document.getElementById("save").textContent = "Saved on this device"; } catch(e) { document.getElementById("save").textContent = "This browser would not save it"; }
+});
+
+// ---------- arriving from the survey with scores in the address ----------
+// The real survey will hand off like this: /results/?q09=4&q16=3&q11=5&q53=2&q24=3&q27=4&q48=3&q51=4&q22=7&q38=2&q39=3&county=31031
+(function(){
+  const p = params();
+  const keys = ["q09","q16","q11","q53","q24","q27","q48","q51","q22","q38","q39"];
+  if (keys.some(k => p[k])) {
+    keys.forEach(k => { const el = document.getElementById(k); if (el && p[k]) el.value = p[k]; });
+    CURRENT = {}; keys.forEach(k => { if (p[k]) CURRENT[k] = p[k]; }); if (p.county) CURRENT.county = p.county;
+    Promise.all([wwReady, cReady]).then(() => render(CURRENT));
+  }
+})();
+</script>
+</body></html>

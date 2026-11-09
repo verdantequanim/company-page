@@ -74,14 +74,14 @@ footer{color:var(--muted);font-size:13px;display:flex;gap:14px;flex-wrap:wrap}
   <header>
     <div class="eyebrow"><span>Verdant Equanim, LLC</span><span class="pill preview">Preview · nothing here is saved</span><span class="pill">HeadWater</span></div>
     <h1>Your HeadWater results</h1>
-    <p class="lede">The picture by area, in plain words. No single number yet, no labels. Where an area is strained, you see what the research says, what has been shown to work, and what your county is doing about it.</p>
+    <p class="lede">The picture by area, in plain words, and one overall number underneath. No labels. Where an area is strained, you see what the research says, what has been shown to work, and what your county is doing about it.</p>
   </header>
 
   <div class="note"><b>This is a preview of the screen a person will see at the end of the survey.</b> It scores the same way the real one will. Answer the questions below to try it, or arrive here from the survey with your scores already filled in. Nothing you enter is sent anywhere.</div>
 
   <section class="panel" id="formPanel">
     <h2>Try it</h2>
-    <p class="hint">Nine of the survey's questions, the ones that make up the four areas. Each takes a few seconds.</p>
+    <p class="hint">Nine of the survey's questions, the ones that make up the three areas and the overall, plus the three feelings questions. Each takes a few seconds.</p>
     <form id="f">
       <fieldset class="grp">
         <legend>Money, work and getting around</legend>
@@ -135,10 +135,9 @@ footer{color:var(--muted);font-size:13px;display:flex;gap:14px;flex-wrap:wrap}
     <p class="hint">These three are reported one at a time on purpose. In the March test they did not hold together well enough to combine, so combining them would invent a number. Each one on its own is a fair signal.</p>
     <div class="areas" id="indicators"></div>
 
-    <div class="locked" id="composite" style="margin-top:18px">
-      <b>One combined HeadWater score</b>
-      <span>This space is reserved. A single score appears here once each area holds a reliability of .70 or better in the rural sample and the survey science reviewer turns it on. Until then a combined number would promise more than the data can carry, so we do not show one.</span>
-    </div>
+    <h2 style="margin-top:18px">Overall</h2>
+    <p class="hint">One number that summarizes the three areas above. It is the average of your area scores, 0 to 100, higher is steadier. It is provisional: the three areas are related but distinct, so the areas are the thing to act on and this is the thing to watch over time. The survey science reviewer sets the final method and the cut points.</p>
+    <div class="areas" id="overall"></div>
 
     <div class="panel" style="margin-top:18px;padding:14px 16px;background:var(--soft)" id="countyPanel">
       <h3 id="countyHead">Your county</h3>
@@ -196,7 +195,7 @@ const INDICATORS = [
     bands:[[1,2,"low","Little or no anxiety."],[3,3,"moderate","Anxious about half the days. Common, and the sleep and support areas above are usually where it starts."],[4,5,"high","Anxious most days. Again, one question is not a diagnosis, and it is a signal worth acting on. The 988 line below is for this too."]] }
 ];
 const CAT_LABEL = { money:"Money, work and health", sleep:"Sleep", social:"Social connection and loneliness", mood:"Mood and anxiety" };
-const COMPOSITE_ON = false; // flipped by the survey science reviewer, not by us
+const COMPOSITE_ON = true; // Overall shown as provisional (Jeromie, Nov 9, 2026). The survey science reviewer sets the final method and cut points.
 
 // ---------- data ----------
 let WW = null, COUNTIES = {};
@@ -284,7 +283,31 @@ function render(ans){
       <p class="sub">Graded by the Community Preventive Services Task Force, the U.S. Preventive Services Task Force or Cochrane. Shelf under review by the data governance board.</p></div>`);
   }
 
-  document.getElementById("composite").classList.toggle("hidden", COMPOSITE_ON);
+  const ovEl = document.getElementById("overall"); ovEl.innerHTML = "";
+  const areaScores = AREAS.map(a => ({ a, r: scoreArea(a, ans) })).filter(x => x.r);
+  if (!COMPOSITE_ON) {
+    ovEl.innerHTML = `<div class="locked"><b>One combined HeadWater score</b><span>Reserved until each area holds a reliability of .70 or better in the rural sample and the survey science reviewer turns it on.</span></div>`;
+  } else if (areaScores.length < 2) {
+    ovEl.innerHTML = `<div class="area"><div class="areahead"><h3>Overall</h3><span class="band">Not enough answers</span></div><p class="sub">The overall needs at least two of the three areas.</p></div>`;
+  } else {
+    const ov = Math.round(areaScores.reduce((s,x) => s + x.r.score, 0) / areaScores.length);
+    const b = bandFor(ov);
+    const low = areaScores.slice().sort((x,y) => x.r.score - y.r.score)[0];
+    const words = { steady: "Taken together, the conditions around you are steady. Keep what is working; the area that is lowest is still the one to watch.",
+                    mixed: "Taken together, the conditions around you are mixed. One area is carrying most of the weight, and that is where a change shows up first.",
+                    strained: "Taken together, the conditions around you are strained. That is not a verdict on you. It is a picture of what you are carrying, and the lowest area below is the first place to start." };
+    ovEl.innerHTML = `
+      <div class="area ${b}">
+        <div class="areahead"><h3>Overall</h3><span class="band">${BAND_WORD[b]} · ${ov} of 100 · provisional</span></div>
+        <div class="bar"><i style="width:${ov}%"></i></div>
+        <p>${words[b]}</p>
+        <p class="sub">Average of ${areaScores.length} area${areaScores.length>1?"s":""}: ${areaScores.map(x => `${x.a.name.split(",")[0]} ${x.r.score}`).join(", ")}. The three feelings questions are not included; they are reported one at a time above.</p>
+        <details ${b!=="steady"?"open":""}><summary>Where to start: ${low.a.name}</summary>
+          <p class="sub" style="margin-top:6px">Your lowest area is ${low.a.name.toLowerCase()} at ${low.r.score} of 100. <a href="../research/#${low.a.cat}">Research Library: ${CAT_LABEL[low.a.cat]} ›</a></p>
+          ${wwHtml(wwFor(low.a.measures))}
+        </details>
+      </div>`;
+  }
 
   const cid = ans.county;
   const ch = document.getElementById("countyHead"), cb = document.getElementById("countyBody"), cl = document.getElementById("countyLinks");
@@ -306,6 +329,8 @@ function render(ans){
     if (prev && prev.scores) {
       const parts = [];
       AREAS.forEach(a => { const now = scoreArea(a, ans), was = prev.scores[a.id]; if (now && was != null) { const d = now.score - was; parts.push(`${a.name.split(",")[0]} <span class="${d>=0?"up":"down"}">${d>=0?"+":""}${d}</span>`); } });
+      const nowVals = AREAS.map(a => scoreArea(a, ans)).filter(Boolean).map(r => r.score);
+      if (prev.scores.overall != null && nowVals.length >= 2) { const d = Math.round(nowVals.reduce((x,y) => x + y, 0) / nowVals.length) - prev.scores.overall; parts.push(`Overall <span class="${d>=0?"up":"down"}">${d>=0?"+":""}${d}</span>`); }
       if (parts.length) cmp.innerHTML = `Since ${new Date(prev.at).toLocaleDateString("en-US",{month:"short",day:"numeric"})}: ` + parts.join(" · ");
     }
   } catch(e) {}
@@ -323,7 +348,7 @@ document.getElementById("again").addEventListener("click", () => { document.getE
 document.getElementById("clear").addEventListener("click", () => { document.getElementById("f").reset(); });
 document.getElementById("save").addEventListener("click", () => {
   if (!CURRENT) return;
-  const scores = {}; AREAS.forEach(a => { const r = scoreArea(a, CURRENT); if (r) scores[a.id] = r.score; });
+  const scores = {}; AREAS.forEach(a => { const r = scoreArea(a, CURRENT); if (r) scores[a.id] = r.score; }); const vals = Object.values(scores); if (vals.length >= 2) scores.overall = Math.round(vals.reduce((x,y) => x + y, 0) / vals.length);
   try { localStorage.setItem("hw-results", JSON.stringify({ at: Date.now(), scores })); document.getElementById("save").textContent = "Saved on this device"; } catch(e) { document.getElementById("save").textContent = "This browser would not save it"; }
 });
 

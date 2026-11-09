@@ -1,0 +1,9 @@
+{
+  "name": "County intervention inventory",
+  "owner": "Verdant Equanim, LLC",
+  "version": "0.1",
+  "updated": "2026-11-08",
+  "rule": "A county's gap view (graded interventions not yet in place) opens one year after the day its HeadWater survey layer goes live. Until then the inventory reads 'not yet reported', never 'nothing'. Any county can report what it has at any time and it is added once verified by phone or by email from the organization's own domain. Entries are by seat type, not by named person.",
+  "report_to": "jluginbill@vereq.co",
+  "counties": {}
+}

@@ -1,0 +1,481 @@
+{
+ "name": "Funder shelf",
+ "owner": "Verdant Equanim, LLC",
+ "version": "0.1",
+ "updated": "2026-11-08",
+ "standard": "Each entry is a funding program verified on the program's own page on the date shown: who it says can apply, where, on what cycle. No aggregator sites, no sample language, no grant advice. Partner access only until the review process is in place.",
+ "funders": [
+  {
+   "name": "Nebraska Funding and Opportunities (Rural Health Information Hub)",
+   "sponsor": "Rural Health Information Hub, Center for Rural Health, University of North Dakota, supported by HRSA",
+   "url": "https://www.ruralhealthinfo.org/states/nebraska/funding",
+   "eligibility": "A listing, not a funder. Lists current Nebraska opportunities with sponsor and deadline, browseable nationwide by type, topic and sponsor. Inactive programs are kept because they are often offered again.",
+   "geography": "Nebraska listing; national database",
+   "cycle": "Updated continuously; on Nov 8, 2026 it listed ten Nebraska items including the Nebraska Graduate Trainee Support Program (due Nov 10, 2026) and the Nebraska Loan Repayment Program for Rural Health Professionals (ongoing)",
+   "note": "First stop for every rural role.",
+   "tags": [
+    "hospital",
+    "behavioral_health",
+    "public_health",
+    "education",
+    "tribal",
+    "extension",
+    "community",
+    "agriculture",
+    "research",
+    "rural_health",
+    "federal"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Rural Health Transformation Program (RHTP)",
+   "sponsor": "Nebraska Department of Health and Human Services; federal funder is the Centers for Medicare and Medicaid Services",
+   "url": "https://dhhs.ne.gov/Pages/Rural-Health-Transformation.aspx",
+   "eligibility": "Varies by request for applications and is listed per RFA. Examples on the page: local and tribal health departments, critical access and rural emergency hospitals, federally qualified health centers, individual providers, licensed training agencies, schools in rural or frontier counties, nonprofits, assisted living facilities.",
+   "geography": "Rural Nebraska; the page notes 88 of 93 counties are rural",
+   "cycle": "RFAs posted on the Funding Opportunities section, the timeline PDF and the RHTP dashboard; as of Nov 8, 2026 all posted RFAs show closed and under review",
+   "note": "About $218.5 million to Nebraska for year one of five. Six initiative areas: Food as Medicine; Regionalized Rural Access and Navigation; Rural Workforce Acceleration; eHealth and Mobile Care; Rural Emergency Behavioral Health; Assisted Living Special Needs Incentive Model. Questions: DHHS.RHTP@nebraska.gov.",
+   "tags": [
+    "hospital",
+    "behavioral_health",
+    "public_health",
+    "education",
+    "tribal",
+    "community",
+    "rural_health"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Rural Health Funding Opportunities (Federal Office of Rural Health Policy)",
+   "sponsor": "Health Resources and Services Administration",
+   "url": "https://www.hrsa.gov/rural-health/funding-opportunities/funding.html",
+   "eligibility": "Not stated on this page; per notice. The page names community programs (rural networks, emergency medical services), state and hospital programs (State Offices of Rural Health, Medicare Rural Hospital Flexibility), and policy research programs.",
+   "geography": "National, rural",
+   "cycle": "Open notices through HRSA Find Funding filtered to FORHP",
+   "note": "Contact forhp@hrsa.gov.",
+   "tags": [
+    "hospital",
+    "behavioral_health",
+    "public_health",
+    "rural_health",
+    "federal"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "How to Apply for a SAMHSA Grant",
+   "sponsor": "Substance Abuse and Mental Health Services Administration",
+   "url": "https://www.samhsa.gov/grants/how-to-apply",
+   "eligibility": "Per notice of funding opportunity. Registrations referenced on the site: SAM.gov, Grants.gov, eRA Commons.",
+   "geography": "National",
+   "cycle": "Current notices and next-year forecasts on the SAMHSA Grants Dashboard",
+   "note": "",
+   "tags": [
+    "behavioral_health",
+    "tribal",
+    "public_health",
+    "federal"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Rural Healthcare Program",
+   "sponsor": "The Leona M. and Harry B. Helmsley Charitable Trust",
+   "url": "https://www.helmsleytrust.org/?p=196",
+   "eligibility": "Not stated on the page. Describes partners in telemedicine, behavioral health (training fellowships, 24/7 telebehavioral teams, a law enforcement and mental health video pilot) and equipment.",
+   "geography": "Nine states including Nebraska",
+   "cycle": "Not stated; contact through the Trust's contact page",
+   "note": "No application instructions on the page.",
+   "tags": [
+    "hospital",
+    "behavioral_health",
+    "rural_health",
+    "foundation"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "How to Apply",
+   "sponsor": "Peter Kiewit Foundation",
+   "url": "https://peterkiewitfoundation.org/how-to-apply/",
+   "eligibility": "Not stated on this page. Priorities: College Access and Success, Youth Development, Economic Development and Opportunity, Quality of Place Amenities, Community Capacity. Process: talk with the team member for the priority, then a request summary, then an invited online application.",
+   "geography": "Not stated on this page; see What We Fund",
+   "cycle": "Not stated",
+   "note": "",
+   "tags": [
+    "community",
+    "education",
+    "foundation"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Grant Opportunities (Nebraska DHHS)",
+   "sponsor": "Nebraska Department of Health and Human Services",
+   "url": "https://dhhs.ne.gov/Pages/Grant-Opportunities.aspx",
+   "eligibility": "Varies by RFA. Non-RHTP items currently posted: Intergenerational Childcare (nursing homes or assisted living facilities; local governments, tribes, higher education, nonprofits and for-profit facilities eligible); SNAP Employment and Training (entities providing job training for low-income adults); NCDD subawards (local governments, Indian tribes, higher education, nonprofits; individuals and for-profits not eligible); Child Care Grants (child care providers); Rural Health Student Loans (Nebraska residents in health programs).",
+   "geography": "Nebraska statewide",
+   "cycle": "Intergenerational Childcare and SNAP E&T accept applications continuously. NCDD RFAs 7571, 7572, 7573 were due October 26, 2026. All RHTP RFAs on the page are marked CLOSED and under review. Stem Cell Research RFA closed 4/26/2026.",
+   "note": "Single DHHS listing page for all RFAs. Each RFA PDF carries its own eligibility and contact. General grant questions go to dhhs.grants@nebraska.gov. Subscribe to GovDelivery for new postings. The NCDD subawards exclude for-profit organizations.",
+   "tags": [
+    "behavioral_health",
+    "community",
+    "hospital",
+    "public_health",
+    "research",
+    "tribal"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Division of Behavioral Health",
+   "sponsor": "Nebraska Department of Health and Human Services",
+   "url": "https://dhhs.ne.gov/Pages/behavioral-health.aspx",
+   "eligibility": "Not stated on page. The Division 'provides funding and oversight' for the public behavioral health system and administers it through six behavioral health regions. One current grant link: Opioid Treatment Infrastructure Cash Fund request for applications.",
+   "geography": "Nebraska statewide, administered through six regions",
+   "cycle": "Not stated",
+   "note": "Most Division funding for community providers flows through contracts with the six Regional Behavioral Health Authorities rather than open statewide grants. Providers should contact their Region. The page links an Opioid Treatment Infrastructure Cash Fund RFA; check that document for eligibility and dates.",
+   "tags": [
+    "behavioral_health",
+    "community",
+    "hospital",
+    "public_health"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Nebraska's 6 Behavioral Health Regions (Regional Administrators list)",
+   "sponsor": "Nebraska DHHS Division of Behavioral Health",
+   "url": "https://dhhs.ne.gov/Behavioral%20Health%20Documents/Nebraska's%206%20Behavioral%20Health%20Regions.pdf",
+   "eligibility": "Not stated on page. Lists the six regions with administrators and websites: Region 1 (Scottsbluff, region1bhs.net), Region 2 (North Platte, r2hs.com), Region 3 (Kearney, region3.net), Region 4 (Norfolk, region4bhs.org), Region 5 (Lincoln, region5systems.net), Region 6 (Omaha, regionsix.com).",
+   "geography": "Nebraska, by region; counties not listed on this document",
+   "cycle": "Not stated",
+   "note": "This DHHS document is a directory, not a funding announcement. Each Region posts its own provider contracting and prevention funding on its own site. County coverage must be confirmed on each Region's website.",
+   "tags": [
+    "behavioral_health",
+    "community",
+    "education",
+    "public_health"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Affiliated Funds",
+   "sponsor": "Nebraska Community Foundation",
+   "url": "https://www.nebcommfound.org/our-network/affiliated-funds/",
+   "eligibility": "Not stated on page. Affiliated funds are community-led funds 'across the state' that invest in their hometowns. Individual fund pages (for example the O'Neill Community Foundation Fund) link local grant applications decided by a volunteer Fund Advisory Committee for 'local worthy causes and projects.'",
+   "geography": "Nebraska statewide, each fund serving its own town or county",
+   "cycle": "Not stated on the network page; set by each local fund",
+   "note": "NCF itself does not run an open statewide grant program for outside organizations. Grants come from individual affiliated funds; find the local fund through the Give page and read its own guidelines. Grant sizes are typically small and local.",
+   "tags": [
+    "agriculture",
+    "community",
+    "education",
+    "extension",
+    "public_health"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Library Connection Grants",
+   "sponsor": "Nebraska Community Foundation",
+   "url": "https://www.nebcommfound.org/library/",
+   "eligibility": "'Funding is available exclusively to funds in the NCF Network who wish to partner with a Greater Nebraska library.' Both an affiliated fund representative and a library representative must complete the application.",
+   "geography": "Greater Nebraska (outside the metro areas)",
+   "cycle": "Applications opened September 15, 2026; funds must be spent by September 1, 2027",
+   "note": "Requests $1,000 to $10,000 with a 1:1 cash match from the affiliated fund. $100,000 total. Three-step inquiry process. Only reachable through an NCF affiliated fund partnering with a public library.",
+   "tags": [
+    "community",
+    "education"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Trailblazer Community Investment Fund",
+   "sponsor": "Nebraska Community Foundation (funded by Tallgrass under a Community Benefits Agreement)",
+   "url": "https://www.nebcommfound.org/trailblazer/",
+   "eligibility": "Early childhood providers (Step Up to Quality participants), nursing homes that accept Medicare and Medicaid, and local food pantries. Must 'be a nonprofit, church, or government entity' located in an eligible county. For-profit nursing homes and assisted living facilities are excluded.",
+   "geography": "26 Nebraska counties along the Trailblazer pipeline: Adams, Banner, Buffalo, Butler, Cass, Clay, Dawson, Fillmore, Frontier, Gage, Gosper, Hall, Hamilton, Johnson, Kearney, Kimball, Lincoln, Merrick, Otoe, Perkins, Phelps, Platte, Polk, Saline, Sarpy, York; plus counties in CO, IA, WY",
+   "cycle": "Annual; no public deadline",
+   "note": "Invitation only. Qualifying organizations 'have already been identified and will be invited.' Grants are $500 to $2,000 per organization, unrestricted. Organizations that qualify but were not invited can email trailblazer@nebcommfound.org.",
+   "tags": [
+    "community"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Operating Grants, Program Grants, Capital Grants",
+   "sponsor": "The Sherwood Foundation",
+   "url": "https://sherwoodfoundation.org/apply/",
+   "eligibility": "Organizations 'closely aligned with our funding priorities and eligibility requirements' are invited to apply after submitting an Inquiry Form. Specific eligibility requirements are not stated on the page.",
+   "geography": "Nebraska (homepage: making the state 'a more equitable place to live, work, learn, and play')",
+   "cycle": "Operating Grants: applications September 1 to 30. Program and Capital Grants: February 1 to 28. Inquiry Form due at least one month before the target window. Deadlines close at noon CST.",
+   "note": "Invitation only. Four steps: Inquiry Form, staff review, possible conversation, invitation. No LOI; the Inquiry Form is the screen. Organizations with an existing Sherwood grant contact their Program Director instead.",
+   "tags": [
+    "behavioral_health",
+    "community",
+    "education",
+    "public_health"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Woods Charitable Fund grants (general cycles and Breakthrough Initiative Grants)",
+   "sponsor": "Woods Charitable Fund, Inc.",
+   "url": "https://woodscharitable.org/apply/",
+   "eligibility": "'Only accepts applications from nonprofit organizations serving Lincoln, Nebraska.' Generally 501(c)(3) organizations with a 509(a)(1), (2) or (3) ruling in good standing with the IRS.",
+   "geography": "Primarily Lincoln, Nebraska; other locations considered only 'in the context of their impact on Lincoln'",
+   "cycle": "Two cycles per year. August cycle: LOI August 15, proposal August 31, decision November. February cycle: LOI February 15, proposal February 28, decision May (timetable page).",
+   "note": "Call or email before submitting anything. LOI first; full application by invitation. First-time applicants should request no more than $10,000. Limitations page excludes 'physical health organizations, medical and scientific research,' 'residential care and medical clinics,' 'programs for individual schools,' capital projects and religious programs. The page name is Woods Charitable Fund, not Foundation.",
+   "tags": [
+    "community",
+    "education"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Community Health Endowment of Lincoln funding (Place Matters priorities and Mental Wellness and Human Connection)",
+   "sponsor": "Community Health Endowment of Lincoln",
+   "url": "https://www.chelincoln.org/whatwedo/funding/what-we-fund.html",
+   "eligibility": "Community organizations 'tax-exempt under Section 501(c)(3)'; 'Government agencies are also eligible for CHE funding.' Must serve Lincoln and the surrounding area.",
+   "geography": "Lincoln, Nebraska and surrounding area (Lancaster County), with priority census tracts from Place Matters 4.0",
+   "cycle": "Not stated on this page; see the Current Funding Cycle page. FAQ: brief eligibility form first, staff respond within five business days, then full application.",
+   "note": "No minimum or maximum grant amount. Indirect capped at 15 percent. Capital and equipment need a dollar-for-dollar match. Mental wellness applications should be non-clinical (mentoring, peer support). For-profits are not listed as eligible.",
+   "tags": [
+    "behavioral_health",
+    "community",
+    "education",
+    "public_health"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Bring Up Nebraska Community Collaboratives",
+   "sponsor": "Nebraska Children and Families Foundation",
+   "url": "https://bringupnebraska.org/who-we-are/collaboratives/community-collaboratives.html",
+   "eligibility": "Not stated on page. Lists 22 community collaboratives and the counties or Tribal Nations each covers (for example Panhandle Partnership, Heartland Family Partners, North Central Collaborative, Southeast Nebraska Collaborative, Winnebago, Omaha Tribe, Santee Sioux Nation).",
+   "geography": "Nebraska, by collaborative service area; most counties covered",
+   "cycle": "Not stated",
+   "note": "No open grant application is posted. Funding to local partners flows through the collaboratives; an organization would approach its local collaborative directly. The foundation's own page (nebraskachildren.org, Community Prevention Systems) also describes no application process.",
+   "tags": [
+    "behavioral_health",
+    "community",
+    "education",
+    "public_health",
+    "tribal"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Distance Learning & Telemedicine Grants",
+   "sponsor": "USDA Rural Development, Rural Utilities Service",
+   "url": "https://www.rd.usda.gov/programs-services/telecommunications-programs/distance-learning-telemedicine-grants",
+   "eligibility": "'Most entities that provide education or health care through telecommunications': state and local governmental organizations, federally-recognized Tribes, non-profit organizations, incorporated for-profit businesses, and groups of eligible entities working together.",
+   "geography": "National; rural areas with populations of 20,000 or fewer",
+   "cycle": "Closed. The page states the agency 'is NOT currently accepting applications for this program due to funding constraints.'",
+   "note": "Grants of $50,000 to $750,000 with a minimum 15 percent non-federal match when open. For-profits are eligible. Watch the page for a new window; FY26 NOFO and application guide are posted.",
+   "tags": [
+    "behavioral_health",
+    "education",
+    "hospital",
+    "public_health",
+    "research",
+    "tribal"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Community Facilities Direct Loan & Grant Program",
+   "sponsor": "USDA Rural Development",
+   "url": "https://www.rd.usda.gov/programs-services/community-facilities/community-facilities-direct-loan-grant-program",
+   "eligibility": "'Public bodies,' 'Community-based non-profit corporations,' and 'Federally Recognized Tribes.'",
+   "geography": "National; rural areas and towns with no more than 20,000 residents, including Tribal lands",
+   "cycle": "Ongoing; applications accepted October 1 through September 30",
+   "note": "Mostly low-interest direct loans. Grants are competitive and cover 15 to 75 percent of eligible costs depending on community size and income. For-profits are not eligible; the purpose excludes 'private, commercial or business undertakings.' Apply through the Nebraska USDA RD state office.",
+   "tags": [
+    "community",
+    "education",
+    "hospital",
+    "public_health",
+    "research",
+    "tribal"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Farm and Ranch Stress Assistance Network (FRSAN) Program",
+   "sponsor": "USDA National Institute of Food and Agriculture",
+   "url": "https://www.nifa.usda.gov/grants/programs/farm-ranch-stress-assistance-network-frsan",
+   "eligibility": "'Applications may only be submitted by a collaborative state; tribal, local or regionally-based network' or partnership of public and private entities. Eligible collaborators include Indian tribes, state departments of agriculture, State Cooperative Extension Services, and nongovernmental organizations.",
+   "geography": "National, awarded by region; Nebraska is in the North Central region led by University of Illinois (farmstress.org)",
+   "cycle": "No open deadline listed. NIFA says it is extending current regional lead institutions and a new competition depends on a Farm Bill and appropriations. An FY26 NOFO technical assistance resource is linked.",
+   "note": "Nebraska organizations do not apply to NIFA directly; the regional center holds the award. The North Central center's About page (farmstress.org/about-us) confirms Nebraska is one of 12 states but lists no subaward or mini-grant program. Contact the center for partnership opportunities.",
+   "tags": [
+    "agriculture",
+    "behavioral_health",
+    "community",
+    "extension",
+    "tribal"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Funding Opportunities, Division of Grants Management",
+   "sponsor": "Indian Health Service",
+   "url": "https://www.ihs.gov/dgm/funding/",
+   "eligibility": "Not stated on the listing page; each NOFO sets eligibility. Programs serve federally recognized Tribes, Tribal organizations and Urban Indian organizations.",
+   "geography": "National",
+   "cycle": "One listing open as of the page: National Indian Health Outreach and Education (HHS-2026-IHS-NIHOE-0001), no deadline shown. Most 2026 NOFOs are marked closed. Tribal Management Grant Program page says its next NOFO 'will be posted to the IHS and Grants.gov websites soon.'",
+   "note": "Application packages are downloaded and submitted through Grants.gov, so SAM.gov registration applies. Tribal Management Grant awards range up to $70,000 (feasibility) and up to $300,000 (health management structure, 35 months).",
+   "tags": [
+    "tribal"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "ANA FY2026 Funding Opportunity Forecasts",
+   "sponsor": "Administration for Native Americans, Administration for Children and Families",
+   "url": "https://acf.gov/ana/news/ana-announces-fy2026-funding-opportunity-forecasts",
+   "eligibility": "Not stated on page for most programs. Page says changes do not alter eligibility for Tribal Nations, Alaska Native communities, or Native Hawaiian and Pacific Islander organizations.",
+   "geography": "National",
+   "cycle": "Forecasts only; no post dates or deadlines given. Programs forecast: Economic Advancement Grants for Local Empowerment (EAGLE), AI3 Action Institute, National Center for Native Training and Technical Assistance, Environmental Regulatory Enhancement, Native Languages Preservation and Maintenance, Esther Martinez Immersion.",
+   "note": "Save the Grants.gov forecast listings for notification. Final eligibility and deadlines will be in each NOFO.",
+   "tags": [
+    "tribal"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Tribal Affairs: Funding Opportunities",
+   "sponsor": "Substance Abuse and Mental Health Services Administration",
+   "url": "https://www.samhsa.gov/tribal-affairs/funding-opportunities",
+   "eligibility": "SAMHSA offers specific grants to 'tribes and tribal organizations.' Programs described: Tribal Opioid Response Grants, Circles of Care, Native Connections.",
+   "geography": "National",
+   "cycle": "Not stated; page last updated 04/17/2024. Applications go through Grants.gov.",
+   "note": "Overview page only. The most recent related NOFO found, Tribal Behavioral Health Substance Use Prevention (SP-26-004, samhsa.gov/grants/grant-announcements/sp-26-004), limited eligibility to federally recognized tribes, tribal organizations, Urban Indian Organizations and consortia, up to $350,000 per year, and closed July 13, 2026. Watch for the next cycle.",
+   "tags": [
+    "tribal"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Early Childhood Education Grant Program (Public Schools & ESUs)",
+   "sponsor": "Nebraska Department of Education, Office of Early Childhood",
+   "url": "https://www.education.ne.gov/oec/public-schools-esus/",
+   "eligibility": "'A public school or an educational service unit is the fiscal agent.' Funded projects must follow Rule 11.",
+   "geography": "Nebraska statewide",
+   "cycle": "2026-27 application period closed. The 2027-28 application period opens in the Grants Management System at the end of the year.",
+   "note": "Covers up to one-half of a project's operating budget. Applications go through NDE's Grants Management System (education.ne.gov/gms2), which is the principal method for NDE grants and requires district administrator access.",
+   "tags": [
+    "education"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "2026 Nebraska 21st Century Community Learning Centers Grant Competition",
+   "sponsor": "Nebraska Department of Education",
+   "url": "https://www.education.ne.gov/21stcclc/grant-competition/",
+   "eligibility": "Schools where 'at least 40.00% of students must have participated in free or reduced-cost meals in 2024-25.' Expanded Learning Opportunity applicants also need a partner providing a 1:1 match.",
+   "geography": "Nebraska statewide",
+   "cycle": "2026 competition closed March 19, 2026; projects began July 1, 2026. Next competition not yet posted.",
+   "note": "Applications limited to three school buildings and submitted through GMS. $1.6 million was available for new grants in 2026 across a four-year period. Community partners participate through the school applicant. ESUCC (esucc.org) describes no grant program of its own; ESUs are service and purchasing cooperatives, not funders.",
+   "tags": [
+    "community",
+    "education"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Nebraska Academic Research and Development Grants (Phase I and Phase II)",
+   "sponsor": "Nebraska Department of Economic Development (Business Innovation Act)",
+   "url": "https://opportunity.nebraska.gov/programs/business/nebraska-academic-research-and-development-grant/",
+   "eligibility": "'Any for-profit business that has physical operations facilities in Nebraska will be considered for Academic R&D funding,' working with a Nebraska college, university or faculty member.",
+   "geography": "Nebraska",
+   "cycle": "Rolling until funds are exhausted; current submission window opened 7/6/2026",
+   "note": "Phase I capped at $100,000, Phase II at $400,000. 1:1 match from non-state sources (4:1 for value-added agriculture). The business is the applicant; the academic partner performs the R&D. Apply through AmpliFund. Contact Brad Kulwicki at DED. Nonprofits and public entities are not the applicant.",
+   "tags": [
+    "research"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Nebraska SBIR/STTR Initiative (Phase 0, Phase I Matching, Phase II Matching)",
+   "sponsor": "Nebraska Department of Economic Development (Business Innovation Act)",
+   "url": "https://opportunity.nebraska.gov/wp-content/uploads/2026/07/NEDED-SBIR-STTR-Program-Guidelines-Updated-July-2026.pdf",
+   "eligibility": "A 'for-profit small business with its principal place of business in Nebraska.' Phase 0 requires a qualified federal Phase I proposal; matching awards require an official federal Phase I or Phase II award notification.",
+   "geography": "Nebraska; at least 51 percent of Phase I or II activities must be performed in Nebraska",
+   "cycle": "Rolling, July 1 through June 30 each fiscal year until funds are exhausted. Phase 0 due 30 days before the federal deadline; matching requests due within 45 days of federal award notice.",
+   "note": "Phase 0 up to $5,000 reimbursement. Phase I match 65 percent up to $150,000. Phase II match 65 percent up to $300,000. Up to $6 million per year. For-profit only; universities participate as STTR research partners of the business.",
+   "tags": [
+    "research"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "NETECH Rural Health Catalyst Fund, Cohort 1",
+   "sponsor": "Invest Nebraska Corporation, administering under a subaward from Nebraska DHHS; CMS Rural Health Transformation Program is the federal funder",
+   "url": "https://nebraskaruralhealthtech.com/apply",
+   "eligibility": "'Open to eligible companies, nonprofits, academic institutions, and government entities' that are U.S.-based and U.S.-owned, founded fewer than 10 years ago, have raised less than $50 million, have a functional prototype at TRL 4 or higher, and are not yet fully commercialized.",
+   "geography": "Solutions must be piloted or deployed at rural or frontier sites in Nebraska; applicants may be based anywhere in the U.S., Nebraska-based companies get preference",
+   "cycle": "Cohort 1 closes November 9, 2026 at 11:59 PM CST. All funds spent and milestones completed by September 30, 2027.",
+   "note": "Non-dilutive, milestone-based grants of $250,000 to $1,000,000, paid 20/20/25/35 percent. For-profits are eligible. Executed agreements with Nebraska implementation sites are required before the deployment milestone, not at application. Rural hospitals and clinics fit here as implementation partners rather than lead applicants unless they meet the age and prototype rules.",
+   "tags": [
+    "behavioral_health",
+    "hospital",
+    "research"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Grants.gov Quick Start Guide for Applicants (Search Grants)",
+   "sponsor": "U.S. Department of Health and Human Services (Grants.gov program management office)",
+   "url": "https://grants.gov/quick-start-guide/applicants",
+   "eligibility": "Set by each federal Notice of Funding Opportunity. 'Your organization must register with SAM.gov.' A Login.gov account is also required.",
+   "geography": "National",
+   "cycle": "Ongoing; each NOFO has its own deadline. Search at https://www.grants.gov/search-grants.",
+   "note": "Applicant Registration page (grants.gov/applicants/applicant-registration) says to allow up to 10 business days for SAM.gov registration to become active, longer if information cannot be verified, and renew SAM.gov every year. Register before you need it.",
+   "tags": [
+    "agriculture",
+    "behavioral_health",
+    "community",
+    "education",
+    "extension",
+    "hospital",
+    "public_health",
+    "research",
+    "tribal"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Serving Neighbors Through Congregational Collaborations Initiative",
+   "sponsor": "Lilly Endowment Inc.",
+   "url": "https://lillyendowment.org/serving-neighbors-initiative/",
+   "eligibility": "'Interested charitable organizations are able to submit concept papers.' Requires an EIN and IRS exempt status determination letter. Congregations are described as collaboration partners; the page does not say a congregation may apply on its own.",
+   "geography": "National; no geographic restriction stated",
+   "cycle": "Concept papers due January 19, 2027. Planning grant awards expected March 2027. Stage 2 implementation proposals by invitation.",
+   "note": "Stage 1 planning grants up to $50,000; Stage 2 implementation grants up to $5 million over four years; up to 60 grants anticipated. A Nebraska faith nonprofit working with congregations fits; a single congregation applying alone is not confirmed on the page. Lilly's Thriving Congregations Initiative is 'currently closed to new proposals.'",
+   "tags": [
+    "community"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "name": "Active Funding Opportunities",
+   "sponsor": "Robert Wood Johnson Foundation",
+   "url": "https://www.rwjf.org/en/grants/active-funding-opportunities.html",
+   "eligibility": "Not stated on page. The Grants page says the Foundation must determine 'your organization type and tax exempt status according to the Internal Revenue Code.'",
+   "geography": "National",
+   "cycle": "No open calls for proposals listed. One upcoming: 'Centering Compassion to Create Community and Government Systems that Promote Wellbeing for All,' launching January 13, 2027.",
+   "note": "Sign up for RWJF funding alerts to catch the January 2027 call. Individual CFP pages set eligibility; the Pioneering Idea Submission page did not show an open unsolicited process when checked.",
+   "tags": [
+    "community",
+    "public_health",
+    "research"
+   ],
+   "checked": "2026-11-08"
+  }
+ ]
+}

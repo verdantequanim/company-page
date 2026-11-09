@@ -1,0 +1,138 @@
+{
+  "name": "Research Library audiences",
+  "owner": "Verdant Equanim, LLC",
+  "version": "0.1",
+  "updated": "2026-11-08",
+  "note": "Each audience reorders the same Research Library shelves and names the funder shelf entries that fit it. Full names, no acronyms. Individuals never register; everything public is theirs. Roles reconstructed from Verdant Equanim documents on 2026-11-08; to be reconciled with the stakeholder list once it is written down once.",
+  "audiences": [
+    {
+      "id": "grant_writer",
+      "label": "County or regional grant writer",
+      "one_line": "Pull the county's rank on a measure and the citation behind it for a needs statement in one motion, then open the funder shelf.",
+      "shelves": ["chronic_stress", "money", "access", "methods", "mood", "sleep", "social", "food", "substance", "physical_activity", "childhood", "environment", "differences", "family_history"],
+      "funder_tags": ["all"]
+    },
+    {
+      "id": "hospital",
+      "label": "Critical access hospital, rural health clinic or hospital administrator",
+      "one_line": "The community health needs assessment every three years, and a number you can defend to the board with the County Health Rankings methods paper.",
+      "shelves": ["sleep", "mood", "social", "access", "methods", "chronic_stress", "substance", "food", "physical_activity", "money", "childhood", "environment", "differences", "family_history"],
+      "funder_tags": ["hospital", "rural_health", "federal"]
+    },
+    {
+      "id": "behavioral",
+      "label": "Certified community behavioral health clinic or behavioral health provider",
+      "one_line": "Keep the required community needs assessment current and see where referral demand will come from.",
+      "shelves": ["mood", "substance", "childhood", "social", "access", "chronic_stress", "sleep", "money", "food", "methods", "physical_activity", "environment", "differences", "family_history"],
+      "funder_tags": ["behavioral_health", "rural_health", "federal"]
+    },
+    {
+      "id": "health_dept",
+      "label": "Local health department",
+      "one_line": "Where the public sources agree, and which measures the county leads the state on.",
+      "shelves": ["methods", "food", "environment", "physical_activity", "substance", "sleep", "mood", "social", "access", "chronic_stress", "money", "childhood", "differences", "family_history"],
+      "funder_tags": ["public_health", "rural_health", "federal"]
+    },
+    {
+      "id": "bh_region",
+      "label": "Behavioral Health Region",
+      "one_line": "Roll the county view up to the region's boundary.",
+      "shelves": ["mood", "substance", "access", "social", "childhood", "chronic_stress", "sleep", "methods", "money", "food", "physical_activity", "environment", "differences", "family_history"],
+      "funder_tags": ["behavioral_health", "federal"]
+    },
+    {
+      "id": "school",
+      "label": "Kindergarten through grade 12 school or Educational Service Unit",
+      "one_line": "Which early life experiences the county's adults report most, and what the evidence says about each.",
+      "shelves": ["childhood", "sleep", "food", "mood", "social", "physical_activity", "substance", "access", "chronic_stress", "money", "methods", "environment", "differences", "family_history"],
+      "funder_tags": ["education", "rural_health"]
+    },
+    {
+      "id": "college",
+      "label": "College or university",
+      "seats": ["Community college", "State college", "University of Nebraska campus", "Private college", "Tribal college"],
+      "one_line": "Teaching the difference between a finding and a headline, and student research with county data.",
+      "shelves": ["methods", "differences", "chronic_stress", "childhood", "money", "social", "sleep", "mood", "food", "substance", "physical_activity", "access", "environment", "family_history"],
+      "funder_tags": ["research", "education"]
+    },
+    {
+      "id": "tribal",
+      "label": "Tribal Nation",
+      "one_line": "The Nation decides what is shown about its people and to whom. Survey layers for tribal respondents follow the Nation's own data agreements, not only the Verdant Equanim board.",
+      "shelves": ["social", "childhood", "access", "differences", "chronic_stress", "food", "money", "mood", "sleep", "substance", "physical_activity", "methods", "environment", "family_history"],
+      "funder_tags": ["tribal", "rural_health", "federal"],
+      "review_note": "This row is reviewed with the Ponca Tribe of Nebraska contact, or a reviewer the Nation names, before anything beyond the shelf order is published."
+    },
+    {
+      "id": "extension",
+      "label": "Nebraska Extension office",
+      "one_line": "County fair and community event survey collection, and local program evidence.",
+      "shelves": ["food", "physical_activity", "social", "money", "sleep", "substance", "mood", "childhood", "access", "chronic_stress", "methods", "environment", "differences", "family_history"],
+      "funder_tags": ["extension", "agriculture"]
+    },
+    {
+      "id": "faith",
+      "label": "Faith community, community organization or nonprofit",
+      "one_line": "Where loneliness and low support concentrate, and where confidence in finding help is low.",
+      "shelves": ["social", "access", "food", "mood", "childhood", "substance", "money", "sleep", "physical_activity", "chronic_stress", "methods", "environment", "differences", "family_history"],
+      "funder_tags": ["community", "foundation"]
+    },
+    {
+      "id": "farm",
+      "label": "Farm and agriculture organization",
+      "one_line": "Financial stress, sleep and substance use in farm counties.",
+      "shelves": ["money", "sleep", "substance", "social", "mood", "access", "chronic_stress", "food", "physical_activity", "childhood", "methods", "environment", "differences", "family_history"],
+      "funder_tags": ["agriculture", "extension"]
+    },
+    {
+      "id": "elected",
+      "label": "County board, city council, mayor or other elected official",
+      "one_line": "Where this county stands, on one page: the county card and three or four sources.",
+      "shelves": ["chronic_stress", "methods", "access", "money"],
+      "one_page": true,
+      "funder_tags": []
+    },
+    {
+      "id": "philanthropy",
+      "label": "Foundation or philanthropic funder",
+      "one_line": "Where to put the next dollar, by measured need, and which graded interventions a county does not yet have.",
+      "shelves": ["methods", "chronic_stress", "differences", "childhood", "money", "social", "access", "food", "mood", "sleep", "substance", "physical_activity", "environment", "family_history"],
+      "funder_tags": []
+    },
+    {
+      "id": "policy",
+      "label": "State agency or policymaker",
+      "one_line": "The statewide picture, the data vintages, and how the numbers are made.",
+      "shelves": ["methods", "chronic_stress", "access", "differences", "money", "childhood", "mood", "social", "food", "sleep", "substance", "physical_activity", "environment", "family_history"],
+      "funder_tags": []
+    },
+    {
+      "id": "researcher",
+      "label": "Researcher or data analyst",
+      "one_line": "The full library, the inclusion standard, reliability by subscale, and the open items: what was left out and why.",
+      "shelves": ["methods", "chronic_stress", "money", "sleep", "mood", "social", "childhood", "family_history", "food", "physical_activity", "environment", "substance", "access", "differences"],
+      "funder_tags": ["research"]
+    },
+    {
+      "id": "insurer",
+      "label": "Insurer, actuary or risk team",
+      "one_line": "An upstream signal layer. Approved uses only; never individual underwriting.",
+      "shelves": ["chronic_stress", "sleep", "money", "methods", "mood", "substance", "physical_activity", "food", "social", "access", "childhood", "environment", "differences", "family_history"],
+      "funder_tags": []
+    },
+    {
+      "id": "employer",
+      "label": "Employer",
+      "one_line": "Improving the work environment. Never screening employees.",
+      "shelves": ["money", "sleep", "social", "chronic_stress", "mood", "substance", "physical_activity", "food", "access", "methods", "childhood", "environment", "differences", "family_history"],
+      "funder_tags": []
+    },
+    {
+      "id": "individual",
+      "label": "Individual or family",
+      "one_line": "Everything here is yours, no code needed: your county's page, the research, what works, and what the people with responsibility in your county are doing about it.",
+      "shelves": ["sleep", "social", "food", "physical_activity", "mood", "money", "substance", "access", "childhood", "chronic_stress", "environment", "differences", "family_history", "methods"],
+      "funder_tags": []
+    }
+  ]
+}

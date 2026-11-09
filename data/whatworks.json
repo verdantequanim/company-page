@@ -1,0 +1,1287 @@
+{
+ "name": "What works",
+ "owner": "Verdant Equanim, LLC",
+ "version": "0.1",
+ "updated": "2026-11-08",
+ "standard": "Only interventions graded by the Community Preventive Services Task Force (The Community Guide), the U.S. Preventive Services Task Force, or a completed Cochrane systematic review. Each entry carries the body's own grade in its own words, including insufficient evidence and recommended against. Each was opened on the body's own page on the date shown. Where none of the three has a finding on an Atlas measure, that measure is left blank on purpose.",
+ "review": "Partner preview until the data governance board's reviewer (Sarah Fischer, PhD, proposed) signs off; then public.",
+ "entries": [
+  {
+   "id": "clinician_delivered_cessation_interventions_for_adults_behavioral_plus_fda_appro",
+   "topic": "Tobacco",
+   "intervention": "Clinician-delivered cessation interventions for adults (behavioral plus FDA-approved medication)",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "Grade A",
+   "year": "2021",
+   "finding": "USPSTF recommends that clinicians ask all adults about tobacco use, advise them to stop, and provide behavioral interventions and FDA-approved pharmacotherapy for cessation to nonpregnant adults who use tobacco.",
+   "setting": "Clinic, primary care",
+   "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/tobacco-use-in-adults-and-pregnant-women-counseling-and-interventions?ds=1",
+   "measures": [
+    "CSMOKING",
+    "chr_smoke"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "e_cigarettes_for_tobacco_cessation_u_s_preventive_services_task_force",
+   "topic": "Tobacco",
+   "intervention": "E-cigarettes for tobacco cessation",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "I statement (insufficient evidence)",
+   "year": "2021",
+   "finding": "USPSTF concludes the evidence is insufficient to assess the balance of benefits and harms of e-cigarettes for tobacco cessation in adults, including pregnant persons, and directs clinicians to cessation interventions with proven effectiveness and established safety.",
+   "setting": "Clinic, primary care",
+   "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/tobacco-use-in-adults-and-pregnant-women-counseling-and-interventions?ds=1",
+   "measures": [
+    "CSMOKING",
+    "chr_smoke"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "mass_reach_health_communication_campaigns_community_preventive_services_task_for",
+   "topic": "Tobacco",
+   "intervention": "Mass-reach health communication campaigns",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2013",
+   "finding": "CPSTF recommends mass-reach health communication interventions based on strong evidence of effectiveness in decreasing tobacco use, increasing cessation and quitline use, and reducing youth initiation.",
+   "setting": "Community, media",
+   "url": "https://thecommunityguide.org/findings/tobacco-use-mass-reach-health-communication-interventions",
+   "measures": [
+    "CSMOKING",
+    "chr_smoke"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "mobile_phone_text_messaging_cessation_programs_community_preventive_services_tas",
+   "topic": "Tobacco",
+   "intervention": "Mobile phone text messaging cessation programs",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2020",
+   "finding": "CPSTF recommends mobile phone text messaging interventions for tobacco smoking cessation to increase the number of adults who successfully quit, with a median 4.1 percentage point increase in cessation at six or more months.",
+   "setting": "Community, digital",
+   "url": "https://thecommunityguide.org/findings/tobacco-use-mobile-phone-text-messaging-cessation-interventions",
+   "measures": [
+    "CSMOKING",
+    "chr_smoke"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "nicotine_replacement_therapy_cochrane",
+   "topic": "Tobacco",
+   "intervention": "Nicotine replacement therapy",
+   "body": "Cochrane",
+   "grade": "High-quality evidence of benefit",
+   "year": "2018",
+   "finding": "The review found high-quality evidence that all licensed forms of nicotine replacement therapy increase the rate of quitting by roughly 50 to 60 percent regardless of setting, with minor site irritation common and serious adverse events rare.",
+   "setting": "Clinic, pharmacy, community",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/29852054/",
+   "measures": [
+    "CSMOKING",
+    "chr_smoke"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "raising_the_unit_price_of_tobacco_products_community_preventive_services_task_fo",
+   "topic": "Tobacco",
+   "intervention": "Raising the unit price of tobacco products",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2012",
+   "finding": "CPSTF recommends interventions that increase the unit price of tobacco products based on strong evidence of effectiveness in reducing tobacco use and youth initiation.",
+   "setting": "Policy",
+   "url": "https://www.thecommunityguide.org/findings/tobacco-use-interventions-increase-unit-price-tobacco",
+   "measures": [
+    "CSMOKING",
+    "chr_smoke"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "reducing_out_of_pocket_costs_for_cessation_treatment_community_preventive_servic",
+   "topic": "Tobacco",
+   "intervention": "Reducing out-of-pocket costs for cessation treatment",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2012",
+   "finding": "CPSTF recommends policies and programs to reduce tobacco users' out-of-pocket costs for evidence-based cessation treatments based on strong evidence of effectiveness in increasing the number of tobacco users who quit.",
+   "setting": "Policy, health plans",
+   "url": "https://www.thecommunityguide.org/findings/tobacco-use-reducing-out-pocket-costs-evidence-based-cessation",
+   "measures": [
+    "CSMOKING",
+    "chr_smoke"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "smoke_free_policies_community_preventive_services_task_force_the_community_guide",
+   "topic": "Tobacco",
+   "intervention": "Smoke-free policies",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2012",
+   "finding": "CPSTF recommends smoke-free policies based on strong evidence that they reduce secondhand smoke exposure, tobacco use, and tobacco-related health events without harming restaurant and bar business activity.",
+   "setting": "Policy",
+   "url": "https://thecommunityguide.org/findings/tobacco-use-smoke-free-policies",
+   "measures": [
+    "CSMOKING",
+    "chr_smoke"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "tobacco_quitlines_community_preventive_services_task_force_the_community_guide",
+   "topic": "Tobacco",
+   "intervention": "Tobacco quitlines",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2012",
+   "finding": "CPSTF recommends quitline interventions, particularly proactive quitlines, based on strong evidence of effectiveness in increasing tobacco cessation among clients interested in quitting.",
+   "setting": "Community, phone-based",
+   "url": "https://www.thecommunityguide.org/findings/tobacco-use-quitline-interventions",
+   "measures": [
+    "CSMOKING",
+    "chr_smoke"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "varenicline_and_cytisine_nicotine_receptor_partial_agonists_cochrane",
+   "topic": "Tobacco",
+   "intervention": "Varenicline and cytisine (nicotine receptor partial agonists)",
+   "body": "Cochrane",
+   "grade": "High-certainty evidence of benefit (varenicline); moderate-certainty evidence of benefit (cytisine)",
+   "year": "2023",
+   "finding": "The review concluded that cytisine and varenicline both help more people to quit smoking than placebo or no medication, with varenicline more than doubling abstinence at six months or longer (RR 2.32) on high-certainty evidence.",
+   "setting": "Clinic, prescribing",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10169257/",
+   "measures": [
+    "CSMOKING",
+    "chr_smoke"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "brief_alcohol_interventions_in_primary_care_cochrane",
+   "topic": "Alcohol",
+   "intervention": "Brief alcohol interventions in primary care",
+   "body": "Cochrane",
+   "grade": "Moderate-certainty evidence of benefit",
+   "year": "2018",
+   "finding": "The review found moderate-certainty evidence that brief interventions in primary care reduced weekly alcohol consumption at 12 months by about 20 grams per week compared with no or minimal intervention (34 trials, 15,197 participants).",
+   "setting": "Clinic, primary care",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD004148.pub4/information",
+   "measures": [
+    "chr_drink"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "dram_shop_commercial_host_liability_community_preventive_services_task_force_the",
+   "topic": "Alcohol",
+   "intervention": "Dram shop (commercial host) liability",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2010",
+   "finding": "CPSTF found that state dram shop liability laws were associated with reductions in alcohol-related harms, including a median 6.4 percent decrease in alcohol-related motor vehicle deaths.",
+   "setting": "Policy, state law",
+   "url": "https://thecommunityguide.org/findings/alcohol-excessive-consumption-dram-shop-liability",
+   "measures": [
+    "chr_drink"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "electronic_screening_and_brief_intervention_e_sbi_community_preventive_services_",
+   "topic": "Alcohol",
+   "intervention": "Electronic screening and brief intervention (e-SBI)",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2012",
+   "finding": "CPSTF recommends electronic screening and brief intervention to reduce self-reported excessive alcohol consumption and alcohol-related problems among intervention participants.",
+   "setting": "Clinic, community, digital",
+   "url": "https://www.thecommunityguide.org/findings/alcohol-excessive-consumption-electronic-screening-and-brief-interventions-e-sbi",
+   "measures": [
+    "chr_drink"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "increasing_alcohol_taxes_community_preventive_services_task_force_the_community_",
+   "topic": "Alcohol",
+   "intervention": "Increasing alcohol taxes",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2007",
+   "finding": "CPSTF recommends increasing the unit price of alcohol by raising taxes to reduce excessive alcohol consumption and related harms, with public health effects expected to be proportional to the size of the tax increase.",
+   "setting": "Policy",
+   "url": "https://www.thecommunityguide.org/findings/alcohol-excessive-consumption-increasing-alcohol-taxes",
+   "measures": [
+    "chr_drink"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "privatization_of_retail_alcohol_sales_community_preventive_services_task_force_t",
+   "topic": "Alcohol",
+   "intervention": "Privatization of retail alcohol sales",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended against, strong evidence",
+   "year": "2011",
+   "finding": "CPSTF recommends against further privatization of alcohol sales in settings with current government control of retail sales, based on strong evidence that privatization increases per capita alcohol consumption (median 44.4 percent increase in sales of privatized beverages).",
+   "setting": "Policy, state",
+   "url": "https://www.thecommunityguide.org/findings/alcohol-excessive-consumption-privatization-retail-alcohol-sales",
+   "measures": [
+    "chr_drink"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "regulating_alcohol_outlet_density_community_preventive_services_task_force_the_c",
+   "topic": "Alcohol",
+   "intervention": "Regulating alcohol outlet density",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, sufficient evidence",
+   "year": "2007",
+   "finding": "CPSTF recommends the use of regulatory authority, such as licensing and zoning, to limit alcohol outlet density as a strategy to reduce excessive alcohol consumption and related harms.",
+   "setting": "Policy, local government",
+   "url": "https://www.thecommunityguide.org/findings/alcohol-excessive-consumption-regulation-alcohol-outlet-density",
+   "measures": [
+    "chr_drink"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "responsible_beverage_service_training_community_preventive_services_task_force_t",
+   "topic": "Alcohol",
+   "intervention": "Responsible beverage service training",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Insufficient evidence",
+   "year": "2010",
+   "finding": "CPSTF finds insufficient evidence to determine whether responsible beverage service training programs reduce excessive alcohol consumption and related harms at the community level, because most positive studies were small trials at individual establishments under favorable conditions.",
+   "setting": "Community, retail",
+   "url": "https://www.thecommunityguide.org/findings/alcohol-excessive-consumption-responsible-beverage-service-training",
+   "measures": [
+    "chr_drink"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "screening_and_brief_behavioral_counseling_for_unhealthy_alcohol_use_in_adults_u_",
+   "topic": "Alcohol",
+   "intervention": "Screening and brief behavioral counseling for unhealthy alcohol use in adults",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "Grade B (adults 18 and older, including pregnant women); I statement for adolescents 12 to 17",
+   "year": "2018",
+   "finding": "USPSTF recommends screening for unhealthy alcohol use in primary care settings in adults 18 years or older, including pregnant women, and providing persons engaged in risky or hazardous drinking with brief behavioral counseling interventions, while finding insufficient evidence for adolescents.",
+   "setting": "Clinic, primary care",
+   "url": "https://www.uspreventiveservicestaskforce.org/uspstf/document/RecommendationStatementFinal/unhealthy-alcohol-use-in-adolescents-and-adults-screening-and-behavioral-counseling-interventions",
+   "measures": [
+    "chr_drink"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "cbt_based_psychotherapy_after_self_harm_in_adults_cochrane",
+   "topic": "Mental health",
+   "intervention": "CBT-based psychotherapy after self-harm in adults",
+   "body": "Cochrane",
+   "grade": "Low-certainty evidence of benefit",
+   "year": "2021",
+   "finding": "The review concluded that psychosocial therapy based on CBT approaches may result in fewer individuals repeating self-harm at longer follow-up time points, although no such effect was found at the post-intervention assessment and the quality of evidence by GRADE criteria was low.",
+   "setting": "Clinic, mental health services",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013668.pub2/pdf/CDSR/CD013668/CD013668_abstract.pdf",
+   "measures": [
+    "chr_suicide"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "collaborative_care_for_depression_community_preventive_services_task_force_the_c",
+   "topic": "Mental health",
+   "intervention": "Collaborative care for depression",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2010",
+   "finding": "CPSTF recommends collaborative care for the management of depressive disorders based on strong evidence of effectiveness in improving depression symptoms, adherence to treatment, response to treatment, and remission and recovery from depression.",
+   "setting": "Clinic, primary care",
+   "url": "https://thecommunityguide.org/findings/mental-health-and-mental-illness-collaborative-care-management-depressive-disorders",
+   "measures": [
+    "MHLTH",
+    "DEPRESSION",
+    "chr_mentdays",
+    "chr_mentdistress"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "collaborative_care_for_depression_and_anxiety_cochrane",
+   "topic": "Mental health",
+   "intervention": "Collaborative care for depression and anxiety",
+   "body": "Cochrane",
+   "grade": "Significant improvement versus usual care; studies varied in risk of bias (no GRADE rating reported in this 2012 version)",
+   "year": "2012",
+   "finding": "The review concluded that collaborative care is associated with significant improvement in depression and anxiety outcomes compared with usual care in the short, medium and long term (depression SMD -0.34, -0.28 and -0.35), with no significant benefit in the very long term.",
+   "setting": "Clinic, primary care",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD006525.pub2/pdf/CDSR/CD006525/CD006525_abstract.pdf",
+   "measures": [
+    "MHLTH",
+    "DEPRESSION",
+    "chr_mentdays",
+    "chr_mentdistress"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "exercise_for_depression_cochrane",
+   "topic": "Mental health",
+   "intervention": "Exercise for depression",
+   "body": "Cochrane",
+   "grade": "Moderate-quality evidence of benefit",
+   "year": "2013",
+   "finding": "The review found moderate-quality evidence from 35 trials (1,353 participants) that exercise reduces depression symptoms more than control conditions at the end of treatment (SMD -0.62), an effect the authors interpreted as moderate.",
+   "setting": "Community, clinic",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD004366.pub6/information",
+   "measures": [
+    "MHLTH",
+    "DEPRESSION",
+    "chr_mentdays",
+    "chr_mentdistress"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "home_based_depression_care_management_for_older_adults_community_preventive_serv",
+   "topic": "Mental health",
+   "intervention": "Home-based depression care management for older adults",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2008",
+   "finding": "CPSTF recommends depression care management at home for older adults with depression based on strong evidence of effectiveness in improving short-term depression outcomes.",
+   "setting": "Home, community",
+   "url": "https://www.thecommunityguide.org/findings/mental-health-and-mental-illness-interventions-reduce-depression-among-older-adults-home",
+   "measures": [
+    "MHLTH",
+    "DEPRESSION",
+    "chr_mentdays",
+    "chr_mentdistress"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "mental_health_benefits_parity_legislation_community_preventive_services_task_for",
+   "topic": "Mental health",
+   "intervention": "Mental health benefits (parity) legislation",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, sufficient evidence",
+   "year": "2012",
+   "finding": "CPSTF recommends mental health benefits legislation, particularly comprehensive parity legislation, based on sufficient evidence of effectiveness in improving financial protection and increasing appropriate utilization of mental health services for people with mental health conditions.",
+   "setting": "Policy, state or federal",
+   "url": "https://www.thecommunityguide.org/findings/mental-health-and-mental-illness-mental-health-benefits-legislation",
+   "measures": [
+    "MHLTH",
+    "DEPRESSION",
+    "chr_mentdays",
+    "chr_mentdistress"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "multi_tiered_trauma_informed_school_programs_community_preventive_services_task_",
+   "topic": "Mental health",
+   "intervention": "Multi-tiered trauma-informed school programs",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Insufficient evidence",
+   "year": "2023",
+   "finding": "CPSTF finds insufficient evidence to determine whether multi-tiered trauma-informed school programs reduce PTSD symptoms or improve mental health and school-related outcomes, because of gaps in study design despite a median 34 percent reduction in PTSD symptoms in included studies.",
+   "setting": "School",
+   "url": "https://thecommunityguide.org/findings/mental-health-multi-tiered-trauma-informed-school-programs-improve-mental-health-among-youth.html",
+   "measures": [
+    "MHLTH",
+    "DEPRESSION",
+    "chr_mentdays",
+    "chr_mentdistress"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "screening_adolescents_for_depression_screening_youth_for_suicide_risk_u_s_preven",
+   "topic": "Mental health",
+   "intervention": "Screening adolescents for depression; screening youth for suicide risk",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "Grade B (major depressive disorder, ages 12 to 18); I statement (depression, age 11 or younger); I statement (suicide risk, children and adolescents)",
+   "year": "2022",
+   "finding": "USPSTF recommends screening for major depressive disorder in adolescents aged 12 to 18 years and concludes evidence is insufficient to assess screening for depression in children 11 or younger or screening for suicide risk in children and adolescents.",
+   "setting": "Clinic, pediatric primary care",
+   "url": "https://uspreventiveservicestaskforce.org/uspstf/recommendation/screening-depression-suicide-risk-children-adolescents",
+   "measures": [
+    "DEPRESSION",
+    "chr_suicide"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "screening_adults_for_anxiety_disorders_u_s_preventive_services_task_force",
+   "topic": "Mental health",
+   "intervention": "Screening adults for anxiety disorders",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "Grade B (adults 64 or younger, including pregnant and postpartum persons); I statement for adults 65 or older",
+   "year": "2023",
+   "finding": "USPSTF recommends screening for anxiety disorders in adults 64 years or younger, including pregnant and postpartum persons, and finds the evidence insufficient on the balance of benefits and harms of screening adults 65 years or older.",
+   "setting": "Clinic, primary care",
+   "url": "https://uspreventiveservicestaskforce.org/uspstf/recommendation/anxiety-adults-screening",
+   "measures": [
+    "MHLTH",
+    "chr_mentdays",
+    "chr_mentdistress"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "screening_adults_for_depression_u_s_preventive_services_task_force",
+   "topic": "Mental health",
+   "intervention": "Screening adults for depression",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "Grade B",
+   "year": "2023",
+   "finding": "USPSTF recommends screening for depression in the adult population, including pregnant and postpartum persons and older adults, with adequate systems in place to ensure accurate diagnosis, effective treatment, and appropriate follow-up.",
+   "setting": "Clinic, primary care",
+   "url": "https://uspreventiveservicestaskforce.org/uspstf/recommendation/screening-depression-suicide-risk-adults",
+   "measures": [
+    "MHLTH",
+    "DEPRESSION",
+    "chr_mentdays",
+    "chr_mentdistress"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "screening_adults_for_suicide_risk_u_s_preventive_services_task_force",
+   "topic": "Mental health",
+   "intervention": "Screening adults for suicide risk",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "I statement (insufficient evidence)",
+   "year": "2023",
+   "finding": "USPSTF concludes that the current evidence is insufficient to assess the balance of benefits and harms of screening for suicide risk in the adult population, including pregnant and postpartum persons and older adults.",
+   "setting": "Clinic, primary care",
+   "url": "https://uspreventiveservicestaskforce.org/uspstf/recommendation/screening-depression-suicide-risk-adults",
+   "measures": [
+    "chr_suicide"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "targeted_school_based_cognitive_behavioral_therapy_programs_for_at_risk_students",
+   "topic": "Mental health",
+   "intervention": "Targeted school-based cognitive behavioral therapy programs for at-risk students",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2019",
+   "finding": "CPSTF recommends targeted school-based cognitive behavioral therapy programs to reduce depression and anxiety symptoms among school-aged children and adolescents assessed to be at increased risk, with larger effects when delivered by external mental health professionals than by trained school staff.",
+   "setting": "School",
+   "url": "https://thecommunityguide.org/findings/mental-health-targeted-school-based-cognitive-behavioral-therapy-programs-reduce-depression-anxiety-symptoms",
+   "measures": [
+    "MHLTH",
+    "DEPRESSION",
+    "chr_mentdays",
+    "chr_mentdistress"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "universal_school_based_cognitive_behavioral_therapy_programs_community_preventiv",
+   "topic": "Mental health",
+   "intervention": "Universal school-based cognitive behavioral therapy programs",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2019",
+   "finding": "CPSTF recommends universal school-based cognitive behavioral therapy programs to prevent or reduce depression and anxiety symptoms among school-aged children and adolescents, based on small reductions in symptoms across reviewed studies.",
+   "setting": "School",
+   "url": "https://thecommunityguide.org/findings/mental-health-universal-school-based-cognitive-behavioral-therapy-programs-reduce-depression-anxiety-symptoms",
+   "measures": [
+    "MHLTH",
+    "DEPRESSION",
+    "chr_mentdays",
+    "chr_mentdistress"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "interactive_telemedicine_for_chronic_disease_and_mental_health_care_cochrane",
+   "topic": "Access to care",
+   "intervention": "Interactive telemedicine for chronic disease and mental health care",
+   "body": "Cochrane",
+   "grade": "High-certainty evidence (diabetes glucose control); moderate-certainty evidence (heart failure admissions and mortality); mental health outcomes not GRADE-rated",
+   "year": "2015",
+   "finding": "The review found high-certainty evidence that telemedicine improves blood glucose control in diabetes, moderate to high-certainty evidence of similar mortality and widely varying hospital admission effects in heart failure, and no difference between video-delivered and face-to-face therapy in seven mental health and substance use studies.",
+   "setting": "Clinic, telehealth",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD002098.pub2/pdf/CDSR/CD002098/CD002098_abstract.pdf",
+   "measures": [
+    "chr_pcp",
+    "chr_mhp",
+    "chr_prevhosp"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "interventions_to_increase_health_professionals_practicing_in_rural_and_underserv",
+   "topic": "Access to care",
+   "intervention": "Interventions to increase health professionals practicing in rural and underserved areas",
+   "body": "Cochrane",
+   "grade": "Very low-certainty evidence",
+   "year": "2015",
+   "finding": "The review found only one eligible study (an interrupted time series of Taiwan's National Health Insurance scheme) suggesting a small reduction in the inequitable distribution of physicians and dentists, rated very low certainty, so the effect of recruitment and retention interventions remains uncertain.",
+   "setting": "Policy, workforce",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD005314.pub3/information",
+   "measures": [
+    "chr_mhp",
+    "chr_pcp"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "nurses_as_substitutes_for_doctors_in_primary_care_cochrane",
+   "topic": "Access to care",
+   "intervention": "Nurses as substitutes for doctors in primary care",
+   "body": "Cochrane",
+   "grade": "Low-certainty evidence (mortality, quality of life); moderate-certainty evidence (patient satisfaction)",
+   "year": "2018",
+   "finding": "The review found that nurse-led primary care may lead to slightly fewer deaths and slightly higher quality of life (low certainty) and probably slightly higher patient satisfaction (moderate certainty) compared with doctor-led care.",
+   "setting": "Clinic, primary care",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD001271.pub3/information",
+   "measures": [
+    "chr_pcp"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "adapting_shift_work_schedules_forward_or_faster_rotation_limiting_shift_length_c",
+   "topic": "Sleep",
+   "intervention": "Adapting shift work schedules (forward or faster rotation, limiting shift length, compressed weeks)",
+   "body": "Cochrane",
+   "grade": "Very low certainty evidence for most schedule changes; low to moderate certainty for a 16-hour shift limit",
+   "year": 2023,
+   "finding": "Forward and faster rotation may reduce sleepiness during shifts with very uncertain evidence, limiting shifts to 16 hours may increase sleep duration with low certainty evidence, and more high quality studies are needed before firm conclusions can be drawn.",
+   "setting": "Worksite, employer policy",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37694838/",
+   "measures": [
+    "SLEEP",
+    "chr_sleep"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "drug_treatments_for_shift_work_sleepiness_and_sleep_disturbance_melatonin_hypnot",
+   "topic": "Sleep",
+   "intervention": "Drug treatments for shift work sleepiness and sleep disturbance (melatonin, hypnotics, modafinil, armodafinil, caffeine)",
+   "body": "Cochrane",
+   "grade": "Low quality evidence for melatonin, hypnotics and caffeine; moderate quality evidence for modafinil and armodafinil",
+   "year": 2014,
+   "finding": "Melatonin may lengthen sleep after night shifts and modafinil or armodafinil modestly reduce sleepiness in people with shift work sleep disorder but carry adverse effects, while hypnotics showed no clear benefit and all findings rest on a small number of low to moderate quality trials.",
+   "setting": "Clinic, occupational health",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD009776.pub2/pdf/CDSR/CD009776/CD009776_abstract.pdf",
+   "measures": [
+    "SLEEP",
+    "chr_sleep"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "listening_to_music_for_insomnia_in_adults_cochrane",
+   "topic": "Sleep",
+   "intervention": "Listening to music for insomnia in adults",
+   "body": "Cochrane",
+   "grade": "Moderate certainty evidence for sleep quality; low to very low certainty for other outcomes",
+   "year": 2022,
+   "finding": "Music may be effective for improving subjective sleep quality in adults with symptoms of insomnia, with moderate certainty evidence, while effects on insomnia severity and other sleep outcomes are low to very low certainty.",
+   "setting": "Self-directed, community",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD010459.pub3/pdf/CDSR/CD010459/CD010459_abstract.pdf",
+   "measures": [
+    "SLEEP",
+    "chr_sleep"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "person_directed_non_drug_interventions_for_shift_workers_bright_light_napping_ex",
+   "topic": "Sleep",
+   "intervention": "Person-directed non-drug interventions for shift workers (bright light, napping, exercise, sleep education)",
+   "body": "Cochrane",
+   "grade": "Very low to low certainty evidence for most comparisons; one comparison moderate certainty",
+   "year": 2016,
+   "finding": "The evidence is too uncertain to show whether bright light, napping, or other person-directed non-drug interventions reduce sleepiness at work or improve sleep after night shifts, and better-designed trials are needed.",
+   "setting": "Worksite, occupational health",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD010641.pub2/information",
+   "measures": [
+    "SLEEP",
+    "chr_sleep"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "screening_the_general_adult_population_for_obstructive_sleep_apnea_u_s_preventiv",
+   "topic": "Sleep",
+   "intervention": "Screening the general adult population for obstructive sleep apnea",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "Grade I (insufficient evidence)",
+   "year": 2022,
+   "finding": "The USPSTF concludes that the current evidence is insufficient to assess the balance of benefits and harms of screening for obstructive sleep apnea in the general adult population.",
+   "setting": "Clinic, primary care",
+   "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/obstructive-sleep-apnea-in-adults-screening",
+   "measures": [
+    "SLEEP",
+    "chr_sleep"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "behavioral_counseling_on_healthy_diet_and_physical_activity_for_adults_with_card",
+   "topic": "Physical activity",
+   "intervention": "Behavioral counseling on healthy diet and physical activity for adults with cardiovascular risk factors",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "Grade B",
+   "year": 2020,
+   "finding": "The USPSTF recommends offering or referring adults with cardiovascular disease risk factors to behavioral counseling interventions to promote a healthy diet and physical activity.",
+   "setting": "Clinic, primary care referral",
+   "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/healthy-diet-and-physical-activity-counseling-adults-with-high-risk-of-cvd",
+   "measures": [
+    "LPA",
+    "chr_inactive"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "behavioral_counseling_on_healthy_diet_and_physical_activity_for_adults_without_c",
+   "topic": "Physical activity",
+   "intervention": "Behavioral counseling on healthy diet and physical activity for adults without cardiovascular risk factors",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "Grade C",
+   "year": 2022,
+   "finding": "The USPSTF recommends that clinicians individualize the decision to offer or refer adults without cardiovascular disease risk factors to behavioral counseling interventions to promote a healthy diet and physical activity.",
+   "setting": "Clinic, primary care",
+   "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/healthy-lifestyle-and-physical-activity-for-cvd-prevention-adults-without-known-risk-factors-behavioral-counseling",
+   "measures": [
+    "LPA",
+    "chr_inactive"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "built_environment_approaches_combining_transportation_system_interventions_with_",
+   "topic": "Physical activity",
+   "intervention": "Built environment approaches combining transportation system interventions with land use and environmental design",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, sufficient evidence",
+   "year": 2016,
+   "finding": "The CPSTF recommends combined built environment approaches to increase physical activity, based on a systematic review finding that combinations of activity-friendly transportation and land use features were associated with higher transportation-related and recreational physical activity and total walking.",
+   "setting": "Policy, local planning",
+   "url": "https://thecommunityguide.org/content/combined-built-environment-features-help-communities-get-active",
+   "measures": [
+    "LPA",
+    "chr_inactive"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "community_wide_campaigns_to_increase_physical_activity_community_preventive_serv",
+   "topic": "Physical activity",
+   "intervention": "Community-wide campaigns to increase physical activity",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": 2001,
+   "finding": "The CPSTF recommends community-wide campaigns on the basis of strong evidence of effectiveness in increasing physical activity and improving physical fitness among adults and children.",
+   "setting": "Community, multi-sector",
+   "url": "https://www.thecommunityguide.org/findings/physical-activity-community-wide-campaigns",
+   "measures": [
+    "LPA",
+    "chr_inactive"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "community_wide_multi_strategy_interventions_for_increasing_physical_activity_coc",
+   "topic": "Physical activity",
+   "intervention": "Community-wide multi-strategy interventions for increasing physical activity",
+   "body": "Cochrane",
+   "grade": "Low to high certainty evidence, typically no evidence of benefit",
+   "year": 2015,
+   "finding": "Across 33 studies, the review found typically no evidence of benefit or effect from community-wide interventions on the percentage of people physically active or on energy expenditure, with certainty ranging from low to high depending on the outcome and follow-up.",
+   "setting": "Community, multi-sector",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD008366.pub3/information",
+   "measures": [
+    "LPA",
+    "chr_inactive"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "creating_or_improving_access_to_places_for_physical_activity_combined_with_infor",
+   "topic": "Physical activity",
+   "intervention": "Creating or improving access to places for physical activity combined with informational outreach",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": 2001,
+   "finding": "The CPSTF recommends the creation of or enhanced access to places for physical activity combined with informational outreach, based on strong evidence of effectiveness in increasing physical activity and improving physical fitness.",
+   "setting": "Community, worksite, local government",
+   "url": "https://www.thecommunityguide.org/findings/physical-activity-creation-or-enhanced-access-places-physical-activity-combined",
+   "measures": [
+    "LPA",
+    "chr_inactive"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "individually_adapted_health_behavior_change_programs_for_physical_activity_commu",
+   "topic": "Physical activity",
+   "intervention": "Individually-adapted health behavior change programs for physical activity",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": 2001,
+   "finding": "The CPSTF recommends individually-adapted health behavior change programs based on strong evidence of effectiveness in increasing physical activity and improving physical fitness among adults and children.",
+   "setting": "Community, clinic, telephone or mail",
+   "url": "https://thecommunityguide.org/findings/physical-activity-individually-adapted-health-behavior-change-programs",
+   "measures": [
+    "LPA",
+    "chr_inactive"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "physical_activity_interventions_that_include_activity_monitors_for_adults_with_o",
+   "topic": "Physical activity",
+   "intervention": "Physical activity interventions that include activity monitors for adults with overweight or obesity",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, sufficient evidence",
+   "year": 2017,
+   "finding": "The CPSTF recommends physical activity promotion interventions that include activity monitors based on sufficient evidence of effectiveness in increasing physical activity in adults with overweight or obesity, with gains shown over three months or less and longer-term maintenance unclear.",
+   "setting": "Clinic, community, online",
+   "url": "https://www.thecommunityguide.org/content/tffrs-physical-activity-interventions-including-activity-monitors-adults-who-are-overweight",
+   "measures": [
+    "LPA",
+    "chr_inactive",
+    "chr_obesity"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "social_support_interventions_in_community_settings_walking_groups_buddy_systems_",
+   "topic": "Physical activity",
+   "intervention": "Social support interventions in community settings (walking groups, buddy systems)",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": 2001,
+   "finding": "The CPSTF recommends efforts made in community settings to provide social support for increasing physical activity, based on strong evidence of effectiveness in increasing physical activity and improving physical fitness among adults.",
+   "setting": "Community, peer-led",
+   "url": "https://www.thecommunityguide.org/findings/physical-activity-social-support-interventions-community-settings",
+   "measures": [
+    "LPA",
+    "chr_inactive"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "stand_alone_mass_media_campaigns_to_increase_physical_activity_community_prevent",
+   "topic": "Physical activity",
+   "intervention": "Stand-alone mass media campaigns to increase physical activity",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Insufficient evidence",
+   "year": 2010,
+   "finding": "The CPSTF finds insufficient evidence to determine the effectiveness of stand-alone mass media campaigns to increase physical activity at the population level, with the 16 included studies showing small and inconsistent changes.",
+   "setting": "Community, media",
+   "url": "https://www.thecommunityguide.org/findings/physical-activity-stand-alone-mass-media-campaigns",
+   "measures": [
+    "LPA",
+    "chr_inactive"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "combined_diet_and_physical_activity_promotion_programs_for_people_at_increased_r",
+   "topic": "Obesity and diabetes",
+   "intervention": "Combined diet and physical activity promotion programs for people at increased risk of type 2 diabetes",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": 2014,
+   "finding": "The CPSTF recommends combined diet and physical activity promotion programs for people at increased risk of type 2 diabetes to reduce new-onset diabetes, with the 16 studies reporting this outcome showing a median 11 percentage point reduction in people developing diabetes.",
+   "setting": "Clinic or community, trained providers",
+   "url": "https://www.thecommunityguide.org/findings/diabetes-combined-diet-and-physical-activity-promotion-programs-prevent-type-2-diabetes",
+   "measures": [
+    "chr_diabetes",
+    "chr_obesity"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "diabetes_management_interventions_engaging_community_health_workers_community_pr",
+   "topic": "Obesity and diabetes",
+   "intervention": "Diabetes management interventions engaging community health workers",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": 2017,
+   "finding": "The CPSTF recommends interventions engaging community health workers for diabetes management, which improved blood sugar control and reduced healthcare use, with mixed results for cardiovascular risk factors and weight.",
+   "setting": "Community, clinic, community health workers",
+   "url": "https://www.thecommunityguide.org/findings/diabetes-management-interventions-engaging-community-health-workers",
+   "measures": [
+    "chr_diabetes"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "diabetes_prevention_interventions_engaging_community_health_workers_community_pr",
+   "topic": "Obesity and diabetes",
+   "intervention": "Diabetes prevention interventions engaging community health workers",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, sufficient evidence",
+   "year": 2016,
+   "finding": "The CPSTF recommends interventions engaging community health workers for diabetes prevention, which improved participants' blood sugar control and weight-related outcomes and reduced rates of progression to type 2 diabetes.",
+   "setting": "Community, community health workers",
+   "url": "https://thecommunityguide.org/findings/diabetes-prevention-interventions-engaging-community-health-workers",
+   "measures": [
+    "chr_diabetes"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "diet_plus_physical_activity_for_prevention_or_delay_of_type_2_diabetes_in_people",
+   "topic": "Obesity and diabetes",
+   "intervention": "Diet plus physical activity for prevention or delay of type 2 diabetes in people at increased risk",
+   "body": "Cochrane",
+   "grade": "Moderate quality evidence for diet plus physical activity; very low to low quality evidence for diet alone or physical activity alone",
+   "year": 2017,
+   "finding": "Diet plus physical activity reduces or delays the onset of type 2 diabetes in people with impaired glucose tolerance with moderate quality evidence, while there is no firm evidence that diet alone or physical activity alone changes diabetes risk, and most trials did not measure complications or quality of life.",
+   "setting": "Clinic, community",
+   "url": "https://www.pubmed.gov/29205264/",
+   "measures": [
+    "chr_diabetes"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "intensive_multicomponent_behavioral_interventions_for_adults_with_obesity_u_s_pr",
+   "topic": "Obesity and diabetes",
+   "intervention": "Intensive multicomponent behavioral interventions for adults with obesity",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "Grade B",
+   "year": 2018,
+   "finding": "The USPSTF recommends that clinicians offer or refer adults with a body mass index of 30 or higher to intensive, multicomponent behavioral interventions; the page notes an update is in progress.",
+   "setting": "Clinic, primary care referral",
+   "url": "https://uspreventiveservicestaskforce.org/uspstf/recommendation/obesity-in-adults-interventions",
+   "measures": [
+    "chr_obesity"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "screening_for_prediabetes_and_type_2_diabetes_in_adults_aged_35_to_70_with_overw",
+   "topic": "Obesity and diabetes",
+   "intervention": "Screening for prediabetes and type 2 diabetes in adults aged 35 to 70 with overweight or obesity",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "Grade B",
+   "year": 2021,
+   "finding": "The USPSTF recommends screening for prediabetes and type 2 diabetes in adults aged 35 to 70 years who have overweight or obesity, and that clinicians offer or refer patients with prediabetes to effective preventive interventions.",
+   "setting": "Clinic, primary care",
+   "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes",
+   "measures": [
+    "chr_diabetes",
+    "chr_obesity"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "team_based_care_for_patients_with_type_2_diabetes_community_preventive_services_",
+   "topic": "Obesity and diabetes",
+   "intervention": "Team-based care for patients with type 2 diabetes",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": 2016,
+   "finding": "The CPSTF recommends team-based care to control type 2 diabetes, which compared with usual care lowered A1c by a mean of 0.5 percent, systolic blood pressure by 5.5 mmHg and LDL cholesterol by 8.0 mg/dL.",
+   "setting": "Clinic, health system",
+   "url": "https://www.thecommunityguide.org/findings/diabetes-management-team-based-care-patients-type-2-diabetes",
+   "measures": [
+    "chr_diabetes"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "technology_supported_multicomponent_coaching_or_counseling_to_reduce_weight_comm",
+   "topic": "Obesity and diabetes",
+   "intervention": "Technology-supported multicomponent coaching or counseling to reduce weight",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, sufficient evidence",
+   "year": 2009,
+   "finding": "The CPSTF recommends multicomponent interventions that use technology-supported coaching or counseling to help clients lose weight, with all included studies reporting weight loss and a median decrease of 8.1 pounds over a median of six months.",
+   "setting": "Clinic, community, online",
+   "url": "https://thecommunityguide.org/findings/obesity-technology-supported-multicomponent-coaching-or-counseling-interventions-reduce",
+   "measures": [
+    "chr_obesity"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "worksite_programs_to_improve_diet_and_physical_activity_and_reduce_weight_commun",
+   "topic": "Obesity and diabetes",
+   "intervention": "Worksite programs to improve diet and physical activity and reduce weight",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence (finding page wording; CPSTF findings index lists it as sufficient evidence)",
+   "year": 2007,
+   "finding": "The CPSTF recommends worksite programs intended to improve diet and physical activity behaviors based on evidence of effectiveness for reducing weight among employees, with employees in individually randomized trials losing an average of 2.8 pounds relative to controls at 12 months.",
+   "setting": "Worksite, employer",
+   "url": "https://www.thecommunityguide.org/findings/obesity-worksite-programs",
+   "measures": [
+    "chr_obesity"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "fruit_and_vegetable_incentive_programs_for_households_with_lower_incomes_communi",
+   "topic": "Food",
+   "intervention": "Fruit and vegetable incentive programs for households with lower incomes",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2023",
+   "finding": "The Task Force found strong evidence that fruit and vegetable incentive programs for lower-income households reduce household food insecurity (median 18 percentage point drop across 7 studies) and increase fruit and vegetable consumption.",
+   "setting": "Community retail, policy",
+   "url": "https://thecommunityguide.org/findings/social-determinants-health-fruit-vegetable-incentive-programs.html",
+   "measures": [
+    "FOODINSECU",
+    "chr_foodinsec",
+    "chr_ltdfood",
+    "chr_foodenv"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "healthy_school_meals_for_all_universal_free_school_meals_community_preventive_se",
+   "topic": "Food",
+   "intervention": "Healthy School Meals for All (universal free school meals)",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2022",
+   "finding": "The Task Force recommends Healthy School Meals for All to increase student meal participation (median 4.5 percentage point increase across 14 studies) and reduce absenteeism; the review did not measure household food insecurity and lists that as an unanswered question.",
+   "setting": "School, policy",
+   "url": "https://www.thecommunityguide.org/findings/social-determinants-health-healthy-school-meals-all",
+   "measures": [
+    "FOODINSECU",
+    "chr_foodinsec"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "home_delivered_and_congregate_meal_services_for_older_adults_community_preventiv",
+   "topic": "Food",
+   "intervention": "Home-delivered and congregate meal services for older adults",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, sufficient evidence",
+   "year": "2021",
+   "finding": "The Task Force found that home-delivered and congregate meal services for independently living adults age 60 and older reduce malnutrition (15.5 and 9.0 percentage point reductions respectively) and increase the share meeting energy and protein intake recommendations; food insecurity was not measured directly.",
+   "setting": "Community, aging services",
+   "url": "https://www.thecommunityguide.org/findings/nutrition-home-delivered-and-congregate-meal-services-older-adults",
+   "measures": [
+    "FOODINSECU",
+    "chr_foodinsec"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "housing_improvements_warmth_and_energy_efficiency_rehousing_area_based_renewal_c",
+   "topic": "Housing and utilities",
+   "intervention": "Housing improvements (warmth and energy efficiency, rehousing, area-based renewal)",
+   "body": "Cochrane",
+   "grade": "No GRADE certainty rating; authors conclude housing investment that improves warmth can improve health, with unclear effects for area-based programs",
+   "year": "2013",
+   "finding": "Cochrane found that housing improvements that make homes warmer and more comfortable can improve health, with the largest gains when targeted to households with inadequate warmth or chronic respiratory disease, while health effects of area-based renewal that does not target individual need were unclear and evidence on fuel costs was inconsistent.",
+   "setting": "Housing, policy",
+   "url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD008657.pub2/pdf/CDSR/CD008657/CD008657_abstract.pdf",
+   "measures": [
+    "chr_sevhouse",
+    "SHUTUTILITY"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "permanent_supportive_housing_with_housing_first_community_preventive_services_ta",
+   "topic": "Housing and utilities",
+   "intervention": "Permanent supportive housing with Housing First",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2019",
+   "finding": "The Task Force found strong evidence that permanent supportive housing with Housing First for people experiencing homelessness who have a disabling condition increases housing stability, decreases homelessness and improves quality of life, with economic benefits exceeding program costs in the United States.",
+   "setting": "Community, policy",
+   "url": "https://thecommunityguide.org/findings/social-determinants-health-housing-first-programs.html",
+   "measures": [
+    "HOUSINSECU"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "tenant_based_housing_voucher_programs_community_preventive_services_task_force_t",
+   "topic": "Housing and utilities",
+   "intervention": "Tenant-based housing voucher programs",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, sufficient evidence",
+   "year": "2020",
+   "finding": "The Task Force found sufficient evidence that tenant-based housing voucher programs improve housing quality and reduce housing insecurity, homelessness, neighborhood poverty, household poverty and food insecurity (median 7.2 percentage point reduction) for adults, with later gains in education, employment and income for children who moved when young.",
+   "setting": "Policy, housing authority",
+   "url": "https://www.thecommunityguide.org/findings/social-determinants-health-tenant-based-housing-voucher-programs",
+   "measures": [
+    "HOUSINSECU",
+    "chr_sevhouse",
+    "chr_costburden",
+    "FOODINSECU",
+    "chr_foodinsec",
+    "chr_childpov"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "center_based_early_childhood_education_programs_community_preventive_services_ta",
+   "topic": "Economic",
+   "intervention": "Center-based early childhood education programs",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": "2015",
+   "finding": "The Task Force found strong evidence that center-based early childhood education programs for low-income 3 and 4 year olds improve educational outcomes, with a median benefit-to-cost ratio of 3.39 to 1 from projected future earnings gains alone.",
+   "setting": "School, community",
+   "url": "https://thecommunityguide.org/findings/social-determinants-health-center-based-early-childhood-education.html",
+   "measures": [
+    "chr_childpov"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "supported_employment_for_adults_with_severe_mental_illness_cochrane",
+   "topic": "Economic",
+   "intervention": "Supported employment for adults with severe mental illness",
+   "body": "Cochrane",
+   "grade": "Moderate to low quality evidence",
+   "year": "2017",
+   "finding": "Cochrane found that supported employment and augmented supported employment were the most effective interventions for helping adults with severe mental illness obtain and keep competitive employment (RR 2.72 versus psychiatric care only at long-term follow-up, low quality evidence), with no increase in adverse events.",
+   "setting": "Clinic, community",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD011867.pub2/pdf/CDSR/CD011867/CD011867_abstract.pdf",
+   "measures": [
+    "chr_unemp"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "welfare_to_work_interventions_for_lone_parents_cochrane",
+   "topic": "Economic",
+   "intervention": "Welfare-to-work interventions for lone parents",
+   "body": "Cochrane",
+   "grade": "Moderate certainty (early employment and income effects); low to moderate certainty (health outcomes); very low to moderate certainty (later follow-up)",
+   "year": "2018",
+   "finding": "Cochrane found that welfare-to-work programs slightly increased lone parents' employment and income at 18 to 48 months with the difference largely gone by 49 to 72 months, had very small effects on parent and child mental and physical health that were unlikely to be substantively important, and most participants remained in poverty.",
+   "setting": "Policy, welfare agency",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD009820.pub3/information",
+   "measures": [
+    "chr_unemp",
+    "chr_childpov",
+    "chr_income"
+   ],
+   "checked": "2026-11-08"
+  },
+  {
+   "id": "video_calls_for_older_people_in_care_settings_cochrane",
+   "topic": "Social connection and loneliness",
+   "intervention": "Video calls for older people in care settings",
+   "body": "Cochrane",
+   "grade": "Very low certainty evidence; no clear difference in loneliness versus usual care",
+   "year": 2020,
+   "finding": "Three small studies (201 participants, mostly nursing home residents) found no clear difference in loneliness between video call interventions and usual care at three months, with very low certainty of evidence, and no study reported social isolation.",
+   "setting": "Residential care, community",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013632/information",
+   "measures": [
+    "LONELINESS",
+    "chr_lonely",
+    "EMOTIONSPT",
+    "chr_support"
+   ],
+   "checked": "2026-11-08",
+   "note": "Rapid review CD013632 (Noone et al.). This is the only completed Cochrane review found that grades an intervention directly on loneliness."
+  },
+  {
+   "id": "child_safety_seat_laws_mandating_use_community_preventive_services_task_force_th",
+   "topic": "Injury",
+   "intervention": "Child safety seat laws mandating use",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": 1998,
+   "finding": "The CPSTF recommends child safety seat laws to increase their use; across nine studies the laws were associated with a median 35 percent drop in fatal injuries, a 17 percent drop in fatal and nonfatal injuries combined, and a 13 percentage point rise in observed seat use.",
+   "setting": "State policy",
+   "url": "https://www.thecommunityguide.org/findings/motor-vehicle-injury-child-safety-seats-laws-mandating-use",
+   "measures": [
+    "chr_injury"
+   ],
+   "checked": "2026-11-08",
+   "note": "Grade and year from the CPSTF Motor Vehicle Injury findings index."
+  },
+  {
+   "id": "exercise_for_preventing_falls_in_community_dwelling_older_people_cochrane",
+   "topic": "Injury",
+   "intervention": "Exercise for preventing falls in community dwelling older people",
+   "body": "Cochrane",
+   "grade": "High certainty evidence",
+   "year": 2019,
+   "finding": "Exercise programmes reduce the rate of falls by 23 percent (rate ratio 0.77, 95% CI 0.71 to 0.83) and the number of people experiencing one or more falls by 15 percent (risk ratio 0.85) in older people living in the community, both rated high certainty.",
+   "setting": "Community, clinic",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012424.pub2/information",
+   "measures": [
+    "chr_injury"
+   ],
+   "checked": "2026-11-08",
+   "note": "Sherrington et al., CD012424.pub2, published 31 January 2019."
+  },
+  {
+   "id": "exercise_interventions_to_prevent_falls_in_older_adults_u_s_preventive_services_",
+   "topic": "Injury",
+   "intervention": "Exercise interventions to prevent falls in older adults",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "Grade B",
+   "year": 2024,
+   "finding": "The USPSTF recommends exercise interventions to prevent falls in community dwelling adults 65 years or older who are at increased risk for falls, concluding with moderate certainty that the net benefit is moderate.",
+   "setting": "Clinic referral, community",
+   "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/falls-prevention-community-dwelling-older-adults-interventions",
+   "measures": [
+    "chr_injury"
+   ],
+   "checked": "2026-11-08",
+   "note": "Final recommendation statement published June 4, 2024."
+  },
+  {
+   "id": "ignition_interlocks_for_convicted_alcohol_impaired_drivers_community_preventive_",
+   "topic": "Injury",
+   "intervention": "Ignition interlocks for convicted alcohol impaired drivers",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": 2006,
+   "finding": "The CPSTF recommends the use of ignition interlocks for people convicted of alcohol impaired driving, based on evidence that re-arrest rates for alcohol impaired driving fall while the devices are installed.",
+   "setting": "Policy, courts",
+   "url": "https://thecommunityguide.org/findings/motor-vehicle-injury-alcohol-impaired-driving-ignition-interlocks",
+   "measures": [
+    "chr_injury"
+   ],
+   "checked": "2026-11-08",
+   "note": "Grade and year from the CPSTF Motor Vehicle Injury findings index."
+  },
+  {
+   "id": "multifactorial_and_multiple_component_interventions_for_preventing_falls_in_comm",
+   "topic": "Injury",
+   "intervention": "Multifactorial and multiple component interventions for preventing falls in community dwelling older people",
+   "body": "Cochrane",
+   "grade": "Low certainty (multifactorial); moderate certainty (multiple component)",
+   "year": 2018,
+   "finding": "Multifactorial interventions may reduce the rate of falls (rate ratio 0.77, low certainty) but may make little or no difference to the number of people who fall (risk ratio 0.96, low certainty), while multiple component interventions probably reduce both the rate of falls (rate ratio 0.74) and the risk of falling (risk ratio 0.82), both moderate certainty.",
+   "setting": "Clinic, community",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012221.pub2/information",
+   "measures": [
+    "chr_injury"
+   ],
+   "checked": "2026-11-08",
+   "note": "Hopewell et al., CD012221.pub2, published 23 July 2018."
+  },
+  {
+   "id": "multifactorial_interventions_to_prevent_falls_in_older_adults_u_s_preventive_ser",
+   "topic": "Injury",
+   "intervention": "Multifactorial interventions to prevent falls in older adults",
+   "body": "U.S. Preventive Services Task Force",
+   "grade": "Grade C",
+   "year": 2024,
+   "finding": "The USPSTF recommends that clinicians individualize the decision to offer multifactorial interventions to prevent falls to community dwelling adults 65 years or older at increased risk for falls, concluding that the net benefit is small.",
+   "setting": "Clinic",
+   "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/falls-prevention-community-dwelling-older-adults-interventions",
+   "measures": [
+    "chr_injury"
+   ],
+   "checked": "2026-11-08",
+   "note": "Same statement as the exercise recommendation, published June 4, 2024."
+  },
+  {
+   "id": "primary_vs_secondary_safety_belt_enforcement_laws_community_preventive_services_",
+   "topic": "Injury",
+   "intervention": "Primary (vs. secondary) safety belt enforcement laws",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": 2000,
+   "finding": "The CPSTF recommends primary safety belt laws over secondary enforcement laws to reduce motor vehicle related injuries and deaths; primary law states showed a median 8 percent drop in fatal injuries and a median 14 percentage point rise in observed belt use.",
+   "setting": "State policy",
+   "url": "https://www.thecommunityguide.org/findings/motor-vehicle-injury-safety-belts-primary-vs-secondary-enforcement-laws",
+   "measures": [
+    "chr_injury"
+   ],
+   "checked": "2026-11-08",
+   "note": "Grade and year from the CPSTF Motor Vehicle Injury findings index."
+  },
+  {
+   "id": "publicized_sobriety_checkpoint_programs_community_preventive_services_task_force",
+   "topic": "Injury",
+   "intervention": "Publicized sobriety checkpoint programs",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": 2012,
+   "finding": "The CPSTF recommends publicized sobriety checkpoint programs based on strong evidence of effectiveness in reducing alcohol impaired driving, with U.S. studies showing decreases in alcohol involved crash fatalities and in drivers over the legal blood alcohol limit.",
+   "setting": "Law enforcement, policy",
+   "url": "https://www.thecommunityguide.org/findings/motor-vehicle-injury-alcohol-impaired-driving-publicized-sobriety-checkpoint-programs",
+   "measures": [
+    "chr_injury"
+   ],
+   "checked": "2026-11-08",
+   "note": "Updates and replaces the 2000 finding on sobriety checkpoints."
+  },
+  {
+   "id": "safety_belt_laws_mandating_use_community_preventive_services_task_force_the_comm",
+   "topic": "Injury",
+   "intervention": "Safety belt laws mandating use",
+   "body": "Community Preventive Services Task Force (The Community Guide)",
+   "grade": "Recommended, strong evidence",
+   "year": 2000,
+   "finding": "Based on 33 studies, safety belt use laws were associated with a median 9 percent decrease in fatal injuries, an 8 percent decrease in fatal and nonfatal injuries combined, and a median 33 percentage point increase in observed belt use.",
+   "setting": "State policy",
+   "url": "https://thecommunityguide.org/findings/motor-vehicle-injury-safety-belts-laws-mandating-use",
+   "measures": [
+    "chr_injury"
+   ],
+   "checked": "2026-11-08",
+   "note": "Grade and year taken from the CPSTF Motor Vehicle Injury findings index (https://www.thecommunityguide.org/content/task-force-findings-motor-vehicle-injury); the finding page itself shows results but not the grade text."
+  },
+  {
+   "id": "antioxidant_vitamin_supplements_beta_carotene_vitamin_a_vitamin_e_for_preventing",
+   "topic": "Premature death and life expectancy",
+   "intervention": "Antioxidant vitamin supplements (beta-carotene, vitamin A, vitamin E) for preventing mortality",
+   "body": "Cochrane",
+   "grade": "Evidence does not support use; beta-carotene and vitamin E seem to increase mortality (low risk of bias trials RR 1.04, 95% CI 1.01 to 1.07)",
+   "year": 2012,
+   "finding": "Across 78 trials, antioxidant supplements did not reduce all-cause mortality and in trials at low risk of bias slightly increased it (RR 1.04, 95% CI 1.01 to 1.07), with the increase linked to beta-carotene and possibly vitamin E, so the authors conclude the evidence does not support antioxidant supplements in the general population or in patients with various diseases.",
+   "setting": "Clinic, community",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD007176.pub2/information",
+   "measures": [
+    "chr_ypll",
+    "chr_lifeexp"
+   ],
+   "checked": "2026-11-08",
+   "note": "Bjelakovic et al., CD007176.pub2, published 14 March 2012. Title and date confirmed on the Cochrane Library record; conclusions read from Cochrane's own plain language summary at https://www.cochrane.org/CD007176/antioxidant-supplements-for-prevention-of-mortality-in-healthy-participants-and-patients-with-various. This is a recommended against type finding."
+  },
+  {
+   "id": "statins_for_primary_prevention_of_cardiovascular_disease_cochrane",
+   "topic": "Premature death and life expectancy",
+   "intervention": "Statins for primary prevention of cardiovascular disease",
+   "body": "Cochrane",
+   "grade": "Reduction in all-cause mortality (odds ratio 0.86, 95% CI 0.79 to 0.94); no GRADE certainty rating given",
+   "year": 2013,
+   "finding": "In people without a history of cardiovascular disease, statins reduced all-cause mortality (odds ratio 0.86, 95% CI 0.79 to 0.94) as well as major vascular events and revascularisations, without excess adverse events.",
+   "setting": "Clinic",
+   "url": "https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD004816.pub5/information",
+   "measures": [
+    "chr_ypll",
+    "chr_lifeexp"
+   ],
+   "checked": "2026-11-08",
+   "note": "Taylor et al., CD004816.pub5, published 31 January 2013. Title and date confirmed on the Cochrane Library record; the mortality odds ratio was read from Cochrane's own plain language summary at https://www.cochrane.org/evidence/CD004816_statins-preventing-cardiovascular-disease-people-without-history-cardiovascular-disease because the Library abstract page did not load."
+  }
+ ],
+ "note": "Three Cochrane reviews whose evidence comes only from low- and middle-income countries (unconditional cash transfers, community-level food access, supplementary feeding) were left off because they do not describe a Nebraska county."
+}

@@ -836,6 +836,14 @@ function setMeasure(id){ current = id; try { localStorage.setItem("nsa-measure2"
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
 new MutationObserver(render).observe(document.documentElement, { attributes:true, attributeFilter:["data-theme"] });
 applyTier(); coverage(); render();
+// Deep link from the results page or anywhere else: /atlas/#county=31031
+(function(){
+  const hc = (location.hash.match(/county=(\d{5})/) || [])[1];
+  if (hc && names[hc]) {
+    selected = hc; showDetail(hc); showPriorities(hc); counties.classed("sel", d => d.id === selected);
+    const el = document.getElementById("prio"); if (el) setTimeout(() => el.scrollIntoView({ behavior:"smooth", block:"start" }), 150);
+  }
+})();
 </script>
 
 </body></html>

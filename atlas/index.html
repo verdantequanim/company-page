@@ -110,6 +110,8 @@ svg{display:block;width:100%;height:auto;max-width:100%}
 .card{padding:16px 18px;display:grid;gap:10px;align-content:start;min-width:0}
 .card h3{font:600 12px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0}
 .cname{font:700 24px/1.1 var(--display);margin:0}
+.popline{margin:4px 0 0;font:500 12px var(--mono);letter-spacing:.04em;color:var(--muted)}
+.popline b{color:var(--ink);font-weight:600}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .stat{display:grid;gap:2px;min-width:0}
 .stat b{font:500 22px/1.1 var(--mono);font-variant-numeric:tabular-nums}
@@ -279,6 +281,7 @@ a{color:var(--accent)}
         <div class="priohead">
           <h3>County priorities</h3>
           <p class="cname" id="prioName"></p>
+          <p class="popline" id="prioPop"></p>
           <p class="def">Each list is ranked from the strongest signal down. A rank is where this county sits against the other 92 Nebraska counties; the priority call belongs to the county and the data governance board. Shaded rows are where this county ranks in the top quarter of the state (rank 23 or better of 93). White rows are everywhere else.</p>
         </div>
         <div class="priogrid">
@@ -305,6 +308,7 @@ a{color:var(--accent)}
         <p><strong>Scores.</strong> The three HeadWater scales average their items on a 0 to 100 scale pointed in the stress direction, so a higher Financial Stress, Stress Load or Social Support score always means more strain. Item layers show the share of respondents giving the flagged answer, and the county panel shows the mean where the item has one.</p>
         <p><strong>Public layer.</strong> CDC PLACES county estimates, age-adjusted percent of adults, from 2023 BRFSS (short sleep from 2022). Model-based estimates, not direct counts. Source: <a href="https://data.cdc.gov/resource/swc5-untb" target="_blank" rel="noopener">data.cdc.gov PLACES county data</a>.</p>
         <p><strong>Survey data.</strong> HeadWater survey layers on this public copy open county by county once a county passes the respondent floor and the Verdant Equanim data governance board approves release. No survey results are published here yet. Wave 2 opened 22 October 2026.<span id="stamp2" hidden></span></p>
+        <p><strong>Population.</strong> The resident count under each county name is the U.S. Census Bureau's annual estimate as of July 1, 2025 (Vintage 2025, released March 2026). It is there so a reader can judge what a HeadWater response count means in that county, and so a rate can be turned into a number of people. Counties are marked rural under the Rural Health Transformation Program's own definition: every county except Douglas, Lancaster and Sarpy. Refreshed each spring with the County Health Rankings update.</p>
         <p><strong>Year one.</strong> For each county, the "From priority to action" panel shows what works on its top priorities and what the county has reported it already has in place. The gap between the two is not shown until one year after the day that county's HeadWater layer goes live. During that year the inventory reads "not yet reported," never "nothing." Each county gets its own year, counted from its own go-live date, and any county can report what it has at any time.</p>
         <p><strong>Partner access.</strong> The passcode on this page is a preview curtain, not an account system. Registration by seat type (hospital, health department, school, Tribal Nation and so on), with each seat seeing what the data governance board says it may, is a platform feature planned for the 2027 build. Until then, <a id="reqAccess" href="#">request partner access by email</a> and Verdant Equanim verifies by hand. Individuals never need a code: the county page, the research, what works and what is in place are theirs without one.</p>
       </section>
@@ -583,7 +587,7 @@ function render(){
 function showDetail(id){
   const it = itemById[current]; const L = layerValues(); const vals = L.vals; const v = vals[id];
   const c = (AGG.counties||{})[id];
-  let head = `<h3>County detail</h3><p class="cname">${names[id]} County</p>`;
+  let head = `<h3>County detail</h3><p class="cname">${names[id]} County</p>${popLine(id, c)}`;
   if (it.places) {
     const arr = Object.values(vals).sort(d3.ascending), med = d3.median(arr);
     const worseHigh = !(it.chr && it.worse === false);
@@ -679,6 +683,7 @@ function rowPublic(r){
 }
 function showPriorities(id){
   document.getElementById("prioName").textContent = names[id] + " County";
+  const popEl = document.getElementById("prioPop"); if (popEl) { const pl = popLine(id, (AGG.counties||{})[id]); popEl.outerHTML = pl ? pl.replace('<p class="popline">', '<p class="popline" id="prioPop">') : '<p class="popline" id="prioPop"></p>'; }
   const cdc = cdcRanked(id), chr = chrRanked(id);
   document.getElementById("prioCdc").innerHTML = cdc.map(rowPublic).join("");
   document.getElementById("prioChr").innerHTML = chr.map(rowPublic).join("");
@@ -826,6 +831,13 @@ function showChain(id){
   const nInv = (inv.entries||[]).length;
   document.getElementById("chainFoot").innerHTML = `Priorities are the topics where ${esc(names[id])} County is in the top quarter of the state, two-source agreement first. ${live ? `HeadWater layer live since ${fmtDate(new Date(live+"T00:00:00"))}.` : "HeadWater layer not yet live for this county."} ${nInv} reported item${nInv===1?"":"s"} in place. Reports are verified before posting; nothing here is a judgment of the county, and the priority call belongs to the county and the data governance board. <a href="../research/#role=grant_writer">Write about this county: open the Research Library as a grant writer ›</a>`;
 }
+let POP = { counties: {} };
+function popLine(id, c){
+  const p = POP.counties[id]; if (!p) return "";
+  const per = c && c.n ? ` · <b>${(c.n / p.pop * 1000).toFixed(1)}</b> HeadWater responses per 1,000 residents` : "";
+  return `<p class="popline"><b>${p.pop.toLocaleString()}</b> residents, ${POP.as_of ? "Census estimate, " + POP.as_of : "Census estimate"} · ${p.rhtp_rural ? "rural under the Rural Health Transformation Program" : "one of the three counties the program does not count as rural"}${per}</p>`;
+}
+fetch("../data/population.json").then(r => r.ok ? r.json() : null).then(j => { if (j) { POP = j; showDetail(selected); if (document.getElementById("prioPop")) showPriorities(selected); } }).catch(() => {});
 Promise.all([
   fetch("../data/whatworks.json").then(r => r.ok ? r.json() : { entries: [] }).catch(() => ({ entries: [] })),
   fetch("../data/inventory.json").then(r => r.ok ? r.json() : { counties: {} }).catch(() => ({ counties: {} }))

@@ -17,8 +17,8 @@
   "cadence": "Once a year, and whenever a source is added or retired"
  },
  "cite_headwater": {
-  "survey": "Verdant Equanim, LLC. (2026). HeadWater chronic stress survey, version 2 (Nebraska Under Stress: Community Wellbeing Survey, Wave 2). Lincoln, Nebraska. https://vereq.co",
-  "atlas": "Verdant Equanim, LLC. (2026). Nebraska Stress Atlas: county estimates from CDC PLACES and County Health Rankings with HeadWater survey layers. Lincoln, Nebraska. https://vereq.co/atlas (data vintages shown on the page)",
+  "survey": "Verdant Equanim, LLC. (2026). HeadWater chronic stress survey, version 2 (Nebraska Under Stress: Community Wellbeing Survey, Wave 2). Lincoln, Nebraska. https://verdantequanim.com",
+  "atlas": "Verdant Equanim, LLC. (2026). Nebraska Stress Atlas: county estimates from CDC PLACES and County Health Rankings with HeadWater survey layers. Lincoln, Nebraska. https://verdantequanim.com/atlas/ (data vintages shown on the page)",
   "reliability": "Reliability of HeadWater version 1 subscales, March 2026 staff test (n = 86): Stability .79 (n = 64), Support .77 (n = 53), Sleep .65 (n = 52). Reported by subscale; rural validation is in progress."
  },
  "categories": [

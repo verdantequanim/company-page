@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="The four pillars: sleep, food, exercise and mindfulness. One small step each, with the research behind it and free places near four Nebraska pilot towns.">
+<title>The four pillars · Verdant Equanim</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{--bg:#f7f4ec;--fg:#1d241c;--muted:#5e6657;--rule:#d9d3c2;--green:#214517;--gold:#c8962e;--card:#efeadc;--panel:#fffdf7;--soft:#e3eedb;--display:"Newsreader",Georgia,"Times New Roman",serif;--body:"Source Sans 3","Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15190f;--fg:#eee8d8;--muted:#a9b09c;--rule:#2e3626;--green:#8fbf6f;--gold:#e0b453;--card:#1c2217;--panel:#1a2015;--soft:#222c1b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15190f;--fg:#eee8d8;--muted:#a9b09c;--rule:#2e3626;--green:#8fbf6f;--gold:#e0b453;--card:#1c2217;--panel:#1a2015;--soft:#222c1b;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1.05rem;line-height:1.5;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{padding-block:22px 10px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
+.mark .seal{width:38px;height:38px;border-radius:50%;background:var(--green);display:grid;place-items:center;color:var(--bg);font-family:var(--display);font-size:1.1rem;font-weight:600}
+.mark .name{font-family:var(--display);font-size:1.25rem}
+nav{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.92rem;text-transform:uppercase;letter-spacing:.08em}
+nav a{color:var(--muted);text-decoration:none;white-space:nowrap}
+nav a:hover,nav a:focus-visible{color:var(--green);text-decoration:underline;outline:none}
+a{color:var(--green)}
+main{max-width:640px;margin:0 auto;padding-block:18px 40px;display:grid;gap:18px}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,7vw,3rem);line-height:1.05;margin:0}
+h2{font-family:var(--display);font-weight:500;font-size:1.65rem;margin:0;line-height:1.15}
+.eyebrow{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lead{background:var(--soft);border-radius:8px;padding:10px 12px}
+.back{min-height:44px;display:inline-flex;align-items:center}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:16px;display:grid;gap:12px}
+.card .sub{color:var(--muted);font-size:.95rem}
+.row{border-top:1px solid var(--rule);padding-top:10px;display:grid;gap:4px}
+.src{font-size:.88rem;color:var(--muted)}
+.step{border-top:1px solid var(--rule);padding-top:10px;display:grid;grid-template-columns:28px 1fr;gap:8px}
+.step .n{font-family:var(--display);font-size:1.65rem;line-height:1;color:var(--green)}
+.step>div{display:grid;gap:6px;min-width:0}
+.box{background:var(--card);border-radius:10px;padding:12px 14px;display:grid;gap:8px}
+.box.g{background:var(--soft)}
+.box h3,.pc h3{margin:0;font-size:1.05rem;font-weight:600;font-family:var(--body)}
+details.box{padding:0 14px}
+summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:600;cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"\2192";margin-right:6px}
+summary span{flex:1}
+summary i{font-style:normal;font-weight:400;font-size:.88rem;color:var(--muted)}
+summary i::after{content:"Show"}
+details[open]>summary i::after{content:"Hide"}
+details .in{display:grid;gap:8px;padding-bottom:12px}
+ol.how{margin:0;padding-left:22px;display:grid;gap:6px}
+.tag{font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 10px;background:#fbe9d6;color:#7a3d0c;white-space:nowrap}
+.hd{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.near{background:var(--green);color:var(--bg);border-radius:12px;padding:16px;display:grid;gap:12px}
+.near .sub,.near .note{opacity:.9;font-size:.95rem}
+.near details{border:1px solid currentColor;border-radius:10px;padding:0 10px}
+.near summary i{color:inherit;opacity:.85}
+.it{background:var(--bg);color:var(--fg);border-radius:8px;padding:12px;display:grid;gap:4px;justify-items:start}
+.it span{font-size:.95rem;color:var(--muted)}
+.pill{font-size:.72rem;letter-spacing:.03em;text-transform:uppercase;border-radius:999px;padding:2px 10px;background:var(--gold);color:#1d241c}
+.pill.w{background:none;border:1px solid var(--muted);color:var(--muted)}
+.btn{min-height:46px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 12px;border-radius:8px;background:var(--green);color:var(--bg);text-decoration:none;font-weight:600}
+.btn::before{content:"\2192";margin-right:8px}
+.btn.o{background:none;color:var(--green);border:1px solid var(--green)}
+.pc{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:16px;display:grid;gap:8px}
+.pc h2{font-size:1.75rem}
+.pc .do{font-size:1.15rem;font-weight:600}
+.c988{border:1px solid var(--green);border-radius:12px;padding:14px 16px;display:flex;gap:14px;align-items:center}
+.c988 b{font-family:var(--display);font-weight:400;font-size:2.1rem;line-height:1;color:var(--green)}
+.fine{font-size:.88rem;color:var(--muted)}
+ul.srcs{margin:0;padding-left:18px;display:grid;gap:4px;font-size:.92rem}
+footer{border-top:1px solid var(--rule);padding-block:20px 30px;color:var(--muted);font-size:.92rem;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="mark" href="../"><span class="seal">VE</span><span class="name">Verdant Equanim</span></a>
+  <nav>
+    <a href="../">Home</a>
+    <a href="../atlas/">The Atlas</a>
+    <a href="../research/">Research Library</a>
+    <a href="./">Four pillars</a>
+    <a href="../howto/">How to use</a>
+  </nav>
+</header>
+<main id="m"><noscript>This page needs JavaScript to show the four pillars. If you need to talk to someone now, call or text 988.</noscript></main>
+<footer>
+  <div>Questions or corrections: <code>jluginbill@vereq.co</code></div>
+  <div>Verdant Equanim, LLC · Lincoln, Nebraska</div>
+</footer>
+</div>
+<script>
+var HAB='Connect the new step to something you already do every day. Pick the step yourself. Give it about two months.';
+var HABS='Utrecht University, 2011: 23 studies. University of South Australia, 2024: 2,601 people.';
+var WALK=[
+['Holdrege','68949',[['North Park','Walking trail around the lake, about 0.8 mile. Free.',1],['South Park','Walking trail next to the city pool. Free.',1]]],
+['South Sioux City','68776',[['Al Bengtson Trail','22 miles of connected paved paths and shared road routes across the city. Listed as wheelchair accessible. Free.',1],['Scenic Park','801 Riverview Drive. Miles of walking trails by the river. Free.',1]]],
+['Grand Island','68801',[['John Brownell Trail','About 2.7 miles of asphalt through neighborhoods. Listed as wheelchair accessible. Free.',1],['St. Joe Trail','Nearly 3 miles south to Hall County Park. Parking at Central Community College. Free.',1],['Riverway and Shoemaker trails','4.5 miles and 1.9 miles. Free.',1]]],
+['Nebraska City','68410',[['Steinhart Park','Paved trail through the park with a pedestrian bridge. Connects to Arbor Lodge. Free.',1],['Arbor Lodge State Historical Park','Walking trails through the arboretum. Whether parking needs a state park permit is being confirmed.',1]]]
+];
+var P={
+sleep:{n:'Sleep',step:'Put the phone down 30 minutes before bed.',ev:'In a four week trial, people who did this fell asleep faster, slept longer and slept better.',evs:'Second Military Medical University, Shanghai, 2020. 38 people. Evidence developing.',
+lead:'<b>Start with what is yours to change.</b> Most of it costs nothing and needs no appointment.',
+c1s:'Poor sleep is an upstream cause. These are the health effects found downstream.',
+c1:[['A 12 percent higher risk of death with short sleep.',' Long sleep carried a 30 percent higher risk.','University of Warwick, 2010. 1,382,999 people followed 4 to 25 years.'],
+['More diabetes, heart disease and obesity.',' Diabetes up 37 percent, coronary heart disease 26 percent, obesity 38 percent.','Oita, Nihon and Kyoto universities, 2017. 153 studies, 5,172,710 people.'],
+['Quality matters as much as hours.',' Trouble staying asleep went with 84 percent more new type 2 diabetes.','University of Warwick, 2010. 107,756 people followed 4 to 32 years.']],
+c2:[['s',1,'Start with what is yours to change.','Steady bed and wake times. Move during the day. Less caffeine late, and go easy on alcohol and nicotine. A quiet room and a way to wind down. Each habit has research behind it.','North Dakota State University, 2015. Nobody has tested the whole list on the general public.'],
+['how','A simple wind-down for tonight','',['Pick the time you need to wake up. Keep it every day, weekends too.','Have your last coffee, pop or energy drink at least six hours before bed.','Thirty minutes before bed, put your phone on the charger outside the bedroom.','Turn the lights down. Read something on paper, or do five minutes of slow breathing.','Lights off. Make the room as dark as you can.'],'Try it for two weeks and watch what your own sleep does.','Caffeine six hours before bed still cut into sleep: Henry Ford Hospital, 2013.',1],
+['how','A dark room and no phone: the evidence','',[],'<b>Put the phone down 30 minutes before bed.</b> In a four week trial, people who did this fell asleep faster, slept longer and slept better.<br><br><b>Read paper, not a lit screen.</b> People reading on a lit screen before bed took longer to fall asleep, made less melatonin and were less alert the next morning than when they read a printed book.<br><br><b>Sleep in the dark.</b> Sleeping with a light or television on went with more obesity in a study of 43,722 women.',"Second Military Medical University, Shanghai, 2020: 38 people. Brigham and Women's Hospital and Harvard, 2015. National Institutes of Health, 2019. Evidence developing.",0],
+['h','When I brush my teeth at night, I put my phone on the charger outside the bedroom.'],
+['s',2,'A stronger method you can still do yourself.','A self-guided sleep skills program, from a book or online, teaches you to retrain your sleep. In trials of people with insomnia the gains lasted, and in-person treatment was not shown to work better.','Vrije Universiteit Amsterdam, 2009: 10 trials, 1,000 people. Aarhus University, 2016: 11 trials, 1,460 people.'],
+['s',3,'A sleep assessment is a tool you can choose.','If it has gone on for months, or you snore loudly, gasp in your sleep, or doze off when you do not mean to, an assessment can find causes habits cannot fix. You decide. You can ask for the skills program before sleeping pills.','American College of Physicians, 2016, puts the skills program first. Wording under clinical review.']],
+c3s:'Sleep help near you.',c3n:'No local sleep listings are loaded yet. Sleep assessments are found through a doctor or clinic. Call 211 for local services.',
+src:[['Irish, 2015',25454674],['van Straten and Cuijpers, 2009',18952469],['Zachariae, 2016',26615572],['American College of Physicians, 2016',27136449],['He, 2020',32040492],['Chang, 2015',25535358],['Park, 2019',31180469],['Drake, 2013',24235903]]},
+food:{n:'Food',step:'Trade one pop a day for water.',ev:'One to two sugary drinks a day went with 26 percent more type 2 diabetes.',evs:'Harvard School of Public Health, 2010. 310,819 people.',
+lead:'<b>Start with one change.</b> You pick it. Small steps are the ones with the evidence behind them.',
+c1s:'What we eat is an upstream cause. These are the health effects found downstream.',
+c1:[['One to two sugary drinks a day went with 26 percent more type 2 diabetes.','','Harvard School of Public Health, 2010. 310,819 people.'],
+['Food moves blood pressure in weeks.',' Eight weeks of more fruits, vegetables and low fat dairy lowered it 5.5 over 3.0 points.','Johns Hopkins University, 1997. 459 adults. All meals were provided.'],
+['About 30 percent fewer heart attacks and strokes',' on a diet built around vegetables, beans, fish and olive oil.','PREDIMED trial, Spain, 2018. 7,447 older adults at high heart risk.']],
+c2:[['s',1,'Start with one change.','Trade one pop a day for water. Or add a fruit or a vegetable to one meal. Water from the tap is free, so the first step can save you money.','Harvard, 2010. Norwegian University of Science and Technology, 2017: 95 studies.'],
+['how','Five simple rules','',['Shop the outside aisles of the store.','If it has more than five ingredients, leave it on the shelf.','Skip anything your great-grandmother would not recognize as food.','Do not eat anything that will not eventually rot.','Eat at a table with family or friends as often as you can.'],'Beans, oats, rice and frozen vegetables pass every one of these rules, wherever the store keeps them.',"These rules come from Michael Pollan's book Food Rules. They are a simple way to remember what the research points to.",1],
+['h','When I sit down to supper, I pour a glass of water first.'],
+['s',2,'A stronger step you can still do yourself.','Cook more from basic ingredients and buy fewer ready made packaged foods. In a controlled study, people ate about 500 more calories a day on packaged, ultra-processed food, with the meals matched for sugar, fat and fiber.','National Institutes of Health, 2019. 20 adults. Evidence developing.'],
+['b','What it costs','Eating well costs about $1.50 more per person per day. The gap is biggest for meat and close to zero for grains.','Review of 27 studies in 10 countries, 2013.'],
+['s',3,'A dietitian is a tool you can choose.','If a doctor or dietitian has given you an eating plan for a condition such as kidney disease or diabetes, that plan comes first. A dietitian can also help you build a plan around a budget or a family.','Wording under clinical review.']],
+c3s:'Free and low cost food in the four pilot towns.',
+c3:[['Holdrege','68949',[['Phelps County Senior Center','Meals for people 60 and older. 416 Garfield Street. Weekdays.',1],['Phelps Community Pantry','Food pantry. Monday to Friday, 1 to 2 PM. Address being confirmed.',0],['Mobile produce pantry','Fresh produce every two weeks, open to anyone. Day and place being confirmed.',0]]],
+['South Sioux City','68776',[['Community Action food pantry','2120 Dakota Avenue. Call ahead: (402) 494-8312. Hours and rules being confirmed.',0],['Mobile pantry at First Lutheran Church','3601 Dakota Avenue. First and third Thursdays. Time being confirmed.',0]]],
+['Grand Island','68801',[['Grand Generation Center','304 East 3rd Street. Noon meals for people 60 and older.',0],["Camille's Cupboard at St. Mary's",'112 South Cedar Street. Grocery bags of non-perishable food. Days being confirmed.',0],['Salvation Army food pantry','818 West 3rd Street. Hours and documents being confirmed.',0]]],
+['Nebraska City','68410',[['Nebraska City Food Pantry','First United Methodist Church, 1023 1st Avenue. Call ahead: (402) 873-3821.',0],['Southeast Nebraska Community Action','111 North 11th Street. Emergency food. Call ahead: (402) 297-7398.',0]]]],
+c3n:'Food listings change often. Please call ahead, or call 211.',
+src:[['Malik, 2010',20693348],['Appel, 1997',9099655],['Estruch, 2018',29897866],['Aune, 2017',28338764],['Reynolds, 2019',30638909],['Hall, 2019',31105044],['Rao, 2013',24309174],['Hammons and Fiese, 2011',21536618]]},
+exercise:{n:'Exercise',step:'Walk for fifteen minutes a day.',ev:'About 15 minutes a day went with a 14 percent lower risk of death and about 3 more years of life.',evs:'National Health Research Institutes, Taiwan, 2011. 416,175 people.',
+lead:'<b>Start small.</b> The people who move the least gain the most from a small increase.',
+c1s:'Too little movement is an upstream cause. These are the health effects found downstream.',
+c1:[['Some activity beats none.',' People who moved, but less than the recommended amount, had a 20 percent lower risk of death than people who did not move at all.','National Cancer Institute, 2015. 661,137 adults followed about 14 years.'],
+['More helps, up to a point.',' Meeting the recommended amount went with a 31 percent lower risk. No harm was seen at ten times that amount.','National Cancer Institute, 2015.'],
+['Strength counts too.',' Thirty to sixty minutes a week of muscle strengthening went with a 10 to 20 percent lower risk of death, heart disease and cancer.','Tohoku University, 2022. 16 studies. Evidence developing.']],
+c2:[['s',1,'Fifteen minutes a day counts.','A walk counts. You do not need a gym. In a study of more than 400,000 people, about 15 minutes of activity a day went with a 14 percent lower risk of death and about 3 more years of life.','National Health Research Institutes, Taiwan, 2011. 416,175 people.'],
+['how','How to do it','',['Step out your door, or walk the aisles of a store when the weather is bad.','Walk at a pace where you can still talk comfortably. If you cannot get a sentence out, ease up.','Walk seven or eight minutes away from home, then turn around. That is your fifteen.','If fifteen is too much today, start with five and add a minute or two each week.'],'<b>For strength, two days a week:</b> stand up from a chair several times in a row, do push-ups against a wall, or carry something heavy across the yard.','The talk test: University of Ottawa Heart Institute, 2014. Starting amounts and strength examples are under clinical review.',1],
+['how','You do not need 10,000 steps','',[],'The benefit kept growing up to about 6,000 to 8,000 steps a day for people 60 and older, and 8,000 to 10,000 for people under 60. Any step up from where you are now helps.','University of Massachusetts Amherst, 2022. 47,471 adults. Evidence developing.',0],
+['h','After I pour my morning coffee, I walk for fifteen minutes.'],
+['s',2,'Stronger steps you can still do yourself.','Count your steps and set a goal. Most phones count them for free. People who tracked steps added about 2,500 a day. Add two short strength sessions a week. Build toward 150 minutes a week.','Stanford University, 2007: 2,767 people. Federal Physical Activity Guidelines, 2018. Tohoku University, 2022.'],
+['b','Walk with someone','Walking groups went with lower blood pressure, lower resting heart rate and lower depression scores. No notable side effects were reported, and people kept coming back.','University of East Anglia, 2015. 42 studies, 1,843 people.'],
+['s',3,'A physical therapist is a tool you can choose.','If pain, an injury or a long time away from activity is holding you back, a physical therapist or a supervised program can help you start safely. The federal guidelines say people with chronic conditions who are able should aim for the same targets.','Wording under clinical review.']],
+c3s:'Free places to walk in the four pilot towns.',c3:WALK,c3n:'Indoor winter walking and walking groups are still being gathered. Call 211 for more.',
+src:[['Wen, 2011',21846575],['Paluch, 2022',35247352],['Momma, 2022',35228201],['Bravata, 2007',18029834],['Hanson and Jones, 2015',25601182],['Federal guidelines, Piercy, 2018',30418471],['Reed and Pipe, 2014',25010379],['Cooney, 2013',24026850]]},
+mindfulness:{n:'Mindfulness',step:'Five minutes of slow breathing a day.',ev:'In a one month trial done at home, five minutes a day improved mood.',evs:'Stanford University, 2023. Evidence developing.',
+lead:'<b>Start with your breath.</b> Five minutes a day. You already have everything you need.',
+c1s:'Ongoing stress is an upstream cause. These are the effects found downstream, and what calming practice changed.',
+c1:[['Distress goes with earlier death, even at low levels.',' People with mild distress had a 20 percent higher risk of death than people with none. The risk rose step by step with the level of distress.','BMJ, 2012. 68,222 adults in England followed about 8 years.'],
+['Ongoing stress shows up in the body.'," Cortisol is the body's main stress hormone. In people living under ongoing stress, long term cortisol ran 43 percent higher. Once the stress had passed, it was no longer raised.",'TU Dresden, 2017. 66 studies, 10,289 people. Evidence developing.'],
+['Calming practice lowers it.',' In controlled trials, meditation lowered cortisol, blood pressure and heart rate, most clearly in people who were ill or under heavy strain.','Peter MacCallum Cancer Centre, 2017: 45 trials. ELTE University, Budapest, 2021. Evidence developing.'],
+['Less stress, anxiety and low mood.',' An eight week program showed large effects on stress in people without a diagnosis, and the gains held about 19 weeks later.','Harvard and McGill, 2015. 29 studies, 2,668 people.']],
+c2:[['s',1,'Five minutes of slow breathing a day counts.','Free, anywhere, no equipment. In a one month trial done at home, five minutes of breathing practice a day improved mood more than five minutes of meditation did.','Stanford University, 2023. University of Sussex, 2023: 12 trials, 785 adults. Evidence developing.'],
+['how','How to do box breathing','Picture a box with four equal sides. Each side is a count of four.',['Sit or stand comfortably. Let your shoulders drop.','Breathe in while you count to four.','Hold your breath while you count to four.','Breathe out slowly while you count to four.','Hold again while you count to four.','Repeat for about five minutes.'],'If four feels like too much, count to three. If you feel lightheaded, stop and breathe normally.<br><br><b>Another way: the long exhale.</b> Breathe in, then let the breath out slowly so the exhale is longer than the inhale.','Both were tested in the Stanford trial. The long exhale showed the strongest result.',1],
+['how','What mindfulness is and how to do it','Mindfulness is paying attention to what is happening right now, on purpose, without judging it. That is all it is.',['Sit somewhere you will not be interrupted for five minutes.','Notice your breath going in and going out. You do not need to change it.',"Your mind will wander. Everyone's does.",'When you notice it has wandered, bring your attention back to your breath.','Do that again each time it wanders.'],'Noticing that your mind wandered and coming back is the practice. It is not a mistake. There is no way to do this wrong.','Wording under clinical review.',0],
+['h','When I park the truck after work, I take five minutes of slow breathing before I go inside.'],
+['b','If it does not feel calming','Most people find this calming. Some people feel more anxious or low when they sit quietly with their thoughts. If that happens, stop. It does not mean you failed. Movement, time outside or talking with someone may suit you better.','Coventry University, 2020. 83 studies, 6,703 people. About 8 percent reported an unwanted effect.'],
+['s',2,'A stronger step you can still do yourself.','Work through a full eight week mindfulness program instead of single sessions. That is where the strongest evidence is. Free online versions work, and a version with a guide works better.','Harvard and McGill, 2015. University of Twente, 2016: 15 trials.'],
+['s',3,'A teacher or counselor is a tool you can choose.','A trained teacher or a group gives you the guided version. If practice stirs up things that are hard to carry alone, a counselor is someone to talk it through with.','Wording under clinical review.']],
+c3s:'Free ways to practice near you.',c3n:'No standing class or group has been confirmed in the four pilot towns yet. The breathing practice above needs no place and no teacher. Public libraries in all four towns host free adult programs. Call 211 for local services.',
+src:[['Russ, 2012',22849956],['Stalder, 2017',28135674],['Pascoe, 2017',28863392],['Koncz, 2021',32635830],['Khoury, 2015',25818837],['Goyal, 2014',24395196],['Balban, 2023',36630953],['Fincham, 2023',36624160],['Spijkerman, 2016',27111302],['Schumer, 2018',29939051],['Farias, 2020',32820538]]}
+};
+var ORD=['sleep','food','exercise','mindfulness'];
+function det(t,inner,o,cls){return '<details class="'+(cls||'box')+'"'+(o?' open':'')+'><summary><span>'+t+'</span><i></i></summary><div class="in">'+inner+'</div></details>';}
+function towns(a){return a.map(function(t,i){return det(t[0]+', '+t[1],t[2].map(function(x){return '<div class="it"><b>'+x[0]+'</b><span>'+x[1]+'</span><em class="pill'+(x[2]?'':' w')+'" style="font-style:normal">'+(x[2]?'Checked in two sources':'Still being checked')+'</em></div>';}).join(''),i===0,'t');}).join('');}
+function blk(b){
+if(b[0]==='s')return '<div class="step"><div class="n">'+b[1]+'</div><div><b>'+b[2]+'</b><div>'+b[3]+'</div><div class="src">'+b[4]+'</div></div></div>';
+if(b[0]==='b')return '<div class="box"><h3>'+b[1]+'</h3><div>'+b[2]+'</div><div class="src">'+b[3]+'</div></div>';
+if(b[0]==='h')return '<div class="box g"><h3>Make it stick</h3><div>'+HAB+'</div><div><i>&ldquo;'+b[1]+'&rdquo;</i></div><div class="src">'+HABS+'</div></div>';
+var inner=(b[2]?'<div>'+b[2]+'</div>':'')+(b[3].length?'<ol class="how">'+b[3].map(function(s){return '<li>'+s+'</li>';}).join('')+'</ol>':'')+(b[4]?'<div>'+b[4]+'</div>':'')+'<div class="src">'+b[5]+'</div>';
+return det(b[1],inner,b[6]);}
+var E988='<div class="c988"><b>988</b><div>If you need to talk to someone now, call or text 988. Any hour.</div></div><div class="fine">This page shows research and local services. It is not a diagnosis and it is not medical advice.</div>';
+function page(k){var p=P[k];
+return '<a class="back" href="#">&larr; All four pillars</a><div class="eyebrow">One of four pillars: sleep, food, exercise, mindfulness</div><h1>'+p.n+'</h1><div class="lead">'+p.lead+'</div>'
++'<section class="card"><div><div class="eyebrow">Card 1</div><h2>What drives it</h2><div class="sub">'+p.c1s+'</div></div>'+p.c1.map(function(r){return '<div class="row"><div><b>'+r[0]+'</b>'+r[1]+'</div><div class="src">'+r[2]+'</div></div>';}).join('')+'<a class="btn o" href="../research/">Open the Research Library</a></section>'
++'<section class="card"><div><div class="eyebrow">Card 2</div><div class="hd"><h2>What works</h2><span class="tag">Under review</span></div><div class="sub">Three steps, yours first. This card is a preview. A clinical reviewer has not signed off on it yet.</div></div>'+p.c2.map(blk).join('')+'</section>'
++'<section class="near"><div><div class="eyebrow" style="color:inherit;opacity:.85">Card 3</div><h2>What is near you</h2><div class="sub">'+p.c3s+'</div></div>'+(p.c3?towns(p.c3):'')+'<div class="note">'+p.c3n+'</div></section>'
++det('Sources for this page','<ul class="srcs">'+p.src.map(function(s){return '<li><a href="https://pubmed.ncbi.nlm.nih.gov/'+s[1]+'/">'+s[0]+'</a></li>';}).join('')+'</ul><div class="src">Each source was read on PubMed at summary level in November 2026.</div>',0)
++E988;}
+function home(){
+return '<h1>The four pillars</h1><div>Four things that are yours to change. Each one has a small first step with research behind it. Pick one. You do not have to do all four.</div>'
++ORD.map(function(k){var p=P[k];return '<section class="pc"><h2>'+p.n+'</h2><div class="eyebrow">The smallest step that counts</div><div class="do">'+p.step+'</div><div>'+p.ev+'</div><div class="src">'+p.evs+'</div><a class="btn" href="#'+k+'">Open '+p.n+'</a></section>';}).join('')
++'<div class="box g"><h3>Make it stick</h3><div>'+HAB+'</div></div>'+E988;}
+function go(){var k=location.hash.replace('#','');var m=document.getElementById('m');m.innerHTML=P[k]?page(k):home();document.title=(P[k]?P[k].n+' · ':'')+'The four pillars · Verdant Equanim';window.scrollTo(0,0);}
+window.addEventListener('hashchange',go);go();
+</script>
+</body>
+</html>

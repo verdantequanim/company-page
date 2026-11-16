@@ -93,6 +93,22 @@ footer a{color:var(--accent)}
 .fd1 .by{font:400 11.5px var(--mono);color:var(--muted)}
 .fd1.fit{border-color:var(--survey)}
 .fd1 .fitTag{font:500 10px var(--mono);color:var(--survey);border:1px solid var(--survey);border-radius:999px;padding:1px 6px;margin-left:6px}
+
+/* Phone width: the role picker's longest option was forcing the page wider than the screen. */
+select{width:100%;max-width:100%;min-width:0}
+.layout>*,.panel{min-width:0}
+.eyebrow{flex-wrap:wrap}
+
+/* Search box and tap-to-open shelves */
+.findbox{display:grid;gap:8px}
+.findbox label{font-weight:600}
+.findbox input{font:inherit;padding:12px;min-height:48px;width:100%;border:1px solid var(--rule,#c9c4b3);border-radius:8px;background:#fff;color:#1d241c}
+.findbox input:focus-visible{outline:3px solid #c8962e;outline-offset:2px}
+.shelfbtn{font:inherit;font-weight:600;min-height:48px;width:100%;margin-top:10px;padding:10px 14px;border:1px solid currentColor;border-radius:8px;background:transparent;color:inherit;cursor:pointer;text-align:left}
+.shelfbtn:focus-visible{outline:3px solid #c8962e;outline-offset:2px}
+.cat.shut>.grid{display:none}
+.cat.nomatch,.entry.nomatch,.topic.nomatch{display:none}
+@media (max-width:860px){.toc{position:static}}
 </style>
 </head>
 <body>
@@ -114,6 +130,7 @@ footer a{color:var(--accent)}
   <div class="layout">
     <nav class="panel toc" aria-label="Categories"><h2>Categories</h2><ol><li><a href="#chronic_stress">Chronic stress and chronic disease</a><span>5</span></li><li><a href="#money">Money, work and health</a><span>4</span></li><li><a href="#sleep">Sleep</a><span>4</span></li><li><a href="#mood">Mood and anxiety</a><span>3</span></li><li><a href="#social">Social connection and loneliness</a><span>3</span></li><li><a href="#childhood">Childhood adversity</a><span>16</span></li><li><a href="#family_history">Family history: famine, war and displacement</a><span>2</span></li><li><a href="#food">Food security and diet</a><span>3</span></li><li><a href="#physical_activity">Physical activity</a><span>2</span></li><li><a href="#environment">Environment</a><span>2</span></li><li><a href="#substance">Substance use</a><span>3</span></li><li><a href="#access">Access to help</a><span>2</span></li><li><a href="#differences">Differences by race, sex, income and disability</a><span>4</span></li><li><a href="#methods">Methods and data sources</a><span>7</span></li></ol></nav>
     <div class="main">
+      <div class="panel findbox"><label for="q">Search the library</label><input id="q" type="search" placeholder="Try sleep, diabetes, loneliness" autocomplete="off"><div id="qn" class="about" role="status" aria-live="polite"></div></div>
       <details class="panel std"><summary>The standard for what goes in</summary><ol><li>A finding is included when it has been replicated in at least two independent populations, or comes from a meta-analysis or a cohort of tens of thousands, and has held for at least ten years. Federal surveillance data (BRFSS, Census, vital statistics) is included as the source for a measure itself.</li><li>Primary sources only: the original study or the federal record, never a news story or a vendor summary. Systematic reviews and meta-analyses rank above single studies.</li><li>Every entry carries a DOI or PubMed ID, the sample size, the population, one plain sentence on what it shows, and the date it was last checked. If the one sentence cannot be written from the record, the entry is not included.</li><li>Entries report what was measured. They do not report why. Where the study&#x27;s own authors say an effect is small, the entry says so.</li><li>The bar is set by the evidence on the evidence: Ioannidis (2005) on why most published findings are false, and the 2015 Reproducibility Project, which replicated 36 of 100 psychology findings. Both are in the Methods shelf.</li><li>Nothing is added to pad a category. A category with two entries that have stood for twenty years is complete.</li></ol><p class="about" style="margin-top:10px">Review: Pending: data governance board review. Once a year, and whenever a source is added or retired.</p></details>
       <section class="panel cite" id="cite"><h2>Cite HeadWater and the Atlas</h2><div class="c"><b>Survey</b><code>Verdant Equanim, LLC. (2026). HeadWater chronic stress survey, version 2 (Nebraska Under Stress: Community Wellbeing Survey, Wave 2). Lincoln, Nebraska. https://verdantequanim.com</code><button class="copy" type="button" data-cite="Verdant Equanim, LLC. (2026). HeadWater chronic stress survey, version 2 (Nebraska Under Stress: Community Wellbeing Survey, Wave 2). Lincoln, Nebraska. https://verdantequanim.com">Copy</button></div><div class="c"><b>Atlas</b><code>Verdant Equanim, LLC. (2026). Nebraska Stress Atlas: county estimates from CDC PLACES and County Health Rankings with HeadWater survey layers. Lincoln, Nebraska. https://verdantequanim.com/atlas/ (data vintages shown on the page)</code><button class="copy" type="button" data-cite="Verdant Equanim, LLC. (2026). Nebraska Stress Atlas: county estimates from CDC PLACES and County Health Rankings with HeadWater survey layers. Lincoln, Nebraska. https://verdantequanim.com/atlas/ (data vintages shown on the page)">Copy</button></div><div class="c"><b>Reliability</b><code>Reliability of HeadWater version 1 subscales, March 2026 staff test (n = 86): Stability .79 (n = 64), Support .77 (n = 53), Sleep .65 (n = 52). Reported by subscale; rural validation is in progress.</code><button class="copy" type="button" data-cite="Reliability of HeadWater version 1 subscales, March 2026 staff test (n = 86): Stability .79 (n = 64), Support .77 (n = 53), Sleep .65 (n = 52). Reported by subscale; rural validation is in progress.">Copy</button></div></section>
       <section class="cat" id="chronic_stress">
@@ -650,6 +667,37 @@ Promise.all([
   const r = fromHash || saved; if (r && (AUD.audiences||[]).some(x => x.id === r)) { sel.value = r; applyRole(r); } else { renderFD(); }
   renderWW();
 });
+</script>
+
+<script>
+(function(){
+  var cats=[].slice.call(document.querySelectorAll('section.cat'));
+  var small=window.matchMedia('(max-width:760px)').matches;
+  function setOpen(c,open){c.classList.toggle('shut',!open);var b=c.querySelector('.shelfbtn');if(b){b.setAttribute('aria-expanded',open?'true':'false');b.textContent=(open?'Hide':'Show')+' the '+c.querySelectorAll('.entry').length+' sources';}}
+  cats.forEach(function(c){
+    if(!c.querySelector('.grid'))return;
+    var b=document.createElement('button');b.type='button';b.className='shelfbtn';
+    var g=c.querySelector('.grid');c.insertBefore(b,g);
+    b.addEventListener('click',function(){setOpen(c,c.classList.contains('shut'));});
+    setOpen(c,!small);
+  });
+  function openHash(){var id=(location.hash||'').slice(1);if(!id||id.indexOf('=')>-1)return;var c=document.getElementById(id);if(c&&c.classList&&c.classList.contains('cat'))setOpen(c,true);}
+  window.addEventListener('hashchange',openHash);openHash();
+  var q=document.getElementById('q'),qn=document.getElementById('qn');
+  if(q)q.addEventListener('input',function(){
+    var t=q.value.trim().toLowerCase(),n=0;
+    cats.forEach(function(c){
+      var es=[].slice.call(c.querySelectorAll('.entry')),hit=0;
+      es.forEach(function(e){var m=!t||e.textContent.toLowerCase().indexOf(t)>-1;e.classList.toggle('nomatch',!m);if(m)hit++;});
+      [].slice.call(c.querySelectorAll('.topic')).forEach(function(tp){tp.classList.toggle('nomatch',!!t);});
+      c.classList.toggle('nomatch',!!t&&!hit);
+      if(t&&hit)setOpen(c,true);
+      if(!t)setOpen(c,!small);
+      n+=hit;
+    });
+    qn.textContent=t?(n+' source'+(n===1?'':'s')+' match "'+q.value.trim()+'"'):'';
+  });
+})();
 </script>
 </body>
 </html>

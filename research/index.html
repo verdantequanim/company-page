@@ -688,6 +688,7 @@ Promise.all([
   const fromHash = (location.hash.match(/role=([a-z_]+)/) || [])[1];
   const r = fromHash || saved; if (r && (AUD.audiences||[]).some(x => x.id === r)) { sel.value = r; applyRole(r); } else { renderFD(); }
   renderWW();
+  const hs = location.hash.slice(1); if (hs === "funders" || hs === "whatworks") { const t = document.getElementById(hs); if (t) setTimeout(() => t.scrollIntoView(), 80); }
 });
 </script>
 

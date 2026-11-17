@@ -578,8 +578,8 @@ select{width:100%;max-width:100%;min-width:0}
         <div id="wwBody"></div>
       </section>
       <section class="cat partner" id="funders">
-        <div class="cathead"><h2>Funder shelf <span class="pp">partner preview</span></h2><div class="n" id="fdN">Funding programs, from their own pages</div></div>
-        <p class="about">Each entry is a funding program, verified on the program's own page: who it says can apply, where, on what cycle, and the date we checked. No aggregator sites, no sample language, no grant advice. The library points to the program and the evidence and stops there. Pick a role above to see the programs that fit it first.</p>
+        <div class="cathead"><h2>Funder shelf</h2><div class="n" id="fdN">Funding programs, from their own pages</div></div>
+        <p class="about">Each entry is a funding program, verified on the program's own page: who it says can apply, where, on what cycle, and the date we checked. No aggregator sites, no sample language, no grant advice. The library points to the program and the evidence and stops there. Deadlines change, so open the program page before you plan around a date. Pick a role above to see the programs that fit it first.</p>
         <div id="fdBody"></div>
       </section>
       <footer>63 entries in 15 categories. Each was read and checked against its PubMed or federal record on 2026-11-06, and the three Recreation entries on 2026-11-15. Entries report what was measured, not why. Questions: <a href="mailto:jluginbill@vereq.co">jluginbill@vereq.co</a> · The data file is <a href="research.json">research.json</a>.</footer>
@@ -643,7 +643,6 @@ function renderFD(){
   const body = document.getElementById("fdBody"); const n = document.getElementById("fdN");
   const fs = FD.funders || [];
   n.textContent = `${fs.length} programs, each verified on its own page`;
-  if (!partner) { body.innerHTML = gateHtml("fd"); wireGate(body); return; }
   if (!fs.length) { body.innerHTML = `<p class="about">The shelf is being assembled.</p>`; return; }
   const tags = role ? (role.funder_tags || []) : [];
   const fits = f => tags.includes("all") || (f.tags||[]).some(t => tags.includes(t));

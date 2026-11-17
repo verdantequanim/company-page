@@ -81,41 +81,41 @@ footer{color:var(--muted);font-size:13px;display:flex;gap:14px;flex-wrap:wrap}
 
   <section class="panel" id="formPanel">
     <h2>Try it</h2>
-    <p class="hint">Nine of the survey's questions, the ones that make up the three areas and the overall, plus the three feelings questions. Each takes a few seconds.</p>
+    <p class="hint">Eight of the survey's questions, worded as they are on the survey, plus the three feelings questions. The eight make up the three areas and the overall. Each takes a few seconds.</p>
     <form id="f">
       <fieldset class="grp">
         <legend>Money, work and getting around</legend>
-        <div class="q"><label for="q09">How steady is your household's money situation right now?</label>
-          <select id="q09" name="q09"><option value="">Choose one</option><option value="1">Very unsteady</option><option value="2">Somewhat unsteady</option><option value="3">In between</option><option value="4">Fairly steady</option><option value="5">Very steady</option></select></div>
-        <div class="q"><label for="q16">How secure do you feel about your job or income?</label>
-          <select id="q16" name="q16"><option value="">Choose one</option><option value="1">Not at all secure</option><option value="2">A little secure</option><option value="3">Somewhat secure</option><option value="4">Mostly secure</option><option value="5">Very secure</option></select></div>
-        <div class="q"><label for="q11">How easy is it for you to get where you need to go?</label>
-          <select id="q11" name="q11"><option value="">Choose one</option><option value="1">Very hard</option><option value="2">Hard</option><option value="3">In between</option><option value="4">Easy</option><option value="5">Very easy</option></select></div>
+        <div class="q"><label for="q09">How financially stable is your household?</label>
+          <select id="q09" name="q09"><option value="">Choose one</option><option value="1">1 · very unstable</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · very stable</option></select></div>
+        <div class="q"><label for="q16">How safe does your job and income feel right now?</label>
+          <select id="q16" name="q16"><option value="">Choose one</option><option value="1">1 · not safe at all</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · very safe</option></select></div>
+        <div class="q"><label for="q11">How easy is it for you to get around (like to the store or doctor)?</label>
+          <select id="q11" name="q11"><option value="">Choose one</option><option value="1">1 · very hard</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · very easy</option></select></div>
       </fieldset>
       <fieldset class="grp">
         <legend>Sleep</legend>
-        <div class="q"><label for="q53">Over the past 7 days, how would you rate your sleep?</label>
-          <select id="q53" name="q53"><option value="">Choose one</option><option value="1">Very poor</option><option value="2">Poor</option><option value="3">Fair</option><option value="4">Good</option><option value="5">Very good</option></select></div>
-        <div class="q"><label for="q24">How regular are your sleep and wake times?</label>
-          <select id="q24" name="q24"><option value="">Choose one</option><option value="1">All over the place</option><option value="2">Not very regular</option><option value="3">Somewhat regular</option><option value="4">Mostly regular</option><option value="5">Very regular</option></select></div>
+        <div class="q"><label for="q53">How good is your sleep?</label>
+          <select id="q53" name="q53"><option value="">Choose one</option><option value="1">1 · very bad</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · very good</option></select></div>
+        <div class="q"><label for="q24">Do you go to sleep and wake up at around the same time every day?</label>
+          <select id="q24" name="q24"><option value="">Choose one</option><option value="1">1 · never</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · always</option></select></div>
       </fieldset>
       <fieldset class="grp">
         <legend>People around you</legend>
-        <div class="q"><label for="q27">There are people in my life who care about me and support me.</label>
-          <select id="q27" name="q27"><option value="">Choose one</option><option value="1">Strongly disagree</option><option value="2">Disagree</option><option value="3">Neither</option><option value="4">Agree</option><option value="5">Strongly agree</option></select></div>
-        <div class="q"><label for="q48">If you needed help in your community, how confident are you that you could find it?</label>
-          <select id="q48" name="q48"><option value="">Choose one</option><option value="1">Not at all confident</option><option value="2">A little confident</option><option value="3">Somewhat confident</option><option value="4">Confident</option><option value="5">Very confident</option></select></div>
-        <div class="q"><label for="q51">How often do you have someone to talk to when you need it?</label>
+        <div class="q"><label for="q27">Do you feel like people around you care about you and support you in life?</label>
+          <select id="q27" name="q27"><option value="">Choose one</option><option value="1">1 · not at all</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · very much</option></select></div>
+        <div class="q"><label for="q48">How confident are you that you could find help in your community if you needed it?</label>
+          <select id="q48" name="q48"><option value="">Choose one</option><option value="1">1 · not confident at all</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · very confident</option></select></div>
+        <div class="q"><label for="q51">How often do you have a person you can talk to when you're feeling sad, stressed, or upset?</label>
           <select id="q51" name="q51"><option value="">Choose one</option><option value="1">Never</option><option value="2">Rarely</option><option value="3">Sometimes</option><option value="4">Often</option><option value="5">Always</option></select></div>
       </fieldset>
       <fieldset class="grp">
         <legend>How you have been feeling</legend>
-        <div class="q"><label for="q22">On a scale of 1 to 10, how stressed have you felt over the past month?</label>
-          <select id="q22" name="q22"><option value="">Choose one</option><option value="1">1 · hardly at all</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10 · as stressed as I can imagine</option></select></div>
-        <div class="q"><label for="q38">Over the past two weeks, how often have you had little interest or pleasure in doing things?</label>
-          <select id="q38" name="q38"><option value="">Choose one</option><option value="1">Not at all</option><option value="2">A few days</option><option value="3">About half the days</option><option value="4">Most days</option><option value="5">Nearly every day</option></select></div>
-        <div class="q"><label for="q39">Over the past two weeks, how often have you felt nervous, anxious or on edge?</label>
-          <select id="q39" name="q39"><option value="">Choose one</option><option value="1">Not at all</option><option value="2">A few days</option><option value="3">About half the days</option><option value="4">Most days</option><option value="5">Nearly every day</option></select></div>
+        <div class="q"><label for="q22">How stressed have you felt this past month?</label>
+          <select id="q22" name="q22"><option value="">Choose one</option><option value="1">1 · not stressed at all</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · extremely stressed</option></select></div>
+        <div class="q"><label for="q38">How often have you had little interest or enjoyment in things you normally like?</label>
+          <select id="q38" name="q38"><option value="">Choose one</option><option value="1">Never</option><option value="2">Rarely</option><option value="3">Sometimes</option><option value="4">Often</option><option value="5">Always</option></select></div>
+        <div class="q"><label for="q39">How often have you felt nervous, anxious, or on edge?</label>
+          <select id="q39" name="q39"><option value="">Choose one</option><option value="1">Never</option><option value="2">Rarely</option><option value="3">Sometimes</option><option value="4">Often</option><option value="5">Always</option></select></div>
       </fieldset>
       <fieldset class="grp">
         <legend>Where you live</legend>
@@ -187,12 +187,12 @@ const AREAS = [
             strained:"You are carrying this with too little support. Loneliness has health effects comparable to smoking in large studies. It is also one of the most fixable things on this page, and your county has people whose job this is." } }
 ];
 const INDICATORS = [
-  { id:"q22", name:"Stress over the past month", scale:10,
-    bands:[[1,3,"low","You rated your stress low this month."],[4,6,"moderate","You rated your stress in the middle this month. Most Nebraskans in the March test landed here."],[7,10,"high","You rated your stress high this month. A single rating like this is a fair signal, and it is worth looking at which area below is driving it."]] },
-  { id:"q38", name:"Interest or pleasure in things", scale:5,
-    bands:[[1,2,"low","Little or no loss of interest."],[3,3,"moderate","About half the days you have had little interest in things. That is worth a conversation with someone you trust or your doctor."],[4,5,"high","Most days you have had little interest or pleasure in things. This one question is not a diagnosis, but it is the question doctors ask first. Please talk to someone about it."]] },
+  { id:"q22", name:"Stress over the past month", scale:5,
+    bands:[[1,2,"low","You rated your stress low this month."],[3,3,"moderate","You rated your stress in the middle this month."],[4,5,"high","You rated your stress high this month. A single rating like this is a fair signal, and it is worth looking at which area below is driving it."]] },
+  { id:"q38", name:"Interest or enjoyment in things", scale:5,
+    bands:[[1,2,"low","Little or no loss of interest."],[3,3,"moderate","You said you sometimes have little interest in things you normally like. That is worth a conversation with someone you trust or your doctor."],[4,5,"high","You said you often or always have little interest or enjoyment in things you normally like. This one question is not a diagnosis, but it is the question doctors ask first. Please talk to someone about it."]] },
   { id:"q39", name:"Feeling nervous or on edge", scale:5,
-    bands:[[1,2,"low","Little or no anxiety."],[3,3,"moderate","Anxious about half the days. Common, and the sleep and support areas above are usually where it starts."],[4,5,"high","Anxious most days. Again, one question is not a diagnosis, and it is a signal worth acting on. The 988 line below is for this too."]] }
+    bands:[[1,2,"low","Little or no anxiety."],[3,3,"moderate","You said you sometimes feel nervous, anxious or on edge. Common, and the sleep and support areas above are usually where it starts."],[4,5,"high","You said you often or always feel nervous, anxious or on edge. Again, one question is not a diagnosis, and it is a signal worth acting on. The 988 line below is for this too."]] }
 ];
 const CAT_LABEL = { money:"Money, work and health", sleep:"Sleep", social:"Social connection and loneliness", mood:"Mood and anxiety" };
 const COMPOSITE_ON = true; // Overall shown as provisional (Jeromie, Nov 9, 2026). The survey science reviewer sets the final method and cut points.
@@ -254,7 +254,7 @@ function render(ans){
         <div class="areahead"><h3>${a.name}</h3><span class="band">${BAND_WORD[b]} · ${r.score} of 100</span></div>
         <div class="bar"><i style="width:${r.score}%"></i></div>
         <p>${a.words[b]}</p>
-        <p class="sub">From ${r.n} of ${a.items.length} questions. In the March test this area held together at ${a.id==="stability"?".79":a.id==="support"?".77":".65"} reliability; rural validation is in progress.</p>
+        <p class="sub">From ${r.n} of ${a.items.length} questions. ${a.id==="sleep"?"Reliability for the two sleep questions the survey uses now has not been run yet.":`In the March test this area held together at ${a.id==="stability"?".79":".77"} reliability; rural validation is in progress.`}</p>
         <details ${b==="strained"?"open":""}><summary>What the research says, and what works</summary>
           <p class="sub" style="margin-top:6px"><a href="../research/#${a.cat}">Research Library: ${CAT_LABEL[a.cat]} ›</a> Studies that met the library's standard, each one read and checked.</p>
           ${wwHtml(wwFor(a.measures))}
@@ -353,7 +353,7 @@ document.getElementById("save").addEventListener("click", () => {
 });
 
 // ---------- arriving from the survey with scores in the address ----------
-// The real survey will hand off like this: /results/?q09=4&q16=3&q11=5&q53=2&q24=3&q27=4&q48=3&q51=4&q22=7&q38=2&q39=3&county=31031
+// The real survey will hand off like this: /results/?q09=4&q16=3&q11=5&q53=2&q24=3&q27=4&q48=3&q51=4&q22=4&q38=2&q39=3&county=31031
 (function(){
   const p = params();
   const keys = ["q09","q16","q11","q53","q24","q27","q48","q51","q22","q38","q39"];

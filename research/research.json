@@ -1,8 +1,8 @@
 {
  "name": "Research Library",
  "owner": "Verdant Equanim, LLC",
- "version": "1.2",
- "updated": "2026-11-15",
+ "version": "1.3",
+ "updated": "2026-11-16",
  "description": "The Research Library is the evidence behind the HeadWater chronic stress survey and the Nebraska Stress Atlas. It exists so that a county, a hospital, a clinic or a health department writing a grant can cite the science in one click, and so that anyone can check what HeadWater measures against the studies that have held up. Each category matches a section of the survey or a layer of the Atlas. Each entry names who did the work, what they found, how many people were studied, and links to the publisher's record, the PubMed record and the free full text where one exists.",
  "standard": [
   "A finding is included when it has been replicated in at least two independent populations, or comes from a meta-analysis or a cohort of tens of thousands, and has held for at least ten years. Federal surveillance data (BRFSS, Census, vital statistics) is included as the source for a measure itself.",
@@ -38,13 +38,13 @@
    "id": "sleep",
    "name": "Sleep",
    "survey": "Stress & Sleep section; CDC PLACES short sleep; County Health Rankings insufficient sleep",
-   "about": "Three independent meta-analyses, covering more than five million people, give the same answer on short sleep and death, diabetes and obesity."
+   "about": "Three independent meta-analyses, covering more than five million people, give the same answer on short sleep and death, diabetes and obesity. A fourth entry covers self-help treatment for insomnia."
   },
   {
    "id": "mood",
    "name": "Mood and anxiety",
    "survey": "Feelings section; CDC PLACES frequent mental distress and depression",
-   "about": "Where HeadWater's mood items come from and how well two-item screens perform. This shelf documents the instruments more than the disease."
+   "about": "Where HeadWater's mood items come from and how well two-item screens perform. This shelf documents the instruments more than the disease. It also holds the meta-analyses on mindfulness programs for stress, anxiety and depression."
   },
   {
    "id": "social",
@@ -69,13 +69,13 @@
    "id": "food",
    "name": "Food security and diet",
    "survey": "Food section; CDC PLACES food insecurity; County Health Rankings food measures",
-   "about": "Food insecurity and clinical disease, and the burden of poor diet. The diabetes link is weaker than often claimed and the entries say so."
+   "about": "Food insecurity and clinical disease, and the burden of poor diet. The diabetes link is weaker than often claimed and the entries say so. It also holds meta-analyses on sugary drinks, what healthier food costs, and shared family meals."
   },
   {
    "id": "physical_activity",
    "name": "Physical activity",
    "survey": "Health & Environment section; CDC PLACES and County Health Rankings inactivity",
-   "about": "The burden of inactivity, estimated conservatively."
+   "about": "The burden of inactivity, estimated conservatively. It also holds the evidence on small amounts of activity, step counters, walking groups and exercise for depression."
   },
   {
    "id": "recreation",
@@ -235,6 +235,35 @@
     "doi": "https://doi.org/10.1038/nrcardio.2017.189"
    },
    "checked": "2026-11-06"
+  },
+  {
+   "id": "cs6",
+   "category": "chronic_stress",
+   "source": "Health Survey for England pooled analysis (Russ, Batty and colleagues)",
+   "type": "Individual participant meta-analysis of 10 cohorts, BMJ",
+   "title": "Association between psychological distress and mortality: individual participant pooled analysis of 10 prospective cohort studies",
+   "authors": [
+    "Russ TC",
+    "Stamatakis E",
+    "Hamer M",
+    "Starr JM",
+    "Kivimaki M",
+    "Batty GD"
+   ],
+   "year": "2012",
+   "journal": "BMJ",
+   "sample": "68,222 adults followed an average of 8.2 years; 8,365 deaths",
+   "population": "Adults 35 and older in England, free of heart disease and cancer at the start",
+   "finding": "The more psychological distress people reported, the higher their risk of death, in a step-by-step pattern. Risk was raised even at low levels of distress: 20 percent higher for the mildest group and 94 percent higher for the most distressed.",
+   "citation": "Russ TC et al. (2012). Association between psychological distress and mortality: individual participant pooled analysis of 10 prospective cohort studies. BMJ. https://doi.org/10.1136/bmj.e4933",
+   "pmid": "22849956",
+   "doi": "10.1136/bmj.e4933",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/22849956/",
+    "doi": "https://doi.org/10.1136/bmj.e4933",
+    "free_full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3409083/"
+   },
+   "checked": "2026-11-16"
   },
   {
    "id": "mo1",
@@ -457,6 +486,30 @@
    "checked": "2026-11-06"
   },
   {
+   "id": "sl4",
+   "category": "sleep",
+   "source": "Vrije Universiteit Amsterdam (van Straten, Cuijpers)",
+   "type": "Meta-analysis, Sleep Medicine Reviews",
+   "title": "Self-help therapy for insomnia: a meta-analysis",
+   "authors": [
+    "van Straten A",
+    "Cuijpers P"
+   ],
+   "year": "2009",
+   "journal": "Sleep Medicine Reviews",
+   "sample": "10 randomized trials, 1,000 people",
+   "population": "Adults with insomnia",
+   "finding": "Self-help treatment for insomnia improved how fast people fell asleep, time awake in the night and sleep quality, but not total sleep time. The gains held over the longer term. The authors call the effects small to moderate and say publication bias may make them look larger than they are.",
+   "citation": "van Straten A, Cuijpers P. (2009). Self-help therapy for insomnia: a meta-analysis. Sleep Medicine Reviews. https://doi.org/10.1016/j.smrv.2008.04.006",
+   "pmid": "18952469",
+   "doi": "10.1016/j.smrv.2008.04.006",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/18952469/",
+    "doi": "https://doi.org/10.1016/j.smrv.2008.04.006"
+   },
+   "checked": "2026-11-16"
+  },
+  {
    "id": "md1",
    "category": "mood",
    "source": "Indiana University and Columbia University (Kroenke, Spitzer, Williams)",
@@ -531,6 +584,87 @@
     "pubmed": "https://pubmed.ncbi.nlm.nih.gov/6668417/"
    },
    "checked": "2026-11-06"
+  },
+  {
+   "id": "md4",
+   "category": "mood",
+   "source": "Harvard University (Khoury and colleagues)",
+   "type": "Meta-analysis, Journal of Psychosomatic Research",
+   "title": "Mindfulness-based stress reduction for healthy individuals: A meta-analysis",
+   "authors": [
+    "Khoury B",
+    "Sharma M",
+    "Rush SE",
+    "Fournier C"
+   ],
+   "year": "2015",
+   "journal": "Journal of Psychosomatic Research",
+   "sample": "29 studies, 2,668 people",
+   "population": "Healthy adults",
+   "finding": "Mindfulness-based stress reduction programs had a large effect on stress and moderate effects on anxiety, depression, distress and quality of life in healthy adults. Results held at an average of 19 weeks. The studies differed a lot from one another.",
+   "citation": "Khoury B et al. (2015). Mindfulness-based stress reduction for healthy individuals: A meta-analysis. Journal of Psychosomatic Research. https://doi.org/10.1016/j.jpsychores.2015.03.009",
+   "pmid": "25818837",
+   "doi": "10.1016/j.jpsychores.2015.03.009",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/25818837/",
+    "doi": "https://doi.org/10.1016/j.jpsychores.2015.03.009"
+   },
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "md5",
+   "category": "mood",
+   "source": "Johns Hopkins University (Goyal and colleagues)",
+   "type": "Systematic review and meta-analysis, JAMA Internal Medicine",
+   "title": "Meditation programs for psychological stress and well-being: a systematic review and meta-analysis",
+   "authors": [
+    "Goyal M",
+    "Singh S",
+    "Sibinga EM",
+    "Gould NF",
+    "Rowland-Seymour A",
+    "Sharma R",
+    "et al."
+   ],
+   "year": "2014",
+   "journal": "JAMA Internal Medicine",
+   "sample": "47 randomized trials, 3,515 people",
+   "population": "Adults in clinical populations",
+   "finding": "Mindfulness meditation programs improved anxiety, depression and pain by a small to moderate amount, with moderate strength of evidence. Evidence for stress and quality of life was weaker. Meditation did not do better than other active treatments such as exercise or medication.",
+   "citation": "Goyal M et al. (2014). Meditation programs for psychological stress and well-being: a systematic review and meta-analysis. JAMA Internal Medicine. https://doi.org/10.1001/jamainternmed.2013.13018",
+   "pmid": "24395196",
+   "doi": "10.1001/jamainternmed.2013.13018",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/24395196/",
+    "doi": "https://doi.org/10.1001/jamainternmed.2013.13018",
+    "free_full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4142584/"
+   },
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "md6",
+   "category": "mood",
+   "source": "Centre for eHealth and Well-being Research (Spijkerman, Pots, Bohlmeijer)",
+   "type": "Meta-analysis of randomized trials, Clinical Psychology Review",
+   "title": "Effectiveness of online mindfulness-based interventions in improving mental health: A review and meta-analysis of randomised controlled trials",
+   "authors": [
+    "Spijkerman MP",
+    "Pots WT",
+    "Bohlmeijer ET"
+   ],
+   "year": "2016",
+   "journal": "Clinical Psychology Review",
+   "sample": "15 randomized trials",
+   "population": "People taking online mindfulness programs",
+   "finding": "Online mindfulness programs had a moderate effect on stress and small effects on depression, anxiety and well-being. Programs with a guide did better on stress than programs without one.",
+   "citation": "Spijkerman MP, Pots WT, Bohlmeijer ET. (2016). Effectiveness of online mindfulness-based interventions in improving mental health: A review and meta-analysis of randomised controlled trials. Clinical Psychology Review. https://doi.org/10.1016/j.cpr.2016.03.009",
+   "pmid": "27111302",
+   "doi": "10.1016/j.cpr.2016.03.009",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/27111302/",
+    "doi": "https://doi.org/10.1016/j.cpr.2016.03.009"
+   },
+   "checked": "2026-11-16"
   },
   {
    "id": "sc1",
@@ -1186,6 +1320,87 @@
    "checked": "2026-11-06"
   },
   {
+   "id": "fd4",
+   "category": "food",
+   "source": "Harvard School of Public Health (Malik, Hu and colleagues)",
+   "type": "Meta-analysis of prospective cohort studies, Diabetes Care",
+   "title": "Sugar-sweetened beverages and risk of metabolic syndrome and type 2 diabetes: a meta-analysis",
+   "authors": [
+    "Malik VS",
+    "Popkin BM",
+    "Bray GA",
+    "Despres JP",
+    "Willett WC",
+    "Hu FB"
+   ],
+   "year": "2010",
+   "journal": "Diabetes Care",
+   "sample": "11 cohort studies; 310,819 people and 15,043 cases of type 2 diabetes",
+   "population": "Adults",
+   "finding": "People who drank the most sugar-sweetened drinks, most often one to two servings a day, had a 26 percent higher risk of developing type 2 diabetes than people who drank none or less than one a month. For metabolic syndrome the risk was 20 percent higher.",
+   "citation": "Malik VS et al. (2010). Sugar-sweetened beverages and risk of metabolic syndrome and type 2 diabetes: a meta-analysis. Diabetes Care. https://doi.org/10.2337/dc10-1079",
+   "pmid": "20693348",
+   "doi": "10.2337/dc10-1079",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/20693348/",
+    "doi": "https://doi.org/10.2337/dc10-1079",
+    "free_full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2963518/"
+   },
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "fd5",
+   "category": "food",
+   "source": "Brown University (Rao, Afshin, Singh, Mozaffarian)",
+   "type": "Systematic review and meta-analysis, BMJ Open",
+   "title": "Do healthier foods and diet patterns cost more than less healthy options? A systematic review and meta-analysis",
+   "authors": [
+    "Rao M",
+    "Afshin A",
+    "Singh G",
+    "Mozaffarian D"
+   ],
+   "year": "2013",
+   "journal": "BMJ Open",
+   "sample": "27 studies from 10 countries",
+   "population": "Retail food prices in 10 countries",
+   "finding": "The healthiest diets cost about $1.50 more per person per day than the least healthy diets. By food group, the price gap was largest for meats and protein and small for grains, dairy, and fats and oils.",
+   "citation": "Rao M et al. (2013). Do healthier foods and diet patterns cost more than less healthy options? A systematic review and meta-analysis. BMJ Open. https://doi.org/10.1136/bmjopen-2013-004277",
+   "pmid": "24309174",
+   "doi": "10.1136/bmjopen-2013-004277",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/24309174/",
+    "doi": "https://doi.org/10.1136/bmjopen-2013-004277",
+    "free_full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3855594/"
+   },
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "fd6",
+   "category": "food",
+   "source": "University of Illinois (Hammons, Fiese)",
+   "type": "Meta-analysis, Pediatrics",
+   "title": "Is frequency of shared family meals related to the nutritional health of children and adolescents?",
+   "authors": [
+    "Hammons AJ",
+    "Fiese BH"
+   ],
+   "year": "2011",
+   "journal": "Pediatrics",
+   "sample": "17 studies, 182,836 children and adolescents",
+   "population": "Children and adolescents",
+   "finding": "Children and teens who shared family meals three or more times a week were more likely to be in a normal weight range and to eat healthier foods, and less likely to have disordered eating, than those who shared fewer. This finding is about children and teens, not adults.",
+   "citation": "Hammons AJ, Fiese BH. (2011). Is frequency of shared family meals related to the nutritional health of children and adolescents?. Pediatrics. https://doi.org/10.1542/peds.2010-1440",
+   "pmid": "21536618",
+   "doi": "10.1542/peds.2010-1440",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/21536618/",
+    "doi": "https://doi.org/10.1542/peds.2010-1440",
+    "free_full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3387875/"
+   },
+   "checked": "2026-11-16"
+  },
+  {
    "id": "pa1",
    "category": "physical_activity",
    "source": "Harvard Medical School and the Lancet Physical Activity Series Working Group (Lee, Blair)",
@@ -1235,6 +1450,119 @@
     "source": "https://www.cdc.gov/physical-activity-basics/benefits/index.html"
    },
    "checked": "2026-11-06"
+  },
+  {
+   "id": "pa2",
+   "category": "physical_activity",
+   "source": "National Health Research Institutes, Taiwan (Wen and colleagues)",
+   "type": "Prospective cohort study, The Lancet",
+   "title": "Minimum amount of physical activity for reduced mortality and extended life expectancy: a prospective cohort study",
+   "authors": [
+    "Wen CP",
+    "Wai JP",
+    "Tsai MK",
+    "Yang YC",
+    "Cheng TY",
+    "Lee MC",
+    "et al."
+   ],
+   "year": "2011",
+   "journal": "The Lancet",
+   "sample": "416,175 adults followed an average of 8 years",
+   "population": "Adults in Taiwan",
+   "finding": "People who exercised about 15 minutes a day had a 14 percent lower risk of death and a life expectancy about 3 years longer than people who were inactive. Each further 15 minutes a day went with a 4 percent lower risk of death.",
+   "citation": "Wen CP et al. (2011). Minimum amount of physical activity for reduced mortality and extended life expectancy: a prospective cohort study. The Lancet. https://doi.org/10.1016/S0140-6736(11)60749-6",
+   "pmid": "21846575",
+   "doi": "10.1016/S0140-6736(11)60749-6",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/21846575/",
+    "doi": "https://doi.org/10.1016/S0140-6736(11)60749-6"
+   },
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "pa3",
+   "category": "physical_activity",
+   "source": "Stanford University (Bravata and colleagues)",
+   "type": "Systematic review, JAMA",
+   "title": "Using pedometers to increase physical activity and improve health: a systematic review",
+   "authors": [
+    "Bravata DM",
+    "Smith-Spangler C",
+    "Sundaram V",
+    "Gienger AL",
+    "Lin N",
+    "Lewis R",
+    "et al."
+   ],
+   "year": "2007",
+   "journal": "JAMA",
+   "sample": "26 studies, 2,767 people: 8 randomized trials and 18 observational studies",
+   "population": "Adult outpatients; average age 49, 85 percent women",
+   "finding": "In the randomized trials, people who used a step counter walked about 2,500 more steps a day than people who did not. Having a step goal went with larger gains. Body mass index and blood pressure fell slightly. Whether the changes last is not known.",
+   "citation": "Bravata DM et al. (2007). Using pedometers to increase physical activity and improve health: a systematic review. JAMA. https://doi.org/10.1001/jama.298.19.2296",
+   "pmid": "18029834",
+   "doi": "10.1001/jama.298.19.2296",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/18029834/",
+    "doi": "https://doi.org/10.1001/jama.298.19.2296"
+   },
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "pa4",
+   "category": "physical_activity",
+   "source": "University of East Anglia (Hanson, Jones)",
+   "type": "Systematic review and meta-analysis, British Journal of Sports Medicine",
+   "title": "Is there evidence that walking groups have health benefits? A systematic review and meta-analysis",
+   "authors": [
+    "Hanson S",
+    "Jones A"
+   ],
+   "year": "2015",
+   "journal": "British Journal of Sports Medicine",
+   "sample": "42 studies, 1,843 people",
+   "population": "Adults in outdoor walking groups",
+   "finding": "People in outdoor walking groups saw lower blood pressure, resting heart rate, body fat and depression scores, and better fitness. No notable harms were reported. The studies compared people before and after joining, so other causes cannot be ruled out.",
+   "citation": "Hanson S, Jones A. (2015). Is there evidence that walking groups have health benefits? A systematic review and meta-analysis. British Journal of Sports Medicine. https://doi.org/10.1136/bjsports-2014-094157",
+   "pmid": "25601182",
+   "doi": "10.1136/bjsports-2014-094157",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/25601182/",
+    "doi": "https://doi.org/10.1136/bjsports-2014-094157",
+    "free_full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4453623/"
+   },
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "pa5",
+   "category": "physical_activity",
+   "source": "Cochrane review (Cooney and colleagues)",
+   "type": "Cochrane systematic review and meta-analysis",
+   "title": "Exercise for depression",
+   "authors": [
+    "Cooney GM",
+    "Dwan K",
+    "Greig CA",
+    "Lawlor DA",
+    "Rimer J",
+    "Waugh FR",
+    "et al."
+   ],
+   "year": "2013",
+   "journal": "Cochrane Database of Systematic Reviews",
+   "sample": "39 trials, 2,326 people",
+   "population": "Adults with depression",
+   "finding": "Exercise reduced symptoms of depression moderately more than no treatment. When only the six best-run trials were counted, the effect was small and not statistically significant. In a few small trials exercise did about as well as talk therapy or medication.",
+   "citation": "Cooney GM et al. (2013). Exercise for depression. Cochrane Database of Systematic Reviews. https://doi.org/10.1002/14651858.CD004366.pub6",
+   "pmid": "24026850",
+   "doi": "10.1002/14651858.CD004366.pub6",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/24026850/",
+    "doi": "https://doi.org/10.1002/14651858.CD004366.pub6",
+    "free_full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9721454/"
+   },
+   "checked": "2026-11-16"
   },
   {
    "id": "rec1",

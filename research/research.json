@@ -1,8 +1,8 @@
 {
  "name": "Research Library",
  "owner": "Verdant Equanim, LLC",
- "version": "1.1",
- "updated": "2026-11-06",
+ "version": "1.2",
+ "updated": "2026-11-15",
  "description": "The Research Library is the evidence behind the HeadWater chronic stress survey and the Nebraska Stress Atlas. It exists so that a county, a hospital, a clinic or a health department writing a grant can cite the science in one click, and so that anyone can check what HeadWater measures against the studies that have held up. Each category matches a section of the survey or a layer of the Atlas. Each entry names who did the work, what they found, how many people were studied, and links to the publisher's record, the PubMed record and the free full text where one exists.",
  "standard": [
   "A finding is included when it has been replicated in at least two independent populations, or comes from a meta-analysis or a cohort of tens of thousands, and has held for at least ten years. Federal surveillance data (BRFSS, Census, vital statistics) is included as the source for a measure itself.",
@@ -76,6 +76,12 @@
    "name": "Physical activity",
    "survey": "Health & Environment section; CDC PLACES and County Health Rankings inactivity",
    "about": "The burden of inactivity, estimated conservatively."
+  },
+  {
+   "id": "recreation",
+   "name": "Recreation and free time",
+   "survey": "Free time, leisure and time outdoors",
+   "about": "What people do with free time, and what it does for health and well-being."
   },
   {
    "id": "environment",
@@ -1229,6 +1235,86 @@
     "source": "https://www.cdc.gov/physical-activity-basics/benefits/index.html"
    },
    "checked": "2026-11-06"
+  },
+  {
+   "id": "rec1",
+   "category": "recreation",
+   "source": "National Cancer Institute (Arem, Moore and colleagues)",
+   "type": "Pooled cohort analysis, JAMA Internal Medicine",
+   "title": "Leisure time physical activity and mortality: a detailed pooled analysis of the dose-response relationship",
+   "authors": [
+    "Arem H",
+    "Moore SC",
+    "Patel A",
+    "Hartge P",
+    "Berrington de Gonzalez A",
+    "Visvanathan K",
+    "et al."
+   ],
+   "year": "2015",
+   "journal": "JAMA Internal Medicine",
+   "sample": "6 cohorts, 661,137 adults, 116,686 deaths, median follow-up 14.2 years",
+   "population": "Adults in the United States and Europe",
+   "finding": "People who did some leisure activity, but less than the recommended minimum, had a 20 percent lower risk of death than people who did none. Meeting the minimum went with a 31 percent lower risk. The benefit leveled off at three to five times the minimum, and ten times the minimum showed no added harm.",
+   "citation": "Arem H et al. (2015). Leisure time physical activity and mortality: a detailed pooled analysis of the dose-response relationship. JAMA Internal Medicine. https://doi.org/10.1001/jamainternmed.2015.0533",
+   "pmid": "25844730",
+   "doi": "10.1001/jamainternmed.2015.0533",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/25844730/",
+    "doi": "https://doi.org/10.1001/jamainternmed.2015.0533",
+    "free_full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4451435/"
+   },
+   "checked": "2026-11-15"
+  },
+  {
+   "id": "rec2",
+   "category": "recreation",
+   "source": "Purdue University (Kuykendall, Tay, Ng)",
+   "type": "Meta-analysis, Psychological Bulletin",
+   "title": "Leisure engagement and subjective well-being: A meta-analysis",
+   "authors": [
+    "Kuykendall L",
+    "Tay L",
+    "Ng V"
+   ],
+   "year": "2015",
+   "journal": "Psychological Bulletin",
+   "sample": "37 effect sizes, 11,834 people",
+   "population": "Adults",
+   "finding": "Taking part in leisure went with higher well-being, a moderate link. How often and how varied the activities were counted for more than total hours. The link was stronger for retired people than for people still working.",
+   "citation": "Kuykendall L, Tay L, Ng V. (2015). Leisure engagement and subjective well-being: A meta-analysis. Psychological Bulletin. https://doi.org/10.1037/a0038508",
+   "pmid": "25602273",
+   "doi": "10.1037/a0038508",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/25602273/",
+    "doi": "https://doi.org/10.1037/a0038508"
+   },
+   "checked": "2026-11-15"
+  },
+  {
+   "id": "rec3",
+   "category": "recreation",
+   "source": "University of East Anglia (Twohig-Bennett, Jones)",
+   "type": "Systematic review and meta-analysis, Environmental Research",
+   "title": "The health benefits of the great outdoors: A systematic review and meta-analysis of greenspace exposure and health outcomes",
+   "authors": [
+    "Twohig-Bennett C",
+    "Jones A"
+   ],
+   "year": "2018",
+   "journal": "Environmental Research",
+   "sample": "143 studies",
+   "population": "Evidence developing",
+   "finding": "More time around parks, trees and open land went with lower stress hormone levels, lower heart rate and blood pressure, and lower rates of type 2 diabetes and death. The authors say several of these results rest on weaker studies that disagree with each other, and most observe people and do not test cause.",
+   "citation": "Twohig-Bennett C, Jones A. (2018). The health benefits of the great outdoors: A systematic review and meta-analysis of greenspace exposure and health outcomes. Environmental Research. https://doi.org/10.1016/j.envres.2018.06.030",
+   "pmid": "29982151",
+   "doi": "10.1016/j.envres.2018.06.030",
+   "links": {
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/29982151/",
+    "doi": "https://doi.org/10.1016/j.envres.2018.06.030",
+    "free_full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6562165/"
+   },
+   "checked": "2026-11-15"
   },
   {
    "id": "en1",

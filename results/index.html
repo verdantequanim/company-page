@@ -254,7 +254,7 @@ function render(ans){
         <div class="areahead"><h3>${a.name}</h3><span class="band">${BAND_WORD[b]} · ${r.score} of 100</span></div>
         <div class="bar"><i style="width:${r.score}%"></i></div>
         <p>${a.words[b]}</p>
-        <p class="sub">From ${r.n} of ${a.items.length} questions. ${a.id==="sleep"?"Reliability for the two sleep questions the survey uses now has not been run yet.":`In the March test this area held together at ${a.id==="stability"?".79":".77"} reliability; rural validation is in progress.`}</p>
+        <p class="sub">From ${r.n} of ${a.items.length} questions. ${a.id==="sleep"?"Reliability for the two sleep questions the survey uses now has not been run yet.":`In the March test this area held together at ${a.id==="stability"?".79":".73"} reliability; rural validation is in progress.`}</p>
         <details ${b==="strained"?"open":""}><summary>What the research says, and what works</summary>
           <p class="sub" style="margin-top:6px"><a href="../research/#${a.cat}">Research Library: ${CAT_LABEL[a.cat]} ›</a> Studies that met the library's standard, each one read and checked.</p>
           ${wwHtml(wwFor(a.measures))}
